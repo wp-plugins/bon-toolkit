@@ -139,32 +139,7 @@ function bon_toolkit_get_builder_options()
             )
         ));
             
-    /**
-     * Contact Form Element
-     * This element will output contact form
-     * Available Property :
-     * @param $email
-     * @param $margin
-     */
-        $builder_options['elements']['contact_form'] = apply_filters('bon_toolkit_builder_element_contactform_filter', array(
-                'email' => array(
-                    'title' => __('Email Address', 'bon-toolkit'),
-                    'name' => $prefix . $suffix['contact_form'] . 'email',
-                    'type' => 'text',
-                    'description' => __('Input the email address for the contact form to send the contact email', 'bon-toolkit')
-                ),
-                'margin' => array(
-                    'title' => __('Bottom Margin', 'bon-toolkit'),
-                    'name' => $prefix . $suffix['contact_form'] . 'margin',
-                    'std' => $default_margin,
-                    'hr' => 'none',
-                    'type' => 'text'
-                ),
-                'default_size' => 'span12',
-                'allowed_size' => array(
-                        'span12'=>'1/1'
-                    ),
-            ));       
+       
             
     /**
      * Text Block Element
