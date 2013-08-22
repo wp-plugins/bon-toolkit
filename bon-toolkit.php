@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.1';
+		public $version = '1.0.2';
 
 		/**
 		 * @var string
@@ -581,7 +581,8 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		        'calendar' => 'builder_calendar_',
 		        'rss' => 'builder_rss_',
 		        'author' => 'builder_author_',
-		        'page' => 'builder_page_'
+		        'page' => 'builder_page_',
+		        'image_block' => 'builder_image_block_'
 		    ));
 
 			return $suffix;

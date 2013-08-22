@@ -24,7 +24,6 @@ function bon_toolkit_get_builder_options()
         'purple' => __('Purple','bon-toolkit'),
         'yellow' => __('Yellow', 'bon-toolkit'),
         'dark' => __('Dark','bon-toolkit')
-        
     );
     /**
      * Custom Post Query Element
@@ -139,7 +138,33 @@ function bon_toolkit_get_builder_options()
             )
         ));
             
-       
+    /**
+     * Contact Form Element
+     * This element will output contact form
+     * Available Property :
+     * @param $email
+     * @param $margin
+     */
+        /*$builder_options['elements']['contact_form'] = apply_filters('bon_toolkit_builder_element_contactform_filter', array(
+                'email' => array(
+                    'title' => __('Email Address', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['contact_form'] . 'email',
+                    'type' => 'text',
+                    'description' => __('Input the email address for the contact form to send the contact email', 'bon-toolkit')
+                ),
+                'margin' => array(
+                    'title' => __('Bottom Margin', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['contact_form'] . 'margin',
+                    'std' => $default_margin,
+                    'hr' => 'none',
+                    'type' => 'text'
+                ),
+                'default_size' => 'span12',
+                'allowed_size' => array(
+                        'span12'=>'1/1'
+                    ),
+            ));
+            */       
             
     /**
      * Text Block Element
@@ -148,7 +173,7 @@ function bon_toolkit_get_builder_options()
      * @param $heeader
      * @param $content
      */
-        $builder_options['elements']['text_block'] = apply_filters('bon_toolkit_builder_element_contactform_filter', array(        
+        $builder_options['elements']['text_block'] = apply_filters('bon_toolkit_builder_element_textblock_filter', array(        
             'header' => array(
                 'title' => __('Title', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'title',
@@ -162,6 +187,47 @@ function bon_toolkit_get_builder_options()
             'margin' => array(
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'margin',
+                'std' => $default_margin,
+                'hr' => 'none',
+                'type' => 'text'
+            ),
+            'default_size' => 'span3',
+            'allowed_size' => array(
+                    'span3'=>'1/4',
+                    'span4'=>'1/3',
+                    'span6'=>'1/2',
+                    'span8'=>'2/3',
+                    'span9'=>'3/4',
+                    'span12'=>'1/1'
+                ),
+        ));
+
+    /**
+     * Image Block Element
+     * This element will output a custom text content
+     * Available Property :
+     * @param $heeader
+     * @param $content
+     */
+        $builder_options['elements']['image_block'] = apply_filters('bon_toolkit_builder_element_imageblock_filter', array(        
+            'header' => array(
+                'title' => __('Title', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'title',
+                'type' => 'text'
+            ),
+            'src' => array(
+                'title' => __('Image URL', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'src',
+                'type' => 'text'
+            ),
+            'link' => array(
+                'title' => __('Link Image to', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'link',
+                'type' => 'text'
+            ),
+            'margin' => array(
+                'title' => __('Bottom Margin', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'margin',
                 'std' => $default_margin,
                 'hr' => 'none',
                 'type' => 'text'
@@ -241,7 +307,7 @@ function bon_toolkit_get_builder_options()
      * @param $description
      * @param $margin
      */
-        $builder_options['elements']['post_content'] = apply_filters('bon_toolkit_builder_element_content_filter', array(
+        $builder_options['elements']['post_content'] = apply_filters('bon_toolkit_builder_element_postcontent_filter', array(
             'info' => array(
                 'title' => __('Description','bon-toolkit'),
                 'name' => $prefix . $suffix['post_content'] . 'no-name',
