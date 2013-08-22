@@ -71,6 +71,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 
 = v1.0 - July 31th, 2013 =
 * Original Release.
+= v1.0.1 - August 22th, 2013 =
+* Added parameter $value in bon_toolkit_builder_render_{element_name}_output
 
 ==Installation==
 

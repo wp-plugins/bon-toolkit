@@ -306,7 +306,8 @@ class BON_Toolkit_Builder_Interface {
         endif;
         wp_reset_query();
         $o .= '</div>';
-        return $o;
+
+        return apply_filters('bon_toolkit_builder_render_post_output', $o, $value);
     }
 
     /**
@@ -331,7 +332,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= $this->render_header('tab', $header);
         $o .= do_shortcode('[bt-tabs direction="' . $value['direction'] . '" color="' . $value['color'] . '"]' . $tab . '[/bt-tabs]');
         $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_tab_output', $o);
+        return apply_filters('bon_toolkit_builder_render_tab_output', $o, $value);
     }
 
     /**
@@ -355,7 +356,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= $this->render_header('toggle', $header);
         $o .= do_shortcode('[bt-toggles color="orange"]' . $tab . '[/bt-toggles]');
         $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_toggle_output', $o);
+        return apply_filters('bon_toolkit_builder_render_toggle_output', $o, $value);
     }
 
     /**
@@ -386,7 +387,7 @@ class BON_Toolkit_Builder_Interface {
         $services .= $service_content;
         $services .= '</div>';
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' service-container" style="' . $margin . '">' . $services . '</div>';
-        return apply_filters('bon_toolkit_builder_render_service_output', $o);
+        return apply_filters('bon_toolkit_builder_render_service_output', $o, $value);
     }
 
     /**
@@ -414,7 +415,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= '</div>';
         $o .= '<div class="panel-button"><a href="' . $value['button_link'] . '" title="' . $value['button_text'] . '">' . $icon . '<span>' . $value['button_text'] . '</span></a></div>';
         $o .= '</div></div>';
-        return apply_filters('bon_toolkit_builder_render_calltoaction_output', $o);
+        return apply_filters('bon_toolkit_builder_render_calltoaction_output', $o, $value);
     }
 
     /**
@@ -434,7 +435,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' contact-form-container" style="' . $margin . '">';
         $o .= '<div class="contact-form">' . $value['email'] . ' Test</div>';
         $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_contact_form_output', $o);
+        return apply_filters('bon_toolkit_builder_render_contact_form_output', $o, $value);
     }
 
     /**
@@ -453,10 +454,10 @@ class BON_Toolkit_Builder_Interface {
         global $post;
         $o = '';
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' post-content-container" style="' . $margin . '">';
-        $o .= $this->render_header('post_content', $header);
+        $o .= '<div class="post-content">'.$this->render_header('post_content', $header);
         $o .= wptexturize(wpautop(get_the_content($post->ID)));
-        $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_post_content_output', $o);
+        $o .= '</div></div>';
+        return apply_filters('bon_toolkit_builder_render_post_content_output', $o, $value);
     }
 
     /**
@@ -478,7 +479,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= '<div class="text-block-content">';
         $o .= $content;
         $o .= '</div></div>';
-        return apply_filters('bon_toolkit_builder_render_text_block_output', $o);
+        return apply_filters('bon_toolkit_builder_render_text_block_output', $o, $value);
     }
 
     /**
@@ -503,7 +504,7 @@ class BON_Toolkit_Builder_Interface {
             $o .= '<div class="hr hr-text"><div class="custom-hr-text">' . $header . '</div></div>';
             $o .= '</div>';
         }
-        return apply_filters('bon_toolkit_builder_render_divider_output', $o);
+        return apply_filters('bon_toolkit_builder_render_divider_output', $o, $value);
     }
 
     /**
@@ -526,7 +527,7 @@ class BON_Toolkit_Builder_Interface {
         the_widget('bon_toolkit_video_widget', $value, $args);
         $o .= ob_get_clean();
         $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_video_output', $o);
+        return apply_filters('bon_toolkit_builder_render_video_output', $o, $value);
     }
 
     /**
@@ -545,7 +546,7 @@ class BON_Toolkit_Builder_Interface {
         the_widget('bon_toolkit_twitter_widget', $value);
         $o .= ob_get_clean();
         $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_twitter_output', $o);
+        return apply_filters('bon_toolkit_builder_render_twitter_output', $o, $value);
     }
 
     /**
@@ -564,7 +565,7 @@ class BON_Toolkit_Builder_Interface {
         the_widget('bon_toolkit_flickr_widget', $value);
         $o .= ob_get_clean();
         $o .= '</div>';
-        return apply_filters('bon_toolkit_builder_render_flickr_output', $o);
+        return apply_filters('bon_toolkit_builder_render_flickr_output', $o, $value);
     }
 
     /**
@@ -600,7 +601,9 @@ class BON_Toolkit_Builder_Interface {
         if (empty($header) || empty($type)) {
             return;
         }
-        return '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h3>' . $header . '</h3></header>';
+
+        $o = '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h3>' . $header . '</h3></header>';
+        return apply_filters('bon_toolkit_builder_render_header_output', $o, $type, $header);
     }
 
 }
