@@ -230,7 +230,7 @@ class BON_Toolkit_Builder_Interface {
             $margin = 'margin-bottom:' . $margin . 'px';
         }
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . '" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-post" style="' . $margin . '">';
         $o .= $this->render_header('post', $header);
         $post_size = apply_filters('bon_toolkit_builder_render_column_class', 'span3');
         $post_col  = '';
@@ -328,7 +328,7 @@ class BON_Toolkit_Builder_Interface {
         foreach ($value['repeat_element'] as $child_element) {
             $tab .= '[bt-tab title="' . $child_element['repeat_title'] . '"]' . $child_element['repeat_content'] . '[/bt-tab]';
         }
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' tab-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-tab" style="' . $margin . '">';
         $o .= $this->render_header('tab', $header);
         $o .= do_shortcode('[bt-tabs direction="' . $value['direction'] . '" color="' . $value['color'] . '"]' . $tab . '[/bt-tabs]');
         $o .= '</div>';
@@ -352,7 +352,7 @@ class BON_Toolkit_Builder_Interface {
         foreach ($value['repeat_element'] as $child_element) {
             $tab .= '[bt-toggle title="' . $child_element['repeat_title'] . '"]' . $child_element['repeat_content'] . '[/bt-toggle]';
         }
-        $o = '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' toggle-container" style="' . $margin . '">';
+        $o = '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-toggle" style="' . $margin . '">';
         $o .= $this->render_header('toggle', $header);
         $o .= do_shortcode('[bt-toggles color="orange"]' . $tab . '[/bt-toggles]');
         $o .= '</div>';
@@ -386,7 +386,7 @@ class BON_Toolkit_Builder_Interface {
         $services .= $icon;
         $services .= $service_content;
         $services .= '</div>';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' service-container" style="' . $margin . '">' . $services . '</div>';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-service" style="' . $margin . '">' . $services . '</div>';
         return apply_filters('bon_toolkit_builder_render_service_output', $o, $value);
     }
 
@@ -408,7 +408,7 @@ class BON_Toolkit_Builder_Interface {
         if ($value['button_icon']) {
             $icon = '<i class="icon ' . $value['button_icon'] . '"></i>';
         }
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' callaction-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-calltoaction" style="' . $margin . '">';
         $o .= '<div class="panel callaction"><div class="panel-content">';
         $o .= '<h1 class="action-title">' . $value['title'] . '</h1>';
         $o .= '<h2 class="action-content subheader">' . $value['subtitle'] . '</h2>';
@@ -432,7 +432,7 @@ class BON_Toolkit_Builder_Interface {
             $margin = 'margin-bottom:' . $margin . 'px';
         }
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' contact-form-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-contactform" style="' . $margin . '">';
         $o .= '<div class="contact-form">' . $value['email'] . ' Test</div>';
         $o .= '</div>';
         return apply_filters('bon_toolkit_builder_render_contact_form_output', $o, $value);
@@ -453,7 +453,7 @@ class BON_Toolkit_Builder_Interface {
         }
         global $post;
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' post-content-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-postcontent" style="' . $margin . '">';
         $o .= $this->render_header('post_content', $header);
         $o .= '<article class="post-content">';
         $o .= wptexturize(wpautop(get_the_content($post->ID)));
@@ -475,7 +475,7 @@ class BON_Toolkit_Builder_Interface {
             $margin = 'margin-bottom:' . $margin . 'px';
         }
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' text-block-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-textblock" style="' . $margin . '">';
         $o .= $this->render_header('text_block', $header);
         $o .= '<div class="text-block-content">';
         $o .= $content;
@@ -498,10 +498,10 @@ class BON_Toolkit_Builder_Interface {
         }
         $o = '';
         if (!$header) {
-            $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' " style="' . $margin . '">';
+            $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-divider" style="' . $margin . '">';
             $o .= '<hr class="divider-bold divider-1" /></div>';
         } else {
-            $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' " style="' . $margin . '">';
+            $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-divider" style="' . $margin . '">';
             $o .= '<div class="hr hr-text"><div class="custom-hr-text">' . $header . '</div></div>';
             $o .= '</div>';
         }
@@ -523,7 +523,7 @@ class BON_Toolkit_Builder_Interface {
             $margin = 'margin-bottom:' . $margin . 'px';
         }
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' video-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-video" style="' . $margin . '">';
         ob_start();
         the_widget('bon_toolkit_video_widget', $value, $args);
         $o .= ob_get_clean();
@@ -542,7 +542,7 @@ class BON_Toolkit_Builder_Interface {
     public function render_twitter($value) {
         extract($value);
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' twitter-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-twitter" style="' . $margin . '">';
         ob_start();
         the_widget('bon_toolkit_twitter_widget', $value);
         $o .= ob_get_clean();
@@ -561,7 +561,7 @@ class BON_Toolkit_Builder_Interface {
     public function render_flickr($value) {
         extract($value);
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' flickr-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-flickr" style="' . $margin . '">';
         ob_start();
         the_widget('bon_toolkit_flickr_widget', $value);
         $o .= ob_get_clean();
@@ -583,7 +583,7 @@ class BON_Toolkit_Builder_Interface {
             $margin = 'margin-bottom:' . $margin . 'px';
         }
         $o = '';
-        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' alert-container" style="' . $margin . '">';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-alert" style="' . $margin . '">';
         $o .= do_shortcode('[bt-alert color="' . $color . '"]' . $content . '[/bt-alert]');
         $o .= '</div>';
         return $o;
