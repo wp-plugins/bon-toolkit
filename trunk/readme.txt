@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,8 +71,11 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 
 = v1.0 - July 31th, 2013 =
 * Original Release.
-= v1.0.1 - August 22th, 2013 =
+= v1.0.1 - August 20th, 2013 =
 * Added parameter $value in bon_toolkit_builder_render_{element_name}_output
+= v1.0.2 - August 22th, 2013 =
+* Added New image block element on page builder
+
 
 ==Installation==
 
@@ -93,4 +96,5 @@ It can also be installed manually.
 5. Navigate to Settings &rarr; Bon Toolkit to learn about the plugin's features. The widgets will be available in Appearance &rarr; Widgets.
 
 ==Upgrade Notice==
+
 

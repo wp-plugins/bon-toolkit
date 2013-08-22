@@ -208,6 +208,8 @@ class BON_Toolkit_Builder_Interface {
 		    return $this->render_dribbble($value);
 		} else if ($type == 'flickr') {
 		    return $this->render_flickr($value);
+		} else if ($type == 'image_block') {
+		    return $this->render_image_block($value);
 		} else if ($type == 'video') {
 		    return $this->render_video($value);
 		} else {
@@ -481,6 +483,35 @@ class BON_Toolkit_Builder_Interface {
         $o .= $content;
         $o .= '</div></div>';
         return apply_filters('bon_toolkit_builder_render_text_block_output', $o, $value);
+    }
+
+    /**
+	 * Rendering Image Block Element.
+	 *
+	 * @since  1.0.2
+	 * @param string $value
+	 * @access public
+	 * @return string
+	 */
+    public function render_image_block($value) {
+        extract($value);
+        if (!empty($margin)) {
+            $margin = 'margin-bottom:' . $margin . 'px';
+        }
+        $o = '';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-imageblock" style="' . $margin . '">';
+        $o .= $this->render_header('image_block', $header);
+        $o .= '<div class="image-block-content">';
+
+        $img = '<img src="'.$src.'" alt="'.$header.'" />';
+
+        if(!empty($link)) {
+        	$o .= '<a href="'.$link.'" title="'.$header.'" target="blank">'.$img.'</a>';
+        } else {
+        	$o .= $img;
+        }
+        $o .= '</div></div>';
+        return apply_filters('bon_toolkit_builder_render_image_block_output', $o, $value);
     }
 
     /**
