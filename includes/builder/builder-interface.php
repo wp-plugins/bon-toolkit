@@ -454,9 +454,10 @@ class BON_Toolkit_Builder_Interface {
         global $post;
         $o = '';
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' post-content-container" style="' . $margin . '">';
-        $o .= '<div class="post-content">'.$this->render_header('post_content', $header);
+        $o .= $this->render_header('post_content', $header);
+        $o .= '<article class="post-content">';
         $o .= wptexturize(wpautop(get_the_content($post->ID)));
-        $o .= '</div></div>';
+        $o .= '</article></div>';
         return apply_filters('bon_toolkit_builder_render_post_content_output', $o, $value);
     }
 
