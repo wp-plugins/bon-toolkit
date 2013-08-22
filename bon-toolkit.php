@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0';
+		public $version = '1.0.1';
 
 		/**
 		 * @var string
