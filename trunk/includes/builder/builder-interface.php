@@ -51,6 +51,7 @@ class BON_Toolkit_Builder_Interface {
 	 */
 	public $builder_metas;
 
+
 	/**
 	 * Sets up our actions/filters.
 	 *
@@ -100,8 +101,6 @@ class BON_Toolkit_Builder_Interface {
 		$output = '';
 		$row_classes = apply_filters('bon_tookit_builder_render_row_class', array('row'));
 
-		$i = 0;
-
 		$len = count($this->builder_metas);
 		
 		foreach($this->builder_metas as $meta) {
@@ -111,6 +110,7 @@ class BON_Toolkit_Builder_Interface {
 				$element_size = intval(trim($value['default_size'], 'span'));;
 
 				$this->span = $this->span + $element_size;
+
 
 				/* If the $span property is greater than (shouldn't be) or equal to the $allowed_grid property. */
 				if ( $this->span >= $this->allowed_grid ) {
@@ -125,7 +125,7 @@ class BON_Toolkit_Builder_Interface {
 					/* Row classes. */
 					$row_classes = $row_classes;
 					$row_class = join( ' ', array_map( 'sanitize_html_class', array_unique( $row_classes ) ) );
-
+					
 					/* Open a wrapper <div> to contain the columns. */
 					$output .= '<div class="' . $row_class . '">';
 
@@ -136,10 +136,13 @@ class BON_Toolkit_Builder_Interface {
 				// default output is filtered in the bon-toolkit-core-functions.php
 				$output .= $this->render_element($key, $value);
 
+				
 				/* If this is the last column. */
 				if ( $this->is_last ) {
 
 					/* Close the wrapper. */
+
+
 					$output .= '</div>';
 					
 					/* Reset the properties that have been changed. */
@@ -147,8 +150,10 @@ class BON_Toolkit_Builder_Interface {
 				} 
 
 			}
-			$i++;
+
 		}
+
+
 
 		return $output;
 		
@@ -163,8 +168,10 @@ class BON_Toolkit_Builder_Interface {
 	 */
 	public function reset() {
 
-		foreach ( get_class_vars( __CLASS__ ) as $name => $default )
+		foreach ( get_class_vars( __CLASS__ ) as $name => $default ) {
 			$this->$name = $default;
+		}
+			
 	}
 
 	/**
@@ -571,11 +578,14 @@ class BON_Toolkit_Builder_Interface {
 	 * @return string
 	 */
     public function render_twitter($value) {
+
+    	$value['widget_args'] = bon_toolkit_default_widget_args();
+
         extract($value);
         $o = '';
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-twitter" style="' . $margin . '">';
         ob_start();
-        the_widget('bon_toolkit_twitter_widget', $value);
+        the_widget('bon_toolkit_twitter_widget', $value, $widget_args);
         $o .= ob_get_clean();
         $o .= '</div>';
         return apply_filters('bon_toolkit_builder_render_twitter_output', $o, $value);
@@ -590,11 +600,15 @@ class BON_Toolkit_Builder_Interface {
 	 * @return string
 	 */
     public function render_flickr($value) {
+
+    	$value['widget_args'] = bon_toolkit_default_widget_args();
+
         extract($value);
+
         $o = '';
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-flickr" style="' . $margin . '">';
         ob_start();
-        the_widget('bon_toolkit_flickr_widget', $value);
+        the_widget('bon_toolkit_flickr_widget', $value, $widget_args );
         $o .= ob_get_clean();
         $o .= '</div>';
         return apply_filters('bon_toolkit_builder_render_flickr_output', $o, $value);
@@ -637,6 +651,7 @@ class BON_Toolkit_Builder_Interface {
         $o = '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h3>' . $header . '</h3></header>';
         return apply_filters('bon_toolkit_builder_render_header_output', $o, $type, $header);
     }
+
 
 }
 

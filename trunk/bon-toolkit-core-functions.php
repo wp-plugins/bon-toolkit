@@ -120,5 +120,22 @@ if( !function_exists('bon_toolkit_get_post_id_lists')) {
 	}		
 } 
 
+if( !function_exists('bon_toolkit_default_widget_args') ) {
 
+	function bon_toolkit_default_widget_args() {
+		if(function_exists('bon_get_default_widget_args') ) {
+			return bon_get_default_widget_args();
+		} else {
+
+			$defaults = array(
+				'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+				'after_widget'  => '</div></div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>'
+			);
+
+			return $defaults;
+		}
+	}
+}
 ?>
