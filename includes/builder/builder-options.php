@@ -770,14 +770,9 @@ function bon_toolkit_get_builder_options()
                 'type' => 'text'
             ),
 
-            'default_size' => 'span4',
+            'default_size' => 'span3',
             'allowed_size' => array(
                     'span3'=>'1/4',
-                    'span4'=>'1/3',
-                    'span6'=>'1/2',
-                    'span8'=>'2/3',
-                    'span9'=>'3/4',
-                    'span12'=>'1/1'
                 ),
         ));
        
