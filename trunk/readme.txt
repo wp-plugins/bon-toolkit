@@ -75,6 +75,10 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Added parameter $value in bon_toolkit_builder_render_{element_name}_output
 = v1.0.2 - August 22th, 2013 =
 * Added New image block element on page builder
+* Added Contact Form Element Output
+* Added Map Element in Builder
+* Added Contact Form CSS
+* Fix undefined element type in builder.php
 
 
 ==Installation==
