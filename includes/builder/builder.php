@@ -124,6 +124,7 @@ class BON_Toolkit_Page_Builder {
 				<div class="bon-builder-panel">
 					<div id="bon-builder-action" class="quicktags-toolbar">
 						<?php wp_nonce_field( 'bon_toolkit_builder_select', 'bon_toolkit_builder_select_nonce'); ?>
+						
 						<label class="title"><?php _e('Choose Elements: ', 'bon-toolkit'); ?></label>
 						<select id="bon-builder-select-elem" class="select-elem">
 							<option value=""><?php _e('Select Element','bon-toolkit'); ?></option>
@@ -133,6 +134,7 @@ class BON_Toolkit_Page_Builder {
 								}
 							?>
 						</select>
+						
 						<input type="button" class="button button-primary" id="bon-builder-add-elem" class="bon-builder-add-elem" value="Add Element" />
 						<img class="ajax-loader" alt="<?php _e('loading...','bon-toolkit'); ?>" src="<?php echo trailingslashit( BON_TOOLKIT_IMAGES );?>ajax-loader.gif" />
 						<br class="clear">
