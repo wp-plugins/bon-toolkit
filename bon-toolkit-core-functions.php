@@ -138,4 +138,65 @@ if( !function_exists('bon_toolkit_default_widget_args') ) {
 		}
 	}
 }
+
+if( !function_exists('bon_toolkit_process_contact_form') ) {
+
+	add_action('wp_ajax_process_contact_form','bon_toolkit_process_contact_form');
+	add_action('wp_ajax_nopriv_process_contact_form','bon_toolkit_process_contact_form');
+
+	function bon_toolkit_process_contact_form() {
+
+		if(!isset($_POST) || empty($_POST)) {
+			$return_data['value'] = 'Cannot send email to destination. No parameter receive form AJAX call.';	
+			die ( json_encode($return_data) );
+		}
+
+		$name = esc_html( $_POST['name'] );
+
+		if(empty($name)) {
+			$return_data['value'] = __('Please enter your name.','bon-toolkit');
+			die ( json_encode($return_data) );
+		}
+
+		$email = sanitize_email( $_POST['email'] );
+
+		if(empty($email)){
+			$return_data['value'] = 'Please enter a valid email address.';
+			die ( json_encode($return_data) );		
+		}
+
+
+		$subject = esc_html( $_POST['subject'] );
+
+		$messages = esc_textarea( $_POST['messages'] );
+
+		if(empty($messages)){ 
+			$return_data['value'] = 'Please enter your messages.';
+			die ( json_encode($return_data) );				
+		}
+
+		$receiver = $_POST['receiver'];
+
+		$body = "You have received a new contact form message via ".get_bloginfo('name')." \n";
+		$body .= 'Name : ' . $name . " \n";
+		$body .= 'Email : ' . $email . " \n";
+		$body .= 'Subject : ' . $subject . " \n";
+		$body .= 'Message : ' . $messages;
+
+		$header = "From: " . $name . " <" . $email . "> \r\n";
+		$header .= "Reply-To: " . $email;
+
+		$subject_email = "[".get_bloginfo('name')." Contact Form] ".$subject;
+
+		if( wp_mail($receiver, $subject_email , $body, $header) ){
+			$return_data['success'] = '1';
+			$return_data['value'] = __('Email was sent successfully.','bon-toolkit');
+			die( json_encode($return_data) );
+		} else {
+			$return_data['value'] = __('There is an error sending email.','bon-toolkit');
+			die( json_encode($return_data) );	
+		}
+
+	}
+}
 ?>

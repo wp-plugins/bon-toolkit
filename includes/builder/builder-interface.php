@@ -219,7 +219,9 @@ class BON_Toolkit_Builder_Interface {
 		    return $this->render_image_block($value);
 		} else if ($type == 'video') {
 		    return $this->render_video($value);
-		} else {
+		} else if ($type == 'map') {
+		    return $this->render_map($value);
+		}else {
 			// if type was defined by the theme use the filter to output the type
 		    return apply_filters('bon_tookit_builder_render_element', $type, $value);
 		}		
@@ -442,7 +444,39 @@ class BON_Toolkit_Builder_Interface {
         }
         $o = '';
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-contactform" style="' . $margin . '">';
-        $o .= '<div class="contact-form">' . $value['email'] . ' Test</div>';
+        $o .= '<form class="bon-builder-contact-forms"><div class="contact-form-wrapper">';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="name">'.__('Your Name', 'bon-toolkit').'</label>';
+        $o .= '<input type="text" value="" name="name" class="name required" />';
+        $o .= '<div class="contact-form-error">'.__('Please enter your name.','bon-toolkit').'</div>';
+        $o .= '</div>';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="email-address">'.__('Email Address', 'bon-toolkit').'</label>';
+        $o .= '<input type="email" value="" name="email" class="email-address required" />';
+        $o .= '<div class="contact-form-error">'.__('Please enter valid email address.','bon-toolkit').'</div>';
+        $o .= '</div>';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="subject">'.__('Subject', 'bon-toolkit').'</label>';
+        $o .= '<input type="text" value="" name="subject" class="subject" />';
+        $o .= '</div>';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="messages">'.__('Your Messages', 'bon-toolkit').'</label>';
+        $o .= '<textarea name="messages" class="messages required"></textarea>';
+        $o .= '<div class="contact-form-error">'.__('Please enter your messages.','bon-toolkit').'</div>';
+        $o .= '</div>';
+
+        $o .= '<input type="hidden" name="receiver" value="'.$email.'" />';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<button type="submit" class="contact-form-submit bon-toolkit-button round-corner blue flat" name="submit">'.__('Send Message','bon-toolkit').'</button>';
+        $o .= '<span class="contact-form-ajax-loader"><img src="'.trailingslashit( BON_TOOLKIT_IMAGES ).'loader.gif" alt="loading..." /></span>';
+        $o .= '</div>';
+
+        $o .= '</div><div class="sending-result"><div class="green bon-toolkit-alert"></div></div></form>';
         $o .= '</div>';
         return apply_filters('bon_toolkit_builder_render_contact_form_output', $o, $value);
     }
@@ -631,7 +665,32 @@ class BON_Toolkit_Builder_Interface {
         $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-alert" style="' . $margin . '">';
         $o .= do_shortcode('[bt-alert color="' . $color . '"]' . $content . '[/bt-alert]');
         $o .= '</div>';
-        return $o;
+        return apply_filters('bon_toolkit_builder_render_alert_output', $o, $value);
+    }
+
+    /**
+	 * Rendering Map.
+	 *
+	 * @since  1.0.0
+	 * @param string $value
+	 * @access public
+	 * @return string
+	 */
+    public function render_map($value) {
+        extract($value);
+        if (!empty($margin)) {
+            $margin = 'margin-bottom:' . $margin . 'px';
+        }
+        if(empty($height)) {
+        	$height = '400px';
+        } else {
+        	$height = absint( $height ) . 'px';
+        }
+        $o = '';
+        $o .= '<div class="' . apply_filters('bon_toolkit_builder_render_column_class', $default_size) . ' bon-builder-element-map" style="' . $margin . '">';
+        $o .= do_shortcode('[bt-map color="' . $color . '" latitude="'.$latitude.'" longitude="'.$longitude.'" zoom="'.$zoom.'" height="'.$height.'"]');
+        $o .= '</div>';
+        return apply_filters('bon_toolkit_builder_render_map_output', $o, $value);
     }
 
     /**

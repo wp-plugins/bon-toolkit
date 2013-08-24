@@ -164,7 +164,9 @@ class BON_Toolkit_Page_Builder {
 
 							$i=0;
 							foreach($metas as $meta) {
-								$this->render_element($meta, key($meta));
+								if(array_key_exists(key($meta), $this->builder_options['elements'])) {
+									$this->render_element($meta, key($meta));
+								}
 							}
 						}
 					?>
