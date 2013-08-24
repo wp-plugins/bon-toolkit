@@ -1,6 +1,7 @@
 <?php
 function bon_toolkit_get_builder_options()
 {
+    global $bontoolkit;
     
     $prefix = bon_toolkit_get_prefix();
     
@@ -15,7 +16,7 @@ function bon_toolkit_get_builder_options()
     );
 
     $suffix = bon_toolkit_get_builder_suffix();
-
+    $bon_toolkit_options = get_option($bontoolkit->option_name);
     $coloroptions = array(
         'red' => __('Red','bon-toolkit'),
         'green' => __('Green','bon-toolkit'),
@@ -105,7 +106,7 @@ function bon_toolkit_get_builder_options()
                     '1' => __('Yes','bon-toolkit'),
                     '0' => __('No','bon-toolkit')
                 ),
-                'hr' => 'none',
+                
                 'description' => __('Pagination will only appear when the number of blog post is greater than the number of fetched item in one page.','bon-toolkit')
             ),
             'orderby' => array(
@@ -133,7 +134,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['post'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             )
         ));
@@ -145,7 +146,7 @@ function bon_toolkit_get_builder_options()
      * @param $email
      * @param $margin
      */
-        /*$builder_options['elements']['contact_form'] = apply_filters('bon_toolkit_builder_element_contactform_filter', array(
+        $builder_options['elements']['contact_form'] = apply_filters('bon_toolkit_builder_element_contactform_filter', array(
                 'email' => array(
                     'title' => __('Email Address', 'bon-toolkit'),
                     'name' => $prefix . $suffix['contact_form'] . 'email',
@@ -156,15 +157,76 @@ function bon_toolkit_get_builder_options()
                     'title' => __('Bottom Margin', 'bon-toolkit'),
                     'name' => $prefix . $suffix['contact_form'] . 'margin',
                     'std' => $default_margin,
-                    'hr' => 'none',
+                    
                     'type' => 'text'
                 ),
                 'default_size' => 'span12',
                 'allowed_size' => array(
-                        'span12'=>'1/1'
+                        'span6' => '1/2',
+                        'span12' =>'1/1',
                     ),
             ));
-            */       
+
+    /**
+     * Map Element
+     * This element will output map
+     * Available Property :
+     * @param $latidue
+     * @param $longitude
+     * @param color
+     * @param height
+     */
+
+    if(isset($bon_toolkit_options['google_api_key']) && !empty($bon_toolkit_options['google_api_key']) ) {
+        $builder_options['elements']['map'] = apply_filters('bon_toolkit_builder_element_map_filter', array(
+                
+                'latitude' => array(
+                    'title' => __('Location Latitude', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'latitude',
+                    'type' => 'text'
+                ),
+                'longitude' => array(
+                    'title' => __('Location Longitude', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'longitude',
+                    'type' => 'text'
+                ),
+                'height' => array(
+                    'title' => __('Map Height', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'height',
+                    'type' => 'text',
+                ),
+                'zoom' => array(
+                    'title' => __('Start Zoom', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'zoom',
+                    'type' => 'text',
+                    'std' => '16',
+                ),
+                'color' => array(
+                    'title' => __('Color', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'color',
+                    'type' => 'select',
+                    'options' => array(
+                        'red' => __('Red','bon-toolkit'),
+                        'green' => __('Green','bon-toolkit'),
+                        'blue' => __('Blue','bon-toolkit'),
+                        'yellow' => __('Yellow','bon-toolkit'),
+                        'orange' => __('Orange','bon-toolkit'),
+                        'purple' => __('Purple','bon-toolkit'),
+                    ),
+                ),
+                'margin' => array(
+                    'title' => __('Bottom Margin', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'margin',
+                    'std' => $default_margin,
+                    'type' => 'text'
+                ),
+                'default_size' => 'span12',
+                'allowed_size' => array(
+                        'span6' => '1/2',
+                        'span12' =>'1/1',
+                    ),
+            ));
+        }
             
     /**
      * Text Block Element
@@ -188,7 +250,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
             'default_size' => 'span3',
@@ -229,7 +291,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['image_block'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
             'default_size' => 'span3',
@@ -285,7 +347,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['service'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
             'default_size' => 'span4',
@@ -324,7 +386,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['post_content'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
             'default_size' => 'span4',
@@ -380,7 +442,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
             'default_size' => 'span12',
@@ -443,7 +505,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['tab'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
             'default_size' => 'span4',
@@ -493,7 +555,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['toggle'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
              'default_size' => 'span4',
@@ -527,7 +589,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['divider'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
              'default_size' => 'span12',
@@ -576,7 +638,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['alert'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
 
@@ -647,7 +709,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['video'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
 
@@ -721,7 +783,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['twitter'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
 
@@ -766,7 +828,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['flickr'] . 'margin',
                 'std' => $default_margin,
-                'hr' => 'none',
+                
                 'type' => 'text'
             ),
 
