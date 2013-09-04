@@ -48,6 +48,7 @@ select#bon-builder-select-elem { height: 2.2em; padding: 4px; min-width: 20em; m
 .bon-builder-meta-description.big-desc { font-size: 15px; font-weight: 300; color: #666; margin: 0 0 0 0; padding: 15px 20px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: block; background: #F8FCFF; border: 1px solid #AFCFED; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
 .bon-builder-meta-input { overflow: hidden; }
 .bon-builder-meta-input input, .bon-builder-meta-input select, .bon-builder-meta-input textarea { float: left; margin-right: 30px; min-width: 250px; }
+.bon-builder-meta-input input.upload_media_text_meta { margin-right: 10px;}
 .bon-builder-meta-modal-footer { text-align: right; padding-top: 20px; }
 .bon-builder-added-tab ul li { float: left; width: 33.33%; position: relative; margin-bottom: 10px; padding: 20px 0 25px 0; }
 .bon-builder-added-tab ul li .bon-builder-meta-body { margin: 0 0 0 15px; padding: 0 15px 15px 0; border-right: 1px solid #eee; border-bottom: none; }

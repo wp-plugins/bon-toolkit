@@ -21,7 +21,7 @@ if( !function_exists('bon_toolkit_setup_slider_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('Slider', array('supports' => array('editor','title', 'page-attributes'), 'menu_position' => 4 ));
+		$cpt->create('Slider', array( 'show_in_nav_menus' => false, 'exclude_from_search' => true, 'supports' => array('editor','title', 'page-attributes'), 'public' => false, 'menu_position' => 4 ));
 
 		$meta_fields = array(
 

@@ -21,7 +21,7 @@ if( !function_exists('bon_toolkit_setup_poll_post_type') ) {
 	
 		$cpt = $bon->cpt();
 
-		$cpt->create('Poll', array('supports' => array('editor', 'title', 'thumbnail', 'comments', 'custom-fields','revisions'), 'menu_position' => 20 ));
+		$cpt->create('Poll', array( 'show_in_nav_menus' => false, 'exclude_from_search' => true, 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ));
 
 		$meta_fields = array(
 			array( 

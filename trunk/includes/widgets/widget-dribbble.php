@@ -1,21 +1,32 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit('No direct script access allowed'); // Exit if accessed directly
 
-/*-----------------------------------------------------------------------------------*/
-/* Bon Toolkit Dribbble Widget
-/*-----------------------------------------------------------------------------------*/
+/**
+ * Widget Dribbble
+ *
+ *
+ *
+ * @author		Hermanto Lim
+ * @copyright	Copyright (c) Hermanto Lim
+ * @link		http://bonfirelab.com
+ * @since		Version 1.0
+ * @package 	Bon Toolkit
+ * @category 	Widgets
+ *
+ *
+*/ 
 
 add_action( 'widgets_init', 'load_bon_toolkit_dribbble_widget' );
 
 function load_bon_toolkit_dribbble_widget() {
-	register_widget( 'bon_toolkit_dribbble_widget' );
+	register_widget( 'Bon_Toolkit_Widget_Dribbble' );
 }
 
-class bon_toolkit_dribbble_widget extends WP_Widget {
+class Bon_Toolkit_Widget_Dribbble extends WP_Widget {
 
-	function bon_toolkit_dribbble_widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'bon-toolkit-dribbble-widget', 'description' => __('Grab your latest Dribbble shots', 'bon-toolkit') );
-		$control_ops = array( 'id_base' => 'bon-toolkit-dribbble-widget' );
-		$this->WP_Widget( 'bon-toolkit-dribbble-widget', BON_TOOLKIT_PREFIX . __(' Dribbble Widget', 'bon-toolkit'), $widget_ops, $control_ops );
+		$control_ops = array();
+		$this->WP_Widget( 'bon-toolkit-dribbble', BON_TOOLKIT_PREFIX . ' ' . __('Dribbble Widget', 'bon-toolkit'), $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -34,7 +45,7 @@ class bon_toolkit_dribbble_widget extends WP_Widget {
 		endif;
 		
 		extract( $args );
-		$dribbble_title = esc_attr( $instance['dribbble_title'] );
+		$dribbble_title = esc_attr( $instance['title'] );
 		$dribbble_name = esc_attr( $instance['dribbble_name'] );
 		$dribbble_shots = esc_attr( $instance['dribbble_shots'] );
 		echo $before_widget;
@@ -66,22 +77,20 @@ class bon_toolkit_dribbble_widget extends WP_Widget {
 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['dribbble_title'] = $new_instance['dribbble_title'];
+		$instance['title'] = $new_instance['title'];
 		$instance['dribbble_name'] = $new_instance['dribbble_name'];
 		$instance['dribbble_shots'] = $new_instance['dribbble_shots'];		
 		return $instance;
 	}
 
 	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'dribbble_title' => '', 'dribbble_name' => '', 'dribbble_shots' => '') );
-		$instance['dribbble_title'] = $instance['dribbble_title'];
-		$instance['dribbble_name'] = $instance['dribbble_name'];
-		$instance['dribbble_shots'] = $instance['dribbble_shots'];
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'dribbble_name' => '', 'dribbble_shots' => '') );
+		
 ?>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id('dribbble_title'); ?>"><?php _e('Title:','bon-toolkit'); ?> 
-					<input class="widefat" id="<?php echo $this->get_field_id('dribbble_title'); ?>" name="<?php echo $this->get_field_name('dribbble_title'); ?>" type="text" value="<?php if(isset($instance['dribbble_title'])) echo $instance['dribbble_title']; ?>" />
+				<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','bon-toolkit'); ?> 
+					<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php if(isset($instance['title'])) echo $instance['title']; ?>" />
 				</label>
 			</p>
 			

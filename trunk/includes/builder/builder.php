@@ -81,7 +81,6 @@ class BON_Toolkit_Page_Builder {
 	 *
 	 */
 		function set_builder_options() {
-			include_once('builder-options.php');
 			$this->builder_options = bon_toolkit_get_builder_options();
 		}
 
@@ -374,8 +373,8 @@ class BON_Toolkit_Page_Builder {
 				<div class="bon-builder-meta-body">
 					<label><?php _e($title, 'bon-toolkit'); ?></label>
 					<div class="bon-builder-meta-input">	
-						<input name="<?php echo $name; ?>" type="text" id="upload_media_text_meta" value="<?php echo $value; ?>" />
-						<input class="upload_media_button_meta" type="button" value="Upload" />
+						<input name="<?php echo $name; ?>" type="text" class="upload_media_text_meta" value="<?php echo $value; ?>" />
+						<a href="#" class="bon-builder-upload-button button"><?php _e('Upload Image','bon-toolkit'); ?></a>
 						<?php if(isset($description)){ ?>
 							<span class="bon-builder-meta-description"><?php echo $description; ?></span>
 						<?php } ?>

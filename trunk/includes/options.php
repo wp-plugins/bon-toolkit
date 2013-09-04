@@ -47,33 +47,6 @@ function bon_toolkit_set_options() {
 		'label' => __('FontAwesome Prefix', 'bon-toolkit')
 	);
 
-	$options[] = array(
-		'type' => 'checkbox',
-		'id' => 'enable_twitter_widget',
-		'desc' => __('Enable / Disable Twitter Widget.','bon-toolkit'),
-		'label' => __('Twitter Widget', 'bon-toolkit')
-	);
-
-	$options[] = array(
-		'type' => 'checkbox',
-		'id' => 'enable_dribbble_widget',
-		'desc' => __('Enable / Disable Dribbble Widget.','bon-toolkit'),
-		'label' => __('Dribbble Widget', 'bon-toolkit')
-	);
-
-	$options[] = array(
-		'type' => 'checkbox',
-		'id' => 'enable_flickr_widget',
-		'desc' => __('Enable / Disable Flickr Widget.','bon-toolkit'),
-		'label' => __('Flickr Widget', 'bon-toolkit')
-	);
-
-	$options[] = array(
-		'type' => 'checkbox',
-		'id' => 'enable_social_widget',
-		'desc' => __('Enable / Disable Social Icons Widget.','bon-toolkit'),
-		'label' => __('Social Icons Widget', 'bon-toolkit')
-	);
 
 
 	$options[] = array(
@@ -157,6 +130,62 @@ function bon_toolkit_set_options() {
 				'desc' => __('Enable / Disable Quiz Post Type','bon-toolkit'),
 				'label' => __('Quiz', 'bon-toolkit'),
 			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_100',
+				'std' => 'Perfect!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score 100', 'bon-toolkit'),
+			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_90',
+				'std' => 'Excellent!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score >= 90', 'bon-toolkit'),
+			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_80',
+				'std' => 'Good!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score >= 80', 'bon-toolkit'),
+			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_60',
+				'std' => 'Average!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score >= 60', 'bon-toolkit'),
+			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_40',
+				'std' => 'Bad!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score >= 40', 'bon-toolkit'),
+			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_30',
+				'std' => 'Poor!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score >= 30', 'bon-toolkit'),
+			);
+
+			$options[] = array(
+				'type' => 'text',
+				'id' => 'quiz_0',
+				'std' => 'Worst!!!',
+				'desc' => '',
+				'label' => __('Comment for Quiz Score 0', 'bon-toolkit'),
+			);
 		}
 	
 
@@ -166,16 +195,140 @@ function bon_toolkit_set_options() {
 	}
 
 	
+
+		// Advanced Widget
+		$options[] = array(
+			'type' => 'section',
+			'id' => 'widget-settings',
+			'std' => '',
+			'label' => __('Widget Settings', 'bon-toolkit'),
+		);
+			
+			$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_twitter_widget',
+			'desc' => __('Enable / Disable Twitter Widget.','bon-toolkit'),
+			'label' => __('Twitter Widget', 'bon-toolkit')
+		);
+
+		$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_dribbble_widget',
+			'desc' => __('Enable / Disable Dribbble Widget.','bon-toolkit'),
+			'label' => __('Dribbble Widget', 'bon-toolkit')
+		);
+
+		$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_flickr_widget',
+			'desc' => __('Enable / Disable Flickr Widget.','bon-toolkit'),
+			'label' => __('Flickr Widget', 'bon-toolkit')
+		);
+
+		$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_social_widget',
+			'desc' => __('Enable / Disable Social Icons Widget.','bon-toolkit'),
+			'label' => __('Social Icons Widget', 'bon-toolkit')
+		);
+
+		$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_video_widget',
+			'desc' => __('Enable / Disable Video Widget.','bon-toolkit'),
+			'label' => __('Video Widget', 'bon-toolkit')
+		);
+
+		$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_posts_widget',
+			'desc' => __('Enable / Disable Posts Widget.','bon-toolkit'),
+			'label' => __('Posts Widget', 'bon-toolkit')
+		);
+
+		$options[] = array(
+			'type' => 'checkbox',
+			'id' => 'enable_contactform_widget',
+			'desc' => __('Enable / Disable Contact Form Widget.','bon-toolkit'),
+			'label' => __('Contact Form Widget', 'bon-toolkit')
+		);
+
+
+		if( current_theme_supports( 'bon-advanced-widget' ) ) {
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_archives',
+				'desc' => __('Enable / Disable Advanced Archives Widget.','bon-toolkit'),
+				'label' => __('Archives Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_tags',
+				'desc' => __('Enable / Disable Advanced Tags Widget.','bon-toolkit'),
+				'label' => __('Tags Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_search',
+				'desc' => __('Enable / Disable Advanced Search Widget.','bon-toolkit'),
+				'label' => __('Search Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_pages',
+				'desc' => __('Enable / Disable Advanced Pages Widget.','bon-toolkit'),
+				'label' => __('Pages Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_nav_menu',
+				'desc' => __('Enable / Disable Advanced Navigation Menu Widget.','bon-toolkit'),
+				'label' => __('Navigation Menu Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_categories',
+				'desc' => __('Enable / Disable Advanced Categories Widget.','bon-toolkit'),
+				'label' => __('Categories Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_calendar',
+				'desc' => __('Enable / Disable Advanced Calendar Widget.','bon-toolkit'),
+				'label' => __('Calendar Widget', 'bon-toolkit')
+			);
+
+			$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'enable_advanced_authors',
+				'desc' => __('Enable / Disable Advanced Authors Widget.','bon-toolkit'),
+				'label' => __('Authors Widget', 'bon-toolkit')
+			);
+			
+		}
+
+		$options[] = array(
+			'type' => 'section_close',
+		);
+	
+	
 	$options[] = array(
 		'type' => 'section',
-		'id' => 'shortcode-setting',
+		'id' => 'api-settings',
 		'std' => '',
-		'label' => __('Shortcode Settings', 'bon-toolkit'),
+		'label' => __('API Settings', 'bon-toolkit'),
 	);
 
 	$options[] = array(
 		'type' => 'info',
-		'std' => 'Some shortcode needs special treatment especially bt-map for google map shortcode.',
+		'std' => __('Here is the place to fill the api key needed for some features to work.','bon-toolkit'),
 	);
 
 	$options[] = array(
@@ -183,6 +336,34 @@ function bon_toolkit_set_options() {
 		'id' => 'google_api_key',
 		'desc' => __('Api Key from Google to activate the Google Map Shortcode. Visit <b>Toolkit Help Tab</b> to find how to activate it','bon-toolkit'),
 		'label' => __('Google Map API Key', 'bon-toolkit'),
+	);
+
+	$options[] = array(
+		'type' => 'text',
+		'id' => 'twitter_access_token',
+		'desc' => __('The twitter access token key generated from your apps.','bon-toolkit'),
+		'label' => __('Twitter Acces Token', 'bon-toolkit'),
+	);
+
+	$options[] = array(
+		'type' => 'text',
+		'id' => 'twitter_access_token_secret',
+		'desc' => __('The twitter access token secret key generated from your apps.','bon-toolkit'),
+		'label' => __('Twitter Acces Token Secret', 'bon-toolkit'),
+	);
+
+	$options[] = array(
+		'type' => 'text',
+		'id' => 'twitter_consumer_key',
+		'desc' => __('The twitter consumer key generated from your apps.','bon-toolkit'),
+		'label' => __('Twitter Consumer Key', 'bon-toolkit'),
+	);
+
+	$options[] = array(
+		'type' => 'text',
+		'id' => 'twitter_consumer_key_secret',
+		'desc' => __('The twitter consumer secret key generated from your apps.','bon-toolkit'),
+		'label' => __('Twitter Consumer Key Secret', 'bon-toolkit'),
 	);
 
 

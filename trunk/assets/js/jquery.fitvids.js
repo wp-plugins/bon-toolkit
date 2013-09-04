@@ -86,3 +86,23 @@
     });
   };
 })( jQuery );
+
+jQuery(document).ready(function($){
+
+  $('body').fitVids();
+
+  $("iframe[src^='http://www.youtube.com'], object, embed").each(function () {
+      var url = $(this).attr("src");
+      if ($(this).attr("src").indexOf("?") > 0) {
+          $(this).attr({
+              "src": url + "&wmode=transparent&html5=1",
+              "wmode": "Opaque"
+          })
+      } else {
+          $(this).attr({
+              "src": url + "?wmode=transparent&html5=1",
+              "wmode": "Opaque"
+          })
+      }
+  });
+});

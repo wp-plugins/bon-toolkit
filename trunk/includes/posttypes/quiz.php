@@ -15,13 +15,14 @@ if( !function_exists('bon_toolkit_setup_quiz_post_type') ) {
 
 	function bon_toolkit_setup_quiz_post_type() {
 
+
 		global $bon;
 
 		$prefix = bon_toolkit_get_prefix();
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('Quiz', array( 'label' => 'Quizzes', 'labels' => array('menu_name' => 'Quizzes', 'all_items' => 'All Quizzes', 'singular_name' => 'Quiz'), 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ));
+		$cpt->create('Quiz', array( 'label' => 'Quizzes', 'exclude_from_search' => true, 'show_in_nav_menus' => false, 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ), array('menu_name' => 'Quizzes', 'all_items' => 'All Quizzes', 'singular_name' => 'Quiz'));
 
 		$meta_fields = array(
 
@@ -70,6 +71,7 @@ if( !function_exists('bon_toolkit_setup_quiz_post_type') ) {
 			    $meta_fields  
 			);
 		}
+		
 
 	}
 

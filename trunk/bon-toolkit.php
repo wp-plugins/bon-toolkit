@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.0.2
+Version: 1.0.3
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.2';
+		public $version = '1.0.3';
 
 		/**
 		 * @var string
@@ -113,7 +113,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			// Set priority to 10 to let the theme support from theme init first for post type features
 			add_action('after_setup_theme', array( $this, 'set_cpt_features' ), 10 );
 
-			add_action('init', array( $this, 'set_page_builder' ), 2 );
+			add_action('init', array( $this, 'set_page_builder' ), 99 );
 
 			add_action('init', array( $this, 'init') , 1 );
 
@@ -144,6 +144,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			// Functions
 			include_once( 'bon-toolkit-core-functions.php' );
+			include_once( 'bon-toolkit-twitter-functions.php' );
 			include_once( 'includes/tinymce/init.php');
 		}
 
@@ -166,12 +167,42 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		// -------------- Register plugin options -------------- //
 		public function admin_init() {
 
+			/* Registers admin stylesheets for the framework. */
+			add_action( 'admin_enqueue_scripts', array($this, 'register_widget_styles'), 1 );
+
+			/* Loads admin stylesheets for the framework. */
+			add_action( 'admin_enqueue_scripts', array($this, 'enqueue_widget_styles') );
+
 
 			if( ! defined( 'BON_FW_VERSION' ) || version_compare( BON_FW_VERSION, '1.0', '<' ) ) {
 				add_action( 'admin_notices', array( $this, 'fw_warning') );
 			}
 
 			register_setting( $this->setting_page , $this->option_name, array( $this, 'validate_options' ) );
+		}
+
+		/**
+		 * Registers the framework's 'widget.css' stylesheet file.  The function does not load the stylesheet.  It merely
+		 * registers it with WordPress.
+		 *
+		 * @since 1.0.0
+		 * @return void
+		 */
+		public function register_widget_styles() {
+			wp_register_style( 'bon-toolkit-core-widget', trailingslashit( BON_TOOLKIT_CSS ) . "widget.css", false, '', 'screen' );
+		}
+
+		/**
+		 * Loads the widget.css stylesheet for admin-related features.
+		 *
+		 * @since 1.0.0
+		 * @return void
+		 */
+		public function enqueue_widget_styles( $hook_suffix ) {
+
+			/* Load admin styles if on the widgets screen and the current theme supports 'hybrid-core-widgets'. */
+			if ( current_theme_supports( 'bon-core-widgets' ) && 'widgets.php' == $hook_suffix )
+				wp_enqueue_style( 'bon-toolkit-core-widget' );
 		}
 
 		public function init() {
@@ -261,12 +292,14 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					wp_register_script( 'google-map-api', 'http://maps.googleapis.com/maps/api/js?key='.$api_key.'&amp;sensor=false', false, false, false );
 					wp_enqueue_script( 'google-map-api' );
 				}
-				wp_register_script( 'bon-toolkit-fitvids', trailingslashit( BON_TOOLKIT_JS ) . 'jquery.fitvids.js', array('jquery'), false, false );
+				if( !wp_script_is( 'fitvids', 'registered' )) {
+					wp_register_script( 'fitvids', trailingslashit( BON_TOOLKIT_JS ) . 'jquery.fitvids.js', array('jquery'), '1.0.2', true );
+				}
 
-				wp_register_script( 'bon-toolkit-jplayer', trailingslashit( BON_TOOLKIT_JS ) . 'jplayer/jquery.jplayer.min.js', array('jquery'), false, false );
-				wp_enqueue_script( 'bon-toolkit-jplayer' );
+				wp_register_script( 'jplayer', trailingslashit( BON_TOOLKIT_JS ) . 'jplayer/jquery.jplayer.min.js', array('jquery'), false, false );
+				wp_enqueue_script( 'jplayer' );
 
-				wp_register_script( 'bon-toolkit', trailingslashit( BON_TOOLKIT_JS ) . 'toolkit.js', array('jquery', 'bon-toolkit-fitvids', 'bon-toolkit-map'), '1.0.0', true );
+				wp_register_script( 'bon-toolkit', trailingslashit( BON_TOOLKIT_JS ) . 'toolkit.js', array('jquery','fitvids','bon-toolkit-map'), '1.0.0', true );
 				wp_enqueue_script( 'bon-toolkit' );
 
 				wp_localize_script( 'bon-toolkit', 'bon_toolkit_ajax', array('url' => admin_url('admin-ajax.php')) );
@@ -449,20 +482,40 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 
 			$widget_arr = array(
-				'bon-dribbble-widget' => array('key_option' => 'no_key', 'file' => 'dribbble'),
-				'bon-flickr-widget' => array('key_option' => 'no_key', 'file' => 'flickr'),
-				'bon-twitter-widget' => array('key_option' => 'no_key', 'file' => 'twitter'),
-				'bon-social-widget' => array('key_option' => 'enable_social_widget', 'file' => 'social'),
-				'bon-video-widget' => array('key_option' => 'no_key', 'file' => 'video'),
+				'bon-toolkit-dribbble-widget' => array('key_option' => 'enable_dribbble_widget', 'file' => 'widget-dribbble'),
+				'bon-toolkit-flickr-widget' => array('key_option' => 'enable_flickr_widget', 'file' => 'widget-flickr'),
+				'bon-toolkit-twitter-widget' => array('key_option' => 'enable_twitter_widget', 'file' => 'widget-twitter'),
+				'bon-toolkit-social-widget' => array('key_option' => 'enable_social_widget', 'file' => 'widget-social'),
+				'bon-toolkit-video-widget' => array('key_option' => 'enable_video_widget', 'file' => 'widget-video'),
+				'bon-toolkit-contact-form-widget' => array('key_option' => 'enable_contactform_widget', 'file' => 'widget-contactform'),
+				'bon-toolkit-post-widget' => array('key_option' => 'enable_posts_widget', 'file' => 'widget-posts'),
 			);
+
 
 			$widget_arr = apply_filters( 'bon_toolkit_filter_widget_opt', $widget_arr );
 			
 			foreach($widget_arr as $key => $value) {
 				if( $this->check_options( esc_attr( $value['key_option'] ) ) === true ) {
-					include_once 'includes/widgets/'.esc_attr($value['file']). '/' . esc_attr($value['file']) . '.php';
+					include_once 'includes/widgets/' . esc_attr($value['file']) . '.php';
 				} else if( $value['key_option'] == 'no_key') {
-					include_once 'includes/widgets/'.esc_attr($value['file']). '/' . esc_attr($value['file']) . '.php';
+					include_once 'includes/widgets/' . esc_attr($value['file']) . '.php';
+				}
+			}
+
+			$ad_arr = array(
+				'bon-toolkit-archives-widget' => array('key_option' => 'enable_advanced_archives', 'file' => 'widget-archives'),
+				'bon-toolkit-authors-widget' => array('key_option' => 'enable_advanced_authors', 'file' => 'widget-authors'),
+				'bon-toolkit-calendar-widget' => array('key_option' => 'enable_advanced_calendar', 'file' => 'widget-calendar'),
+				'bon-toolkit-categories-widget' => array('key_option' => 'enable_advanced_categories', 'file' => 'widget-categories'),
+				'bon-toolkit-nav-menu-widget' => array('key_option' => 'enable_advanced_nav_menu', 'file' => 'widget-nav-menu'),
+				'bon-toolkit-pages-widget' => array('key_option' => 'enable_advanced_pages', 'file' => 'widget-pages'),
+				'bon-toolkit-search-widget' => array('key_option' => 'enable_advanced_search', 'file' => 'widget-search'),
+				'bon-toolkit-tags-widget' => array('key_option' => 'enable_advanced_tags', 'file' => 'widget-tags'),
+			);
+
+			foreach($ad_arr as $key => $value) {
+				if( $this->check_options( esc_attr( $value['key_option'] ) ) === true && current_theme_supports( 'bon-advanced-widget' ) ) {
+					include_once 'includes/widgets/' . esc_attr($value['file']) . '.php';
 				}
 			}
 		}
@@ -480,7 +533,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				'bon-quiz' =>  array('key_option' => 'enable_quiz', 'file' => 'quiz'),
 			);
 
-			if( !class_exists('BON_Main') || !class_exists('BON_Cpt') || !class_exists('BON_Metabox') || !class_exists('BON_Machine') ) {
+			if( !class_exists('BON_Main') || !class_exists('BON_Cpt') || !class_exists('BON_Metabox') ) {
 				// class is needed in order to create the CPT and MetaBox
 				return;
 
@@ -490,7 +543,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 				foreach($this->cpt_arr as $key => $value) {
 					if( current_theme_supports( $key ) && $this->check_options( esc_attr( $value['key_option'] ) ) === true ) {
-						include_once 'includes/posttypes/'.esc_attr($value['file']). '/' . esc_attr($value['file']) . '.php';
+						include_once 'includes/posttypes/' . esc_attr($value['file']) . '.php';
 					}
 				}
 				
@@ -546,6 +599,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			if( current_theme_supports('bon-page-builder') && class_exists('BON_Main') ) {
 				
+				include_once 'includes/builder/builder-options.php';
 				include_once 'includes/builder/builder.php';
 				include_once 'includes/builder/builder-interface.php';
 			}
@@ -586,6 +640,18 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		    ));
 
 			return $suffix;
+		}
+
+		function flush_rewrite() {
+		    // First, we "add" the custom post type via the above written function.
+		    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
+		    // They are only referenced in the post_type column with a post entry, 
+		    // when you add a post of this CPT.
+		    $this->set_cpt_features();
+
+		    // ATTENTION: This is *only* done during plugin activation hook in this example!
+		    // You should *NEVER EVER* do this on every page load!!
+		    flush_rewrite_rules();
 		}
 
 	} // end class
