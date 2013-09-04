@@ -4,6 +4,7 @@ class BON_Toolkit_Shortcodes {
     function __construct() {
         add_action( 'init', array( $this, 'add_shortcodes' ) );
         add_filter( 'init', array( $this, 'filter_process_shortcodes' ) ); 
+
     }
 
     /*--------------------------------------------------------------------------------------
@@ -51,7 +52,14 @@ class BON_Toolkit_Shortcodes {
         add_shortcode('bt-toggle', array( $this, 'toggle_shortcode' ));
         add_shortcode('bt-alert', array( $this, 'alert_shortcode' ));
         add_shortcode('bt-button', array( $this, 'button_shortcode' ));
-        //add_shortcode('bt-widget', array( $this, 'widget_shortcode' ));
+        
+        if ( !shortcode_exists( 'entry-published' ) ) {
+            add_shortcode('entry-published', array( $this, 'entry_published_shortcode' ));
+        }
+
+        if ( !shortcode_exists( 'entry-author' ) ) {
+            add_shortcode('entry-author', array( $this, 'entry_author_shortcode' ));
+        }
     }
 
     /*--------------------------------------------------------------------------------------
@@ -263,35 +271,35 @@ class BON_Toolkit_Shortcodes {
        return '<a target="'.$target.'" class="bon-toolkit-button '.$size.' '.$style.' '.$color.' '. $type .'" href="'.$url.'">' . do_shortcode($content) . '</a>';
     }
 
+   
+    /**
+     * Displays the published date of an individual post.
+     *
+     * @since 1.0
+     * @access public
+     * @param array $attr
+     * @return string
+     */
+    function entry_published_shortcode( $attr ) {
+        $attr = shortcode_atts( array( 'before' => '', 'after' => '', 'text' => __('Posted on:','bon'), 'format' => get_option( 'date_format' ) ), $attr );
 
-    function widget_shortcode( $attr, $content = null ) {
-        // Configure defaults and extract the attributes into variables
-        extract( shortcode_atts( 
-            array( 
-                'type'   => '',
-                'title'  => '',
-            ), 
-            $attr 
-        ));
-        
-
-        $args = array(
-            'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
-            'after_widget'  => '</div></div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>'
-        );
-
-        ob_start();
-        the_widget( $type, $attr, $args ); 
-        $output = ob_get_clean();
-
-        return $output;
-
+        $published = '<span class="entry-published-meta entry-post-meta"><strong class="published-text entry-meta-title">'.$attr['text'].'</strong> <abbr title="' . get_the_time( esc_attr__( 'l, F jS, Y, g:i a', 'bon' ) ) . '">' . get_the_time( $attr['format'] ) . '</abbr></span>';
+        return $attr['before'] . $published . $attr['after'];
     }
 
-   
-
+    /**
+     * Displays an individual post's author with a link to his or her archive.
+     *
+     * @since 1.0
+     * @access public
+     * @param array $attr
+     * @return string
+     */
+    function entry_author_shortcode( $attr ) {
+        $attr = shortcode_atts( array( 'before' => '', 'after' => '', 'text' => __('Author:','bon') ), $attr );
+        $author = '<span class="entry-author-meta entry-post-meta"><strong class="author-text entry-meta-title">'.$attr['text'].'</strong> <a class="url fn n" rel="author" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . '">' . get_the_author_meta( 'display_name' ) . '</a></span>';
+        return $attr['before'] . $author . $attr['after'];
+    }
 }
 
 new BON_Toolkit_Shortcodes();

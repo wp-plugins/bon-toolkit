@@ -30,7 +30,7 @@ class BON_Toolkit_Quiz {
 	}
 
 	function init() {
-
+		
 		$prefix = bon_toolkit_get_prefix();
 		$this->prefix = $prefix;
 		add_shortcode($this->shortcode_tag, array( $this, 'shortcode' ) );
@@ -75,6 +75,9 @@ class BON_Toolkit_Quiz {
 	        }
 
 	    $content = get_post($post_id);
+
+	    global $bontoolkit;
+	    $options = get_option($bontoolkit->option_name);
 
 			$quiz_comment['perfect'] = ( isset($options['quiz_100']) ? $options['quiz_100'] : 'Perfect!' );
 			$quiz_comment['excellent'] = ( isset($options['quiz_90']) ? $options['quiz_90'] : 'Excellent!' );

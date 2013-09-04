@@ -62,19 +62,10 @@ class BON_Toolkit_Columns {
 
 		/* Register shortcodes on 'init'. */
 		add_action( 'init', array( &$this, 'init' ) );
-		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_styles' ), 1 );
 		add_filter('the_content', array( &$this, 'process_shortcode'), 7);
 
 	}
 
-	public function enqueue_styles() {
-
-		/* Use the .min stylesheet if SCRIPT_DEBUG is turned off. */
-		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
-		/* Enqueue the stylesheet. */
-		wp_enqueue_style('bon-toolkit-columns', trailingslashit( BON_TOOLKIT_CSS ) . "columns.css", null, '1.0' );
-	}
 
 	/**
 	 * Registers the [column] shortcode.

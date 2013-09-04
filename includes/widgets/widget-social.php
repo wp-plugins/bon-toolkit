@@ -1,26 +1,37 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit('No direct script access allowed'); // Exit if accessed directly
 
-/*-----------------------------------------------------------------------------------*/
-/* Bon Toolkit Social Icons Widget
-/*-----------------------------------------------------------------------------------*/
+/**
+ * Widget Social
+ *
+ *
+ *
+ * @author		Hermanto Lim
+ * @copyright	Copyright (c) Hermanto Lim
+ * @link		http://bonfirelab.com
+ * @since		Version 1.0
+ * @package 	Bon Toolkit
+ * @category 	Widgets
+ *
+ *
+*/ 
 
-add_action('widgets_init','load_bon_toolkit_social_widget');
+add_action( 'widgets_init', 'load_bon_toolkit_social_widget' );
 
 function load_bon_toolkit_social_widget() {
-	register_widget('bon_toolkit_social_widget');
+	register_widget( 'Bon_Toolkit_Widget_Social' );
 }
 
-class bon_toolkit_social_widget extends WP_Widget {
+class Bon_Toolkit_Widget_Social extends WP_Widget {
 	/**
 	 * @var array
 	 * 
 	 */
 	public $social_params = array();
 
-	function bon_toolkit_social_widget() {
+	function __construct() {
 	    $widget_ops = array( 'classname' => 'bon-toolkit-social-widget', 'description' => __('Show social icon links', 'bon-toolkit') );
-		$control_ops = array( 'width'  => 800, 'height' => 350, 'id_base' => 'bon-toolkit-social-widget' );
-		$this->WP_Widget('bon-toolkit-social-widget', BON_TOOLKIT_PREFIX . __(' Social Icons Widget', 'bon-toolkit'), $widget_ops, $control_ops);
+		$control_ops = array( 'width'  => 800, 'height' => 350, );
+		$this->WP_Widget('bon-toolkit-social', BON_TOOLKIT_PREFIX . __(' Social Icons Widget', 'bon-toolkit'), $widget_ops, $control_ops);
 		
 		$this->social_params = array(
 			'wordpress_icon',
@@ -51,7 +62,7 @@ class bon_toolkit_social_widget extends WP_Widget {
 	function widget( $args, $instance ) {
  		extract($args);
 
-		$icons_title = apply_filters('widget_title', $instance['icons_title']);
+		$icons_title = apply_filters('widget_title', $instance['title']);
 		
 		$size = (isset($instance['size']) ? $instance['size'] : '' );
 		$color = (isset($instance['color']) ? $instance['color'] : '' );
@@ -106,7 +117,7 @@ class bon_toolkit_social_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 
 		$instance = $old_instance;
-		$instance['icons_title'] = strip_tags( $new_instance['icons_title']);
+		$instance['title'] = strip_tags( $new_instance['title']);
 		
 		$instance['color'] = strip_tags( $new_instance['color']);
 		$instance['color_style'] = strip_tags( $new_instance['color_style']);
@@ -130,7 +141,7 @@ class bon_toolkit_social_widget extends WP_Widget {
 
 			if($i == 1) {
 
-				echo '<div class="bon-widget-controls columns-3">';
+				echo '<div class="bon-toolkit-widget-controls columns-3">';
 
 			}
 
@@ -157,10 +168,10 @@ class bon_toolkit_social_widget extends WP_Widget {
 		?>
 		
 
-	 	<div class="bon-widget-controls columns-3 column-last">
+	 	<div class="bon-toolkit-widget-controls columns-3 column-last">
 	 	<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><code><?php _e('Title:','bon-toolkit'); ?></code></label>
-			<input class="widefat" type="text" id="<?php echo $this->get_field_id('icons_title'); ?>" name="<?php echo $this->get_field_name('icons_title'); ?>" value="<?php if(isset($instance['icons_title'])) echo $instance['icons_title']; ?>" />
+			<input class="widefat" type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php if(isset($instance['title'])) echo $instance['title']; ?>" />
 		</p>
 	 	<?php
 	 		$color = (isset($instance['color']) ? $instance['color'] : '');

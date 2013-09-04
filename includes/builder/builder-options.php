@@ -280,7 +280,7 @@ function bon_toolkit_get_builder_options()
             'src' => array(
                 'title' => __('Image URL', 'bon-toolkit'),
                 'name' => $prefix . $suffix['image_block'] . 'src',
-                'type' => 'text'
+                'type' => 'upload'
             ),
             'link' => array(
                 'title' => __('Link Image to', 'bon-toolkit'),
@@ -673,6 +673,7 @@ function bon_toolkit_get_builder_options()
                 'description' => __('To embed you only need to specify the url. For example: http://www.youtube.com/watch?v=abcdeFGHIJ. To use self hosted video leave the embed field empty.','bon-toolkit')
             ),
 
+
             'embed' => array(
                 'title' => __('Video Url (Third Party Host)', 'bon-toolkit'),
                 'name' => $prefix . $suffix['video'] . 'embed',
@@ -746,30 +747,6 @@ function bon_toolkit_get_builder_options()
             'postcount' => array(
                 'title' => __('How many post to fetch?', 'bon-toolkit'),
                 'name' => $prefix . $suffix['twitter'] . 'postcount',
-                'type' => 'text',
-            ),
-
-            'consumerkey' => array(
-                'title' => __('Twitter Consumer Key', 'bon-toolkit'),
-                'name' => $prefix . $suffix['twitter'] . 'consumerkey',
-                'type' => 'text',
-            ),
-
-            'consumersecret' => array(
-                'title' => __('Twitter Consumer Secret', 'bon-toolkit'),
-                'name' => $prefix . $suffix['twitter'] . 'consumersecret',
-                'type' => 'text',
-            ),
-
-            'accesstoken' => array(
-                'title' => __('Twitter Access Token', 'bon-toolkit'),
-                'name' => $prefix . $suffix['twitter'] . 'accesstoken',
-                'type' => 'text',
-            ),
-
-            'accesstokensecret' => array(
-                'title' => __('Twitter Access Token Secret', 'bon-toolkit'),
-                'name' => $prefix . $suffix['twitter'] . 'accesstokensecret',
                 'type' => 'text',
             ),
 

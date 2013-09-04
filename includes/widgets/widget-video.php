@@ -1,30 +1,41 @@
-<?php
-/*-----------------------------------------------------------------------------------*/
-/* Bon Toolkit Video Widget
-/*-----------------------------------------------------------------------------------*/
+<?php if ( ! defined( 'ABSPATH' ) ) exit('No direct script access allowed'); // Exit if accessed directly
 
+/**
+ * Widget Video
+ *
+ *
+ *
+ * @author		Hermanto Lim
+ * @copyright	Copyright (c) Hermanto Lim
+ * @link		http://bonfirelab.com
+ * @since		Version 1.0
+ * @package 	Bon Toolkit
+ * @category 	Widgets
+ *
+ *
+*/ 
 
 add_action( 'widgets_init', 'load_bon_toolkit_video_widget' );
 
 function load_bon_toolkit_video_widget() {
-	register_widget( 'bon_toolkit_video_widget' );
+	register_widget( 'Bon_Toolkit_Widget_Video' );
 }
 
 /*-----------------------------------------------------------------------------------*/
 /*  Widget class
 /*-----------------------------------------------------------------------------------*/
-class bon_toolkit_video_widget extends WP_Widget {
+class Bon_Toolkit_Widget_Video extends WP_Widget {
 
 	
 
 /*-----------------------------------------------------------------------------------*/
 /*	Widget Setup
 /*-----------------------------------------------------------------------------------*/
-function bon_toolkit_video_widget() {
+function __construct() {
 
 	$widget_ops = array( 'classname' => 'bon-toolkit-video-widget', 'description' => __('Show Video', 'bon-toolkit') );
-	$control_ops = array( 'id_base' => 'bon-toolkit-video-widget' );
-	$this->WP_Widget('bon-toolkit-video-widget', BON_TOOLKIT_PREFIX . __(' Video Widget', 'bon-toolkit'), $widget_ops, $control_ops);
+	$control_ops = array();
+	$this->WP_Widget('bon-toolkit-video', BON_TOOLKIT_PREFIX . __(' Video Widget', 'bon-toolkit'), $widget_ops, $control_ops);
 
 }
 
@@ -54,56 +65,17 @@ function widget( $args, $instance ) {
 
 	if ( $title ) { echo $before_title . $title . $after_title; }
 
-	echo '<div class="bon-toolkit-video">';
+	$vid_args = array(
+		'embed' => $embed,
+		'm4v' => $m4v,
+		'ogv' => $ogv,
+		'poster' => $poster,
+		'id' => $this->id,
+		'echo' => true,
+		'desc' => $desc,
+	);
 
-    if(!empty($embed)) {
-    	echo '<div class="bon-toolkit-video-embed">';
-    	$embed_code = wp_oembed_get($embed);
-    	echo $embed_code;
-    	echo '</div>';
-
-    } else if(!empty ($m4v) && !empty($ogv)) {
-    	echo '<div id="jp-'.$this->id.'" class="bon-toolkit-jplayer jp-jplayer jp-jplayer-video" data-poster="'.$poster.'" data-m4v="'.$m4v.'" data-ogv="'.$ogv.'"></div>';
-
-    	echo '<div class="jp-video-container">
-            <div class="jp-video">
-                <div class="jp-type-single">
-                    <div id="jp-interface-'.$this->id.'" class="jp-interface">
-                        <div class="jp-controls">
-                            <div class="jp-play" tabindex="1">
-                                <span class="'.$awe.'play icon"></span>
-                            </div>
-                            <div class="jp-pause" tabindex="1">
-                                <span class="'.$awe.'pause icon"></span>
-                            </div>
-                            <div class="jp-progress-container">
-                                <div class="jp-progress">
-                                    <div class="jp-seek-bar">
-                                        <div class="jp-play-bar"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jp-mute" tabindex="1"><span class="'.$awe.'volume-up icon"></span></div>
-                            <div class="jp-unmute" tabindex="1"><span class="'.$awe.'volume-off icon"></span></div>
-                            <div class="jp-volume-bar-container">
-                                <div class="jp-volume-bar">
-                                    <div class="jp-volume-bar-value"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>';
-    } else {
-    	echo '<p>'. __('Error Loading Video', 'bon-toolkit') . '</p>';
-    }
-    if($desc != '') {
-		echo '<div class="bon-toolkit-video-desc">' . $desc . '</div>';
-    }
-	echo '</div>';
-		
-	
+	bon_toolkit_video($vid_args);	
 	
 	echo $after_widget;
 }
