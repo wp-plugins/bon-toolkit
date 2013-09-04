@@ -789,7 +789,7 @@ class BON_Toolkit_Builder_Interface {
             return;
         }
 
-        $o = apply_filters('bon_toolkit_builder_render_header_output', $type, $header);
+        $o = apply_filters('bon_toolkit_builder_render_header_output', '', $type, $header);
 
        	if( $o != '' ) {
        		return $o;
