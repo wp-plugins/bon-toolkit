@@ -143,7 +143,7 @@ ul.bon-toolkit-accordion label + input[type='radio']:checked ~ span.accordion-cl
 /*--- contact form ---*/
 span.contact-form-ajax-loader, div.bon-builder-element-contactform div.sending-result, div.bon-builder-element-contactform span.contact-form-error{ display: none; }
 .contact-form-input { margin-bottom: 15px; }
-div.sending-result {
+div.contact-form-error, div.sending-result {
 	display: none;
 }
 .contact-form-input button { margin: 0 10px 0 0;}
