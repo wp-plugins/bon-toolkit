@@ -388,4 +388,55 @@ if( !function_exists('bon_toolkit_sort_name_callback') ) {
 	    return strnatcasecmp( $a['name'], $b['name'] );
 	}
 }
+
+if( !function_exists('bon_toolkit_get_contact_form') ) {
+	function bon_toolkit_get_contact_form($email = '') {
+		if(empty($email) || !is_email($email)) {
+			return __('Failed rendering contact form. Please provide a correct <strong>Email Address</strong>.','bon-toolkit');
+		}
+
+		$o = apply_filters('bon_toolkit_get_contact_form', '', $email);
+
+		if($o != '')
+			return $o;
+
+
+		$o .= '<form class="bon-builder-contact-forms"><div class="contact-form-wrapper">';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="name">'.__('Your Name', 'bon-toolkit').'</label>';
+        $o .= '<input type="text" value="" name="name" class="name required" placeholder="'.__('Name', 'bon').'" />';
+        $o .= '<div class="contact-form-error">'.__('Please enter your name.','bon-toolkit').'</div>';
+        $o .= '</div>';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="email-address">'.__('Email Address', 'bon-toolkit').'</label>';
+        $o .= '<input type="email" value="" name="email" class="email-address required" placeholder="'.__('Email', 'bon').'" />';
+        $o .= '<div class="contact-form-error">'.__('Please enter valid email address.','bon-toolkit').'</div>';
+        $o .= '</div>';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="subject">'.__('Subject', 'bon-toolkit').'</label>';
+        $o .= '<input type="text" value="" name="subject" class="subject" placeholder="'.__('Subject', 'bon').'" />';
+        $o .= '</div>';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<label for="messages">'.__('Your Messages', 'bon-toolkit').'</label>';
+        $o .= '<textarea name="messages" class="messages required" placeholder="'.__('Messages', 'bon').'"></textarea>';
+        $o .= '<div class="contact-form-error">'.__('Please enter your messages.','bon-toolkit').'</div>';
+        $o .= '</div>';
+
+        $o .= '<input type="hidden" name="receiver" value="'.$email.'" />';
+
+        $o .= '<div class="contact-form-input">';
+        $o .= '<button type="submit" class="contact-form-submit bon-toolkit-button round-corner blue flat" name="submit">'.__('Send Message','bon-toolkit').'</button>';
+        $o .= '<span class="contact-form-ajax-loader"><img src="'.trailingslashit( BON_TOOLKIT_IMAGES ).'loader.gif" alt="loading..." /></span>';
+        $o .= '</div>';
+
+        $o .= '</div><div class="sending-result"><div class="green bon-toolkit-alert"></div></div></form>';
+
+        return $o;
+
+	}
+}
 ?>

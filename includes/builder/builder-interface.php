@@ -488,39 +488,7 @@ class BON_Toolkit_Builder_Interface {
 
         extract($value);
         
-        $o .= '<form class="bon-builder-contact-forms"><div class="contact-form-wrapper">';
-
-        $o .= '<div class="contact-form-input">';
-        $o .= '<label for="name">'.__('Your Name', 'bon-toolkit').'</label>';
-        $o .= '<input type="text" value="" name="name" class="name required" />';
-        $o .= '<div class="contact-form-error">'.__('Please enter your name.','bon-toolkit').'</div>';
-        $o .= '</div>';
-
-        $o .= '<div class="contact-form-input">';
-        $o .= '<label for="email-address">'.__('Email Address', 'bon-toolkit').'</label>';
-        $o .= '<input type="email" value="" name="email" class="email-address required" />';
-        $o .= '<div class="contact-form-error">'.__('Please enter valid email address.','bon-toolkit').'</div>';
-        $o .= '</div>';
-
-        $o .= '<div class="contact-form-input">';
-        $o .= '<label for="subject">'.__('Subject', 'bon-toolkit').'</label>';
-        $o .= '<input type="text" value="" name="subject" class="subject" />';
-        $o .= '</div>';
-
-        $o .= '<div class="contact-form-input">';
-        $o .= '<label for="messages">'.__('Your Messages', 'bon-toolkit').'</label>';
-        $o .= '<textarea name="messages" class="messages required"></textarea>';
-        $o .= '<div class="contact-form-error">'.__('Please enter your messages.','bon-toolkit').'</div>';
-        $o .= '</div>';
-
-        $o .= '<input type="hidden" name="receiver" value="'.$email.'" />';
-
-        $o .= '<div class="contact-form-input">';
-        $o .= '<button type="submit" class="contact-form-submit bon-toolkit-button round-corner blue flat" name="submit">'.__('Send Message','bon-toolkit').'</button>';
-        $o .= '<span class="contact-form-ajax-loader"><img src="'.trailingslashit( BON_TOOLKIT_IMAGES ).'loader.gif" alt="loading..." /></span>';
-        $o .= '</div>';
-
-        $o .= '</div><div class="sending-result"><div class="green bon-toolkit-alert"></div></div></form>';
+        $o = bon_toolkit_get_contact_form($email);
 
         return $o;
     }

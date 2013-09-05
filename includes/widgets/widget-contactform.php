@@ -69,7 +69,14 @@ class Bon_Toolkit_Widget_Contact_Form extends WP_Widget {
 		if ( !empty( $instance['title'] ) )
 			echo $before_title . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . $after_title;
 
-		
+		$o = apply_filters( 'bon_toolkit_contact_form_widget_filter', '', $args['email_address']);
+
+		if($o != '') {
+			echo $o;
+		} else {
+			$o = bon_toolkit_get_contact_form($args['email_address']);
+        	echo $o;
+		}
 
 		
 		/* Close the theme's widget wrapper. */

@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 = v1.0.3 - September 4th, 2013 =
 * Mayor update for widgets
 * Mayor update in builder-interface.php
+= v1.0.4 - September 6th, 2013 =
+* Fix Accidentally removed contact form widget output
 
 
 
