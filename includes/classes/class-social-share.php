@@ -18,13 +18,15 @@ function bon_toolkit_render_social_counter($output) {
 		global $bontoolkit;
 		$options = get_option( $bontoolkit->option_name );
 
-		$defaults = array(
+		$defaults = apply_filters('bon_toolkit_render_social_counter_filter',array(
 			'social_buttons' => array(
 				'facebook',
 				'twitter',
 				'googleplus',
+				'stumbleupon',
+				'linkedin'
 				)
-		);
+		));
 
 
 		$location = $options['share_button_location'];
