@@ -124,7 +124,7 @@ class Bon_Toolkit_Social_Counter {
 
 	public function init() {
 
-		if(is_singular()) {
+		if(is_singular() && !is_singular('page')) {
 
 			global $post;
 
