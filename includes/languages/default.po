@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bon Toolkit\n"
-"POT-Creation-Date: 2013-09-04 22:39+0700\n"
-"PO-Revision-Date: 2013-09-04 22:39+0700\n"
+"POT-Creation-Date: 2013-09-09 08:57+0700\n"
+"PO-Revision-Date: 2013-09-09 08:57+0700\n"
 "Last-Translator: \n"
 "Language-Team: Bonfirelab <hermanto@bonfirelab.com>\n"
 "Language: EN\n"
@@ -19,7 +19,7 @@ msgid "Cannot send email to destination. No parameter receive form AJAX call."
 msgstr ""
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:157
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:453
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:409
 msgid "Please enter your name."
 msgstr ""
 
@@ -43,6 +43,54 @@ msgstr ""
 msgid "Error Loading Video"
 msgstr ""
 
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:395
+msgid ""
+"Failed rendering contact form. Please provide a correct <strong>Email "
+"Address</strong>."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:407
+msgid "Your Name"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:408
+msgid "Name"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:413
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:151
+msgid "Email Address"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:414
+msgid "Email"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:415
+msgid "Please enter valid email address."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:419
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:420
+msgid "Subject"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:424
+msgid "Your Messages"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:425
+msgid "Messages"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:426
+msgid "Please enter your messages."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:432
+msgid "Send Message"
+msgstr ""
+
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-twitter-functions.php:52
 msgid "Access Token not properly configured."
 msgstr ""
@@ -63,13 +111,13 @@ msgstr ""
 msgid "There was an error grabbing the Twitter feed"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:221
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:222
 msgid ""
 "BonFramework is not available in your theme or you are currently using the "
 "older version. Some features of the Bon Toolkit are disabled."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:327
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:328
 msgid "Bon Toolkit Options"
 msgstr ""
 
@@ -360,15 +408,43 @@ msgstr ""
 msgid "Twitter Consumer Key Secret"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:379
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:380
+msgid "Social Share Settings"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:386
+msgid "Turn on the social share button on posts and pages"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:387
+msgid "Turn on Social Share button"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:395
+msgid "After Post Content"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:396
+msgid "Before Post Content"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:398
+msgid "Where do you want the share button to be put?"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:399
+msgid "Set Location for Share Button"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:410
 msgid "Toolkit Help"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:389
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:420
 msgid "What is this plugin and why do I need it?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:390
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:421
 msgid ""
 "The Bon Toolkit provides extra functionality to the collection of themes "
 "from <a target=\"blank\" href=\"http://bonfirelab.com\" title=\"bonfirelab"
@@ -378,21 +454,21 @@ msgid ""
 "function as you see them in the demos."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:395
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:426
 msgid "How to use the Shortcode?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:396
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:427
 msgid ""
 "When editing post there is a small black button with \"B\" in the Editor. "
 "Press it and choose the shortcode you want."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:401
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:432
 msgid "How to Get Google Map API Key?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:402
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:433
 msgid ""
 "<ul><li>Visit this link <a target=\"blank\" href=\"https://code.google.com/"
 "apis/console\">https://code.google.com/apis/console</a> and Log In with your "
@@ -405,24 +481,24 @@ msgid ""
 "Key for browser apps. </li></ul>"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:407
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:438
 msgid ""
 "Why are the some of the Post Type Settings available in one of my Bonfirelab "
 "themes but not the other?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:408
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:439
 msgid ""
 "The Toolkit plugin only shows options / settings for themes that support it. "
 "If your theme does not support either feature, their settings will not be "
 "shown."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:413
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:444
 msgid "Can I use this plugin with other themes?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:414
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:445
 msgid ""
 "This toolkit was developed to extend the functionality of Bonfirelab themes, "
 "however you can still use some parts of the plugin features such as widget "
@@ -430,11 +506,11 @@ msgid ""
 "with Bonfirelab Themes due to framework dependant."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:419
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:450
 msgid "This plugin is awesome where do I find the developer?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:420
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:451
 msgid ""
 "You can find me on <a href=\"http://bonfirelab.com\" target=\"blank\" "
 ">bonfirelab.com</a>. Or follow me on <a href=\"http://twitter.com/"
@@ -447,35 +523,6 @@ msgstr ""
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/shortcodes.php:299
 msgid "Author:"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:451
-msgid "Your Name"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:457
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:151
-msgid "Email Address"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:459
-msgid "Please enter valid email address."
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:463
-msgid "Subject"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:468
-msgid "Your Messages"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:470
-msgid "Please enter your messages."
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:476
-msgid "Send Message"
 msgstr ""
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:21
@@ -931,6 +978,15 @@ msgstr ""
 msgid "Invalid Quiz ID"
 msgstr ""
 
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:102
+msgid "Share this on :"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:216
+#, php-format
+msgid "Share this on %s"
+msgstr ""
+
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:28
 msgid "Poll Settings"
 msgstr ""
@@ -1129,12 +1185,12 @@ msgstr ""
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-authors.php:164
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-calendar.php:112
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-categories.php:200
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:114
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:121
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-dribbble.php:92
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-flickr.php:67
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-nav-menu.php:135
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-pages.php:182
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:212
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:213
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-search.php:147
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-social.php:173
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-tags.php:216
@@ -1151,7 +1207,7 @@ msgid "Type"
 msgstr ""
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-archives.php:201
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:221
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:222
 msgid "Order"
 msgstr ""
 
@@ -1219,7 +1275,7 @@ msgstr ""
 msgid "Show count?"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:118
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:125
 msgid "Receiver Email Address"
 msgstr ""
 
@@ -1255,50 +1311,48 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:110
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:111
 msgid "Permalink to "
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:113
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:114
 msgid ""
 "[entry-published format=\"M, d Y\" text=\"Published on\"] [entry-author text="
 "\"by\"]"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:122
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:123
 msgid "No post found."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:208
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:209
 msgid ""
 "<strong>Note:</strong> Post type and term value have to match each taxonomy "
 "belong to post type for the query to work."
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:216
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:217
 msgid "Limit"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:230
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:231
 msgid "Order by"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:239
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:240
 msgid "Include Published Meta"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:248
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:249
 msgid "Post Type"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:250
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:279
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:360
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:378
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:251
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:280
 msgid "Select One"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:277
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:278
 msgid "Term"
 msgstr ""
 

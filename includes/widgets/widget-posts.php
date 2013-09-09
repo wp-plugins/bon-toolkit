@@ -85,6 +85,7 @@ class Bon_Toolkit_Widget_Posts extends WP_Widget {
 			'posts_per_page' => $args['limit'],
 			'order' =>	$args['order'],
 			'orderby' => $args['orderby'],
+			'ignore_sticky_posts' => true,
 		);
 		$tax_query = array();
 
@@ -306,109 +307,6 @@ class Bon_Toolkit_Widget_Posts extends WP_Widget {
 	<?php
 	}
 
-	function post_type_options() {
-		$post_types = get_post_types(array('public' => true));
-
-		$return = '';
-		if($post_types) {
-			foreach($post_types as $key => $value) {
-				$return .= '<options value="'.$key.'">'.$value.'</option>';
-			}
-		}
-
-		return $return;
-	}
-
-	function taxonomy_options() {
-		$post_types = get_post_types(array('public' => true, 'show_ui' => true, 'show_in_nav_menus' => true, 'publicly_queryable' => true));
-
-		$t = '';
-		$c = '';
-		$p = '';
-		$taxonomies = array();
-		$terms = array();
-		
-		if(!empty($post_types)) {
-
-			$p .= '<select id="post_type" name="post_type">';
-
-			foreach($post_types as $key => $value) {
-
-				$p .= '<option name="'.$key.'" id="'.$key.'">'.$value.'</option>';
-
-				$temp_taxonomies = get_object_taxonomies($value, 'objects');
-
-				if(!empty($temp_taxonomies)) {
-
-					foreach($temp_taxonomies as $temp_key => $temp_val) {
-						
-						if($temp_val->show_ui === true) {
-							$taxonomies[$key][] = $temp_key ;
-						}
-					}
-				}
-				
-			}
-
-			$p .= '</select>';
-		}
-
-		if(is_array($taxonomies) && !empty($taxonomies)) {
-			
-			foreach($taxonomies as $tax_key => $tax_vals) {
-				$t .= '<select id="'.$tax_key.'" name="'.$tax_key.'">';
-				$t .= '<option value="">'. __('Select One', 'bon-toolkit') . '</option>';
-				foreach($tax_vals as $tax_val) {
-					if(strpos($tax_val,'tag') === false) {
-
-						$temp_terms = get_terms($tax_val);
-						foreach($temp_terms as $temp_term) {
-							$terms[$tax_val][$temp_term->slug] = $temp_term->name;
-						}
-						$t .= '<option value="'.$tax_val.'">'.$tax_val.'</option>';
-					}
-				}
-
-				$t .= '</select>';
-			}
-		}
-
-		foreach($terms as $key => $term_vals) {
-			$c .= '<select id="'.$key.'" name="'.$term_vals.'">';
-			$c .= '<option value="">'. __('Select One', 'bon-toolkit') . '</option>';
-			foreach($term_vals as $term_key => $term_val) {
-				$c .= '<option value="'.$term_key.'">'.$term_val.'</option>';
-			}
-
-			$c .= '</select>';
-		}
-
-		return array('taxonomy_options' => $t, 'term_options' => $c);
-	}
-
-	function get_default_query_vars() {
-
-		$defaults = array(
-			'post_type'             => '',
-			'post_status'           => 'publish',
-			'posts_per_page'        => 5,
-			'pagination'            => true,
-			'ignore_sticky_posts'   => true,
-		);
-
-		$tax_query = array();
-        $meta_query = array();
-        
-        $tax_query[] = array(
-            'taxonomy' => '',
-            'field' => 'slug',
-            'terms' => ''
-        );
-
-        $defaults['tax_query'] = $tax_query;
-
-
-	}
 }
 
 ?>

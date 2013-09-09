@@ -371,6 +371,37 @@ function bon_toolkit_set_options() {
 		'type' => 'section_close',
 	);
 	
+	
+
+	$options[] = array(
+		'type' => 'section',
+		'id' => 'social-share-settings',
+		'std' => '',
+		'label' => __('Social Share Settings', 'bon-toolkit'),
+	);
+
+	$options[] = array(
+				'type' => 'checkbox',
+				'id' => 'automatic_share_button',
+				'desc' => __('Turn on the social share button on posts and pages','bon-toolkit'),
+				'label' => __('Turn on Social Share button', 'bon-toolkit')
+			);
+
+	$options[] = array(
+		'type' => 'select',
+		'id' => 'share_button_location',
+		'std' => '',
+		'options' => array(
+			'after_post' => __('After Post Content', 'bon'),
+			'before_post' => __('Before Post Content', 'bon'),
+		),
+		'desc' => __('Where do you want the share button to be put?','bon-toolkit'),
+		'label' => __('Set Location for Share Button', 'bon-toolkit'),
+	);
+
+	$options[] = array(
+		'type' => 'section_close',
+	);
 
 	$options[] = array(
 		'type' => 'section',

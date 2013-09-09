@@ -264,3 +264,50 @@ div.contact-form-error, div.sending-result {
 		width: 100%;
 	}
 }
+
+.social-share-button {
+	display: inline-block;
+	margin: .2em .8em 0 0;
+}
+.social-share-button.bon-toolkit-social-icon  a {
+	width: 34px;
+	height: 34px;
+	font-size: 15px;
+	line-height: 34px;
+}
+.social-share-button-count {
+	position: relative;
+	text-align: center;
+	 border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	background-color: #fff;
+	background-color: green;
+	padding: 2px 8px;
+	font-size: 13px;
+	color: #fff;
+	background-color: #333;
+}
+.social-share-button-count:before {
+    border-width: 6px 8px 6px 0;
+    border-style: solid;
+    border-color: transparent #333 transparent transparent;
+    content: "";
+    height: 0;
+    left: -8px;
+    position: absolute;
+    top: 0;
+    margin-top: 6px;
+    width: 0;
+}
+.share-text {
+	vertical-align: middle;
+	float: left;
+	margin: .2em .8em .2em 0;
+}
+.social-share-button-container {
+	margin: 20px 0 0 0;
+	padding: 10px 0 5px 0;
+	border-top: 1px dotted #eee;
+	border-bottom: 1px dotted #eee;
+} 

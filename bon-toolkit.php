@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.0.4
+Version: 1.0.5
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.4';
+		public $version = '1.0.5';
 
 		/**
 		 * @var string
@@ -158,6 +158,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			include_once 'includes/classes/class-likes.php';
 			include_once 'includes/classes/class-columns.php';
+			include_once 'includes/classes/class-social-share.php';
 		}
 
 		// -------------- Include Required Front End File -------------- //
@@ -480,7 +481,6 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		// -------------- Setting Widget -------------- //
 		public function set_widget_features() {
 
-
 			$widget_arr = array(
 				'bon-toolkit-dribbble-widget' => array('key_option' => 'enable_dribbble_widget', 'file' => 'widget-dribbble'),
 				'bon-toolkit-flickr-widget' => array('key_option' => 'enable_flickr_widget', 'file' => 'widget-flickr'),
@@ -490,7 +490,6 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				'bon-toolkit-contact-form-widget' => array('key_option' => 'enable_contactform_widget', 'file' => 'widget-contactform'),
 				'bon-toolkit-post-widget' => array('key_option' => 'enable_posts_widget', 'file' => 'widget-posts'),
 			);
-
 
 			$widget_arr = apply_filters( 'bon_toolkit_filter_widget_opt', $widget_arr );
 			
