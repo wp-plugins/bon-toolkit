@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.6
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,9 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Minimized Script and CSS
 = v1.0.7 - September 10th, 2013 =
 * Add filter to social share
+= v1.0.8 - September 19th, 2013 =
+* Fixed the shortcode_exists problem for WP 3.5
+
 
 
 

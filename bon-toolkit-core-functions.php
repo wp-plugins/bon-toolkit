@@ -439,4 +439,130 @@ if( !function_exists('bon_toolkit_get_contact_form') ) {
 
 	}
 }
+
+function bon_toolkit_post_custom_bg() {
+
+	if(!current_theme_supports( 'bon-custom-post-bg' )) {
+		return;
+	}
+
+	$post_types = get_theme_support( 'bon-custom-post-bg' );
+
+	$post_types = $post_types[0];
+
+	if(current_theme_supports( 'bon-custom-post-bg' ) && is_array($post_types) && class_exists('BON_Metabox')) {
+
+		$prefix = bon_toolkit_get_prefix();
+
+		if(is_admin()) {
+
+			$mb = new BON_Metabox();
+
+			$fields = array(
+				array(
+					'label' => __('Background Image', 'bon-toolkit'),
+					'desc' => __('Upload a custom background image for this post. Once image has been uploaded, click Insert into Post.', 'bon-toolkit'),
+					'type' => 'image',
+					'id' => $prefix . 'custom_bg_image',
+				),
+
+				array(
+					'label' => __('Background Repeat', 'bon-toolkit'),
+					'desc' => __('Select the preferred repeat for the uploaded image.', 'bon-toolkit'),
+					'type' => 'select',
+					'options' => array(
+						'no-repeat' => __('No Repeat', 'bon-toolkit'),
+						'repeat-x' => __('Repeat Horizontal', 'bon-toolkit'),
+						'repeat-y' => __('Repeat Vertical', 'bon-toolkit'),
+						'repeat' => __('Repeat', 'bon-toolkit'),
+					),
+					'id' => $prefix . 'custom_bg_repeat',
+				),
+
+				array(
+					'label' => __('Background Position', 'bon-toolkit'),
+					'desc' => __('Select the background position for the uploaded image.', 'bon-toolkit'),
+					'type' => 'select',
+					'options' => array(
+						'left' => __('Left', 'bon-toolkit'),
+						'right' => __('Right', 'bon-toolkit'),
+						'center' => __('Center', 'bon-toolkit'),
+					),
+					'id' => $prefix . 'custom_bg_position',
+				),
+
+				array(
+					'label' => __('Background Cover', 'bon-toolkit'),
+					'desc' => __('If browser supported, the background image should cover the block.', 'bon-toolkit'),
+					'type' => 'select',
+					'options' => array(
+						'true' => __('Yes', 'bon-toolkit'),
+						'false' => __('No', 'bon-toolkit'),
+					),
+					'id' => $prefix . 'custom_bg_cover',
+				),
+
+				array(
+					'label' => __('Background Color', 'bon-toolkit'),
+					'desc' => __('Select a custom background color for this post.', 'bon-toolkit'),
+					'type' => 'color',
+					'id' => $prefix . 'custom_bg_color',
+				),
+			);
+
+			$mb->create_box('bon-custom-background', __('Custom Background','bon'), $fields, $post_types, 'normal', 'high');
+		}
+	}
+}
+
+add_action( 'init', 'bon_toolkit_post_custom_bg', 20 );
+
+
+function bon_toolkit_filter_custom_bg() {
+
+	if(!current_theme_supports( 'bon-custom-post-bg' )) {
+		return;
+	}
+
+	$post_types = get_theme_support( 'bon-custom-post-bg' );
+
+	$post_types = $post_types[0];
+	if(is_array($post_types) && current_theme_supports('bon-custom-post-bg')) {
+
+		if( is_singular($post_types) ) {
+
+			$prefix = bon_toolkit_get_prefix();
+
+			$bg_image = get_post_meta( get_the_ID(), "{$prefix}custom_bg_image", true );
+			$bg_image = wp_get_attachment_url($bg_image);
+			$bg_repeat = get_post_meta( get_the_ID(), "{$prefix}custom_bg_repeat", true );
+			$bg_color = get_post_meta( get_the_ID(), "{$prefix}custom_bg_color", true );
+			$bg_position = get_post_meta( get_the_ID(), "{$prefix}custom_bg_position", true );
+			$bg_cover = get_post_meta( get_the_ID(), "{$prefix}custom_bg_cover", true );
+			
+
+
+			if(empty($bg_image) && empty($bg_color)) {
+				return;
+			}
+
+			$current_post_type = get_post_type();
+			$id = get_the_ID();
+
+			$selector = apply_filters( 'bon_toolkit_custom_bg_selector', '.custom-post-background' );
+
+			$bg_attachment = 'scroll';
+			$bg_cover_style = '';
+			if('true' == $bg_cover) {
+				$bg_attachment = 'fixed';
+				$bg_cover_style = '-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;';
+			}
+			$style = "<style type='text/css' id='custom-post-background-css'> .singular-{$current_post_type}-{$id} {$selector} { background: url({$bg_image}) {$bg_repeat} {$bg_position} {$bg_color} {$bg_attachment}; {$bg_cover} }</style>"; 
+			
+			echo $style;
+		}
+	}
+}
+
+add_action('wp_head', 'bon_toolkit_filter_custom_bg', 1000);
 ?>

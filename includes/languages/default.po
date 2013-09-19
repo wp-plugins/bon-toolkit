@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bon Toolkit\n"
-"POT-Creation-Date: 2013-09-09 08:57+0700\n"
-"PO-Revision-Date: 2013-09-09 08:57+0700\n"
+"POT-Creation-Date: 2013-09-19 07:37+0700\n"
+"PO-Revision-Date: 2013-09-19 07:37+0700\n"
 "Last-Translator: \n"
 "Language-Team: Bonfirelab <hermanto@bonfirelab.com>\n"
 "Language: EN\n"
@@ -89,6 +89,94 @@ msgstr ""
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:432
 msgid "Send Message"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:463
+msgid "Background Image"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:464
+msgid ""
+"Upload a custom background image for this post. Once image has been "
+"uploaded, click Insert into Post."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:470
+msgid "Background Repeat"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:471
+msgid "Select the preferred repeat for the uploaded image."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:474
+msgid "No Repeat"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:475
+msgid "Repeat Horizontal"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:476
+msgid "Repeat Vertical"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:477
+msgid "Repeat"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:483
+msgid "Background Position"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:484
+msgid "Select the background position for the uploaded image."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:487
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:475
+msgid "Left"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:488
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:476
+msgid "Right"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:489
+msgid "Center"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:495
+msgid "Background Cover"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:496
+msgid "If browser supported, the background image should cover the block."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:499
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:83
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:106
+msgid "Yes"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:500
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:84
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:107
+msgid "No"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:506
+msgid "Background Color"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:507
+msgid "Select a custom background color for this post."
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:513
+msgid "Custom Background"
 msgstr ""
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-twitter-functions.php:52
@@ -614,16 +702,6 @@ msgstr ""
 msgid "Show Thumbnail"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:83
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:106
-msgid "Yes"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:84
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:107
-msgid "No"
-msgstr ""
-
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:88
 msgid "Number of Posts"
 msgstr ""
@@ -801,14 +879,6 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:475
-msgid "Left"
-msgstr ""
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:476
-msgid "Right"
-msgstr ""
-
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:481
 msgid "Tab Color"
 msgstr ""
@@ -978,11 +1048,11 @@ msgstr ""
 msgid "Invalid Quiz ID"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:102
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:104
 msgid "Share this on :"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:216
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:218
 #, php-format
 msgid "Share this on %s"
 msgstr ""

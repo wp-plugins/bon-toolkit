@@ -21,7 +21,7 @@ if( !function_exists('bon_toolkit_setup_testimonial_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('Testimonial', array( 'show_in_nav_menus' => false, 'supports' => array('editor','title'), 'menu_position' => 20 ));
+		$cpt->create('Testimonial', array( 'public' => false, 'exclude_from_search' => true, 'show_in_nav_menus' => false, 'supports' => array('editor','title'), 'menu_position' => 20 ));
 
 		$meta_fields = array(
 
