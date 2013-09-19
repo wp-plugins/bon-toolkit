@@ -53,11 +53,11 @@ class BON_Toolkit_Shortcodes {
         add_shortcode('bt-alert', array( $this, 'alert_shortcode' ));
         add_shortcode('bt-button', array( $this, 'button_shortcode' ));
         
-        if ( !shortcode_exists( 'entry-published' ) ) {
+        if ( function_exists('shortcode_exists') && !shortcode_exists( 'entry-published' ) ) {
             add_shortcode('entry-published', array( $this, 'entry_published_shortcode' ));
         }
 
-        if ( !shortcode_exists( 'entry-author' ) ) {
+        if ( function_exists('shortcode_exists') && !shortcode_exists( 'entry-author' ) ) {
             add_shortcode('entry-author', array( $this, 'entry_author_shortcode' ));
         }
     }
