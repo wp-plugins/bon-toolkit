@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.0.8
+Version: 1.0.9
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.8';
+		public $version = '1.0.9';
 
 		/**
 		 * @var string
@@ -285,14 +285,12 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					'ajax_url'                         => $this->ajax_url(),
 				);
 
-				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery'), '1.0.0', true );
 
-				$api_key = (isset($bon_toolkit_options['google_api_key']) ? $bon_toolkit_options['google_api_key'] : '');
+				wp_register_script( 'googlemaps3', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, false, false );
+				wp_enqueue_script( 'googlemaps3' );
 
-				if(isset($api_key) && !empty($api_key)) {
-					wp_register_script( 'google-map-api', 'http://maps.googleapis.com/maps/api/js?key='.$api_key.'&amp;sensor=false', false, false, false );
-					wp_enqueue_script( 'google-map-api' );
-				}
+				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery', 'googlemaps3'), '1.0.0', true );
+
 				if( !wp_script_is( 'fitvids', 'registered' )) {
 					wp_register_script( 'fitvids', trailingslashit( BON_TOOLKIT_JS ) . 'jquery.fitvids.js', array('jquery'), '1.0.2', true );
 				}

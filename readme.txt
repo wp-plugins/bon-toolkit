@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.6
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,14 +48,6 @@ The Bon Toolkit provides extra functionality to the collection of themes from Bo
 
 The Toolkit plugin only shows options / settings for themes that support it. If your theme does not support either feature, their settings will not be shown.
 
-= How to Get Google Map API Key? =
-
-1. Visit this link https://code.google.com/apis/console and Log In with your Google Account.
-2. Next click the Create Project, then you'll be taken to the google service page.
-3. Click the Services link from the left-hand menu then Activate the Google Maps API v3 service.
-4. After activation Click the API Access link from the left-hand menu.
-5 .Your API key is available from the API Access page, in the Simple API Access section. Maps API applications use the Key for browser apps. 
-
 = Can I use this plugin with other themes? =
 
 This toolkit was developed to extend the functionality of Bonfirelab themes, however you can still use some parts of the plugin features such as widget in other themes. Advanced features like Custom Post Types will only work with Bonfirelab Themes due to framework dependant.
@@ -94,8 +86,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Add filter to social share
 = v1.0.8 - September 19th, 2013 =
 * Fixed the shortcode_exists problem for WP 3.5
-
-
+= v1.0.9 - September 21th, 2013 =
+* Google Map No Longer using Api Key
 
 
 ==Installation==

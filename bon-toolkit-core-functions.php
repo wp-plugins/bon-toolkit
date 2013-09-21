@@ -557,7 +557,7 @@ function bon_toolkit_filter_custom_bg() {
 				$bg_attachment = 'fixed';
 				$bg_cover_style = '-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;';
 			}
-			$style = "<style type='text/css' id='custom-post-background-css'> .singular-{$current_post_type}-{$id} {$selector} { background: url({$bg_image}) {$bg_repeat} {$bg_position} {$bg_color} {$bg_attachment}; {$bg_cover} }</style>"; 
+			$style = "<style type='text/css' id='custom-post-background-css'> .singular-{$current_post_type}-{$id} {$selector} { background: url({$bg_image}) {$bg_repeat} {$bg_position} {$bg_color} {$bg_attachment}; {$bg_cover_style} }</style>"; 
 			
 			echo $style;
 		}

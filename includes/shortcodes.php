@@ -42,10 +42,7 @@ class BON_Toolkit_Shortcodes {
         global $bontoolkit;
         $bon_toolkit_options = get_option($bontoolkit->option_name);
 
-        if(isset($bon_toolkit_options['google_api_key']) && !empty($bon_toolkit_options['google_api_key']) ) {
-            add_shortcode('bt-map', array( $this, 'map_shortcode' ));    
-        }
-
+        add_shortcode('bt-map', array( $this, 'map_shortcode' ));    
         add_shortcode('bt-tabs', array( $this, 'tabs_shortcode' ));
         add_shortcode('bt-tab', array( $this, 'tab_shortcode' ));
         add_shortcode('bt-toggles', array( $this, 'toggles_shortcode' ));

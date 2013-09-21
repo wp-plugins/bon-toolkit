@@ -333,13 +333,6 @@ function bon_toolkit_set_options() {
 
 	$options[] = array(
 		'type' => 'text',
-		'id' => 'google_api_key',
-		'desc' => __('Api Key from Google to activate the Google Map Shortcode. Visit <b>Toolkit Help Tab</b> to find how to activate it','bon-toolkit'),
-		'label' => __('Google Map API Key', 'bon-toolkit'),
-	);
-
-	$options[] = array(
-		'type' => 'text',
 		'id' => 'twitter_access_token',
 		'desc' => __('The twitter access token key generated from your apps.','bon-toolkit'),
 		'label' => __('Twitter Acces Token', 'bon-toolkit'),
@@ -429,8 +422,8 @@ function bon_toolkit_set_options() {
 
 	$options[] = array(
 		'type' => 'help',
-		'label' =>  __('How to Get Google Map API Key?','bon-toolkit'),
-		'desc' => __('<ul><li>Visit this link <a target="blank" href="https://code.google.com/apis/console">https://code.google.com/apis/console</a> and Log In with your Google Account.</li><li>Next click the <b>Create Project</b>, then you\'ll be taken to the google service page.</li><li>Click the <b>Services</b> link from the left-hand menu then Activate the <b>Google Maps API v3 service</b>.</li><li> After activation Click the <b>API Access</b> link from the left-hand menu. </li><li>Your API key is available from the <b>API Access</b> page, in the <b>Simple API Access</b> section. Maps API applications use the Key for browser apps. </li></ul>','bon-toolkit'),
+		'label' =>  __('Available Shortcode Settings','bon-toolkit'),
+		'desc' => __('<ul> <li> <strong>Used to wrap [bt-tab][/bt-tabs] (~s different)</strong> <pre><code>[bt-tabs direction="top|left|right" color="red|green|blue|yellow|dark|purple|orange"] [bt-tab][/bt-tab] [/bt-tabs]</code></pre> </li> <li> <strong>Use to output each tab content</strong> <pre><code>[bt-tab]Content[/bt-tab]</code></pre> </li> <li> <strong>Used to output map</strong> <pre><code>[bt-map latitude="123456890" longitude="1234567890" zoom="14" color="red|green|blue|yellow|dark|purple|orange" height="px|%|em" width="px|%|em"]</code></pre> </li> <li> <strong>Used to wrap [bt-toggle][/bt-toggle]</strong> <pre><code>[bt-toggles] [bt-toggle][/bt-toggle] [/bt-toggles]</code></pre> </li> <li> <strong>Used to output toggle content</strong> <pre><code>[bt-toggle]Content[/bt-toggle]</code></pre> </li> <li> <strong>Used to output Alert</strong> <pre><code>[bt-alert color="white|blue|gray|yellow|red|green"]Content[/bt-alert]</code></pre> </li> <li> <strong>Used to output Button</strong> <pre><code>[bt-button url="http://" target="_self|_blank" color="dark|light|pink|red|green|blue|yellow|orange|purple" style="grad|flat" size="small|medium|large" type="square|round|round-corner" ]Content[/bt-button]</code></pre> </li> </ul>','bon-toolkit'),
 	);
 
 	$options[] = array(
