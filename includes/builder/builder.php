@@ -65,6 +65,7 @@ class BON_Toolkit_Page_Builder {
 				wp_register_script('bon-toolkit-builder-modal', trailingslashit( BON_TOOLKIT_JS ) . 'modal.js', array('jquery'));
 				
 				wp_enqueue_style( 'bon-toolkit-builder' );
+
 				wp_enqueue_script( 'jquery-ui-dialog' );
 				wp_enqueue_script('bon-toolkit-builder');
 				wp_enqueue_script('bon-toolkit-builder-modal');
@@ -123,18 +124,16 @@ class BON_Toolkit_Page_Builder {
 				<div class="bon-builder-panel">
 					<div id="bon-builder-action" class="quicktags-toolbar">
 						<?php wp_nonce_field( 'bon_toolkit_builder_select', 'bon_toolkit_builder_select_nonce'); ?>
-						
-						<label class="title"><?php _e('Choose Elements: ', 'bon-toolkit'); ?></label>
-						<select id="bon-builder-select-elem" class="select-elem">
-							<option value=""><?php _e('Select Element','bon-toolkit'); ?></option>
 							<?php
 								foreach( $elements as $key => $value ){
-									echo '<option value="'.$key.'">' . ucwords(str_replace('_', ' ', $key )) . '</option>';
+									$i = '';
+									if(isset($value['builder_icon'])) {
+										$i = '<i class="'.$value['builder_icon'].'"></i>';
+									}
+									echo '<button value="'.$key.'" class="button bon-builder-add-elem">' . $i . ucwords(str_replace('_', ' ', $key )) . '</button>';
 								}
 							?>
-						</select>
-						
-						<input type="button" class="button button-primary" id="bon-builder-add-elem" class="bon-builder-add-elem" value="Add Element" />
+
 						<img class="ajax-loader" alt="<?php _e('loading...','bon-toolkit'); ?>" src="<?php echo trailingslashit( BON_TOOLKIT_IMAGES );?>ajax-loader.gif" />
 						<br class="clear">
 					</div>
@@ -142,7 +141,7 @@ class BON_Toolkit_Page_Builder {
 						<?php $this->render_selected_elements(); ?>
 					</div>
 				</div>
-				<p><?php _e('Choose the element in the select box and hit the add element button to start building your page.','bon-toolkit'); ?></p>
+				<p id="builder-notice"><?php _e('Choose the builder element from the button bar above. You can drag the position and resize the block of the generated element','bon-toolkit'); ?></p>
 			<?php
 		}
 
@@ -286,7 +285,7 @@ class BON_Toolkit_Page_Builder {
 							$input_value['value'] = '';
 						}
 
-						if( $input_key == 'default_size' || $input_key == 'allowed_size') {
+						if( $input_key == 'default_size' || $input_key == 'allowed_size' || $input_key == 'builder_icon') {
 							continue;
 						} /*else if( $input_key == 'repeat-element' ) {
 							$this->render_repeat_element($input_value, $input_value['value']);

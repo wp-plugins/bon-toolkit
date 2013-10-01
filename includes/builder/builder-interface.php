@@ -240,7 +240,9 @@ class BON_Toolkit_Builder_Interface {
 		    $o.= $this->render_video($value);
 		} else if ($type == 'map') {
 		    $o.= $this->render_map($value);
-		}else {
+		} else if ($type == 'widget') {
+		    $o.= $this->render_widget($value);
+		} else {
 			// if type was defined by the theme use the filter to output the type
 		    $o.= apply_filters('bon_tookit_builder_render_element', $type, $value);
 		}
@@ -515,7 +517,7 @@ class BON_Toolkit_Builder_Interface {
 
         $o .= $this->render_header('post_content', $header);
         $o .= '<article class="post-content">';
-        $o .= wptexturize(wpautop(get_the_content($post->ID)));
+        $o .= wptexturize( wpautop( do_shortcode( get_the_content($post->ID) ) ) );
         $o .= '</article>';
         return $o;
     }
@@ -764,6 +766,33 @@ class BON_Toolkit_Builder_Interface {
        	}
 
         $o .= '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h3>' . $header . '</h3></header>';
+        return $o;
+    }
+
+    /**
+	 * Rendering Widget Element.
+	 *
+	 * @since  1.1.0
+	 * @param string $value
+	 * @access public
+	 * @return string
+	 */
+    public function render_widget($value) {
+
+    	$o = apply_filters('bon_toolkit_builder_render_widget_output', '', $value);
+
+       	if( $o != '' ) {
+       		return $o;
+       	}
+       	
+        if ( is_active_sidebar( $value['widget_id'] ) ) {
+	        ob_start();
+			dynamic_sidebar($value['widget_id']);
+			$o = ob_get_clean();
+		} else {
+			$o = '<p>'._e('Please activate some widget','bon-toolkit').'</p>';
+		}
+
         return $o;
     }
 

@@ -1,0 +1,301 @@
+@font-face {
+	font-family: 'builder-icon';
+	src:url('../fonts/builder-icon.eot');
+	src:url('../../fonts/builder-icon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/builder-icon.woff') format('woff'),
+		url('../fonts/builder-icon.ttf') format('truetype'),
+		url('../fonts/builder-icon.svg#builder-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'builder-icon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.bt-dropmenu, .bt-checkin, .bt-starfull, .bt-checkbox, .bt-checkbox2, .bt-maps, .bt-favorite, .bt-diskspace2, .bt-tab, .bt-font, .bt-picture, .bt-pictures, .bt-facetime-video, .bt-envelope-alt, .bt-pencil, .bt-ruler, .bt-tag, .bt-tags, .bt-folder-close, .bt-flickr, .bt-facebook, .bt-twitter, .bt-dribbble, .bt-carousel, .bt-shopping-cart, .bt-store, .bt-file, .bt-file-2, .bt-stop, .bt-accordion, .bt-list, .bt-dropcap, .bt-searchdocument, .bt-bullhorn, .bt-divide, .bt-alert, .bt-rss, .bt-settings5, .bt-cog, .bt-unlock-alt, .bt-pencil-2, .bt-edit, .bt-briefcase, .bt-user, .bt-user-2, .bt-caret-right, .bt-download-alt, .bt-home, .bt-legal, .bt-document, .bt-profile, .bt-chat, .bt-ok, .bt-check, .bt-check-sign, .bt-question-sign, .bt-reliability, .bt-reorder, .bt-collapse-alt, .bt-flag, .bt-quote, .bt-quotes-left, .bt-code, .bt-sitemap, .bt-link, .bt-thumbs-up, .bt-thumbs-down, .bt-thumbnails, .bt-th-large, .bt-layout, .bt-layout-2, .bt-layout-3, .bt-layout-4, .bt-layout-5, .bt-layout-6, .bt-layout-7, .bt-layout-8, .bt-layout-9, .bt-layout-10, .bt-layout-11, .bt-layout-12, .bt-layout-13, .bt-layout-14, .bt-bell-alt, .bt-heart, .bt-soundcloud, .bt-music, .bt-headphones, .bt-font-2 {
+	font-family: 'builder-icon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.bt-dropmenu:before {
+	content: "\e000";
+}
+.bt-checkin:before {
+	content: "\e001";
+}
+.bt-starfull:before {
+	content: "\e002";
+}
+.bt-checkbox:before {
+	content: "\e003";
+}
+.bt-checkbox2:before {
+	content: "\e004";
+}
+.bt-maps:before {
+	content: "\e005";
+}
+.bt-favorite:before {
+	content: "\e006";
+}
+.bt-diskspace2:before {
+	content: "\e007";
+}
+.bt-tab:before {
+	content: "\e008";
+}
+.bt-font:before {
+	content: "\e009";
+}
+.bt-picture:before {
+	content: "\e00a";
+}
+.bt-pictures:before {
+	content: "\e00b";
+}
+.bt-facetime-video:before {
+	content: "\e00c";
+}
+.bt-envelope-alt:before {
+	content: "\e00d";
+}
+.bt-pencil:before {
+	content: "\e00e";
+}
+.bt-ruler:before {
+	content: "\e00f";
+}
+.bt-tag:before {
+	content: "\e010";
+}
+.bt-tags:before {
+	content: "\e011";
+}
+.bt-folder-close:before {
+	content: "\e012";
+}
+.bt-flickr:before {
+	content: "\e013";
+}
+.bt-facebook:before {
+	content: "\e014";
+}
+.bt-twitter:before {
+	content: "\e015";
+}
+.bt-dribbble:before {
+	content: "\e016";
+}
+.bt-carousel:before {
+	content: "\e017";
+}
+.bt-shopping-cart:before {
+	content: "\e018";
+}
+.bt-store:before {
+	content: "\e019";
+}
+.bt-file:before {
+	content: "\e01a";
+}
+.bt-file-2:before {
+	content: "\e01b";
+}
+.bt-stop:before {
+	content: "\e01c";
+}
+.bt-accordion:before {
+	content: "\e01d";
+}
+.bt-list:before {
+	content: "\e01e";
+}
+.bt-dropcap:before {
+	content: "\e01f";
+}
+.bt-searchdocument:before {
+	content: "\e020";
+}
+.bt-bullhorn:before {
+	content: "\e021";
+}
+.bt-divide:before {
+	content: "\e022";
+}
+.bt-alert:before {
+	content: "\e023";
+}
+.bt-rss:before {
+	content: "\e024";
+}
+.bt-settings5:before {
+	content: "\e025";
+}
+.bt-cog:before {
+	content: "\e026";
+}
+.bt-unlock-alt:before {
+	content: "\e027";
+}
+.bt-pencil-2:before {
+	content: "\e028";
+}
+.bt-edit:before {
+	content: "\e029";
+}
+.bt-briefcase:before {
+	content: "\e02a";
+}
+.bt-user:before {
+	content: "\e02b";
+}
+.bt-user-2:before {
+	content: "\e02c";
+}
+.bt-caret-right:before {
+	content: "\e02d";
+}
+.bt-download-alt:before {
+	content: "\e02e";
+}
+.bt-home:before {
+	content: "\e02f";
+}
+.bt-legal:before {
+	content: "\e030";
+}
+.bt-document:before {
+	content: "\e031";
+}
+.bt-profile:before {
+	content: "\e032";
+}
+.bt-chat:before {
+	content: "\e033";
+}
+.bt-ok:before {
+	content: "\e034";
+}
+.bt-check:before {
+	content: "\e035";
+}
+.bt-check-sign:before {
+	content: "\e036";
+}
+.bt-question-sign:before {
+	content: "\e037";
+}
+.bt-reliability:before {
+	content: "\e038";
+}
+.bt-reorder:before {
+	content: "\e039";
+}
+.bt-collapse-alt:before {
+	content: "\e03a";
+}
+.bt-flag:before {
+	content: "\e03b";
+}
+.bt-quote:before {
+	content: "\e03c";
+}
+.bt-quotes-left:before {
+	content: "\e03d";
+}
+.bt-code:before {
+	content: "\e03e";
+}
+.bt-sitemap:before {
+	content: "\e03f";
+}
+.bt-link:before {
+	content: "\e040";
+}
+.bt-thumbs-up:before {
+	content: "\e041";
+}
+.bt-thumbs-down:before {
+	content: "\e042";
+}
+.bt-thumbnails:before {
+	content: "\e043";
+}
+.bt-th-large:before {
+	content: "\e044";
+}
+.bt-layout:before {
+	content: "\e045";
+}
+.bt-layout-2:before {
+	content: "\e046";
+}
+.bt-layout-3:before {
+	content: "\e047";
+}
+.bt-layout-4:before {
+	content: "\e048";
+}
+.bt-layout-5:before {
+	content: "\e049";
+}
+.bt-layout-6:before {
+	content: "\e04a";
+}
+.bt-layout-7:before {
+	content: "\e04b";
+}
+.bt-layout-8:before {
+	content: "\e04c";
+}
+.bt-layout-9:before {
+	content: "\e04d";
+}
+.bt-layout-10:before {
+	content: "\e04e";
+}
+.bt-layout-11:before {
+	content: "\e04f";
+}
+.bt-layout-12:before {
+	content: "\e050";
+}
+.bt-layout-13:before {
+	content: "\e051";
+}
+.bt-layout-14:before {
+	content: "\e052";
+}
+.bt-bell-alt:before {
+	content: "\e053";
+}
+.bt-heart:before {
+	content: "\e054";
+}
+.bt-soundcloud:before {
+	content: "\e055";
+}
+.bt-music:before {
+	content: "\e056";
+}
+.bt-headphones:before {
+	content: "\e057";
+}
+.bt-font-2:before {
+	content: "\e058";
+}

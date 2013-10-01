@@ -88,6 +88,9 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Fixed the shortcode_exists problem for WP 3.5
 = v1.0.9 - September 21th, 2013 =
 * Google Map No Longer using Api Key
+= v1.1.0 - October 2nd, 2013 =
+* Update Page builder interface
+* Add widget element for Page builder
 
 
 ==Installation==

@@ -1,7 +1,7 @@
 <?php
 function bon_toolkit_get_builder_options()
 {
-    global $bontoolkit;
+    global $bontoolkit, $wp_registered_sidebars;
     
     $prefix = bon_toolkit_get_prefix();
     
@@ -26,6 +26,15 @@ function bon_toolkit_get_builder_options()
         'yellow' => __('Yellow', 'bon-toolkit'),
         'dark' => __('Dark','bon-toolkit')
     );
+
+    $widget_options = array();
+
+    if(!empty($wp_registered_sidebars) && is_array($wp_registered_sidebars)) {
+        foreach($wp_registered_sidebars as $key => $sidebar) {
+            $widget_options[$key] = $sidebar['name'];
+        }
+    }
+    
     /**
      * Custom Post Query Element
      * This element will output blog posts
@@ -157,9 +166,9 @@ function bon_toolkit_get_builder_options()
                     'title' => __('Bottom Margin', 'bon-toolkit'),
                     'name' => $prefix . $suffix['contact_form'] . 'margin',
                     'std' => $default_margin,
-                    
                     'type' => 'text'
                 ),
+                'builder_icon' => 'bt-envelope-alt',
                 'default_size' => 'span12',
                 'allowed_size' => array(
                         'span6' => '1/2',
@@ -185,6 +194,7 @@ function bon_toolkit_get_builder_options()
                     'name' => $prefix . $suffix['map'] . 'latitude',
                     'type' => 'text'
                 ),
+                'builder_icon' => 'bt-checkin',
                 'longitude' => array(
                     'title' => __('Location Longitude', 'bon-toolkit'),
                     'name' => $prefix . $suffix['map'] . 'longitude',
@@ -241,6 +251,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['text_block'] . 'title',
                 'type' => 'text'
             ),
+            'builder_icon' => 'bt-font',
             'content' => array(
                 'title' => __('Content', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'content',
@@ -277,6 +288,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['image_block'] . 'title',
                 'type' => 'text'
             ),
+            'builder_icon' => 'bt-picture',
             'src' => array(
                 'title' => __('Image URL', 'bon-toolkit'),
                 'name' => $prefix . $suffix['image_block'] . 'src',
@@ -291,7 +303,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['image_block'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
             'default_size' => 'span3',
@@ -322,6 +333,7 @@ function bon_toolkit_get_builder_options()
                 'type' => 'text',
                 'description' => __('Class for the icon','bon-toolkit')
             ),
+            'builder_icon' => 'bt-check',
             'icon_style' => array(
                 'title' => __('Icon Style', 'bon-toolkit'),
                 'name' => $prefix . $suffix['service'] . 'icon_style',
@@ -347,7 +359,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['service'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
             'default_size' => 'span4',
@@ -376,6 +387,7 @@ function bon_toolkit_get_builder_options()
                 'type' => 'info',
                 'description' => __('Use this element to put the content from the WordPress Editor','bon-toolkit')
             ),
+            'builder_icon' => 'bt-file',
             'header' => array(
                 'title' => __('Title','bon-toolkit'),
                 'name' => $prefix . $suffix['post_content'] . 'title',
@@ -422,6 +434,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['call_to_action'] . 'subtitle',
                 'type' => 'textarea'
             ),
+            'builder_icon' => 'bt-bullhorn',
             'button_text' => array(
                 'title' => __('Button Text', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'button_text',
@@ -442,7 +455,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
             'default_size' => 'span12',
@@ -466,6 +478,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['tab'] . 'title',
                 'type' => 'text'
             ),
+            'builder_icon' => 'bt-tab',
             'direction' => array(
                 'title' => __('Tab Direction', 'bon-toolkit'),
                 'name' => $prefix . $suffix['tab'] . 'direction',
@@ -505,7 +518,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['tab'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
             'default_size' => 'span4',
@@ -534,6 +546,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['toggle'] . 'title',
                 'type' => 'text'
             ),
+            'builder_icon' => 'bt-accordion',
             'repeat_element' => array(
                 'type' => 'repeatable',
                 'name' => $prefix . $suffix['toggle'] . 'child',
@@ -555,7 +568,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['toggle'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
              'default_size' => 'span4',
@@ -584,12 +596,11 @@ function bon_toolkit_get_builder_options()
                 'type' => 'text',
                 'description' => __('Leave blank to use second style divider','bon-toolkit'),
             ),
-
+            'builder_icon' => 'bt-ellipsis-horizontal',
             'margin' => array(
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['divider'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
              'default_size' => 'span12',
@@ -619,7 +630,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['alert'] . 'content',
                 'type' => 'textarea',
             ),
-
+            'builder_icon' => 'bt-alert',
             'color' => array(
                 'title' => __('Alert Color', 'bon-toolkit'),
                 'name' => $prefix . $suffix['alert'] . 'color',
@@ -638,11 +649,9 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['alert'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
-
-             'default_size' => 'span12',
+            'default_size' => 'span12',
             'allowed_size' => array(
                     'span3'=>'1/4',
                     'span4'=>'1/3',
@@ -665,7 +674,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['video'] . 'title',
                 'type' => 'text',
             ),
-
+            'builder_icon' => 'bt-facetime-video',
             'info' => array(
                 'title' => __('Description', 'bon-toolkit'),
                 'name' => $prefix . $suffix['video'] . 'no-name',
@@ -673,12 +682,11 @@ function bon_toolkit_get_builder_options()
                 'description' => __('To embed you only need to specify the url. For example: http://www.youtube.com/watch?v=abcdeFGHIJ. To use self hosted video leave the embed field empty.','bon-toolkit')
             ),
 
-
             'embed' => array(
                 'title' => __('Video Url (Third Party Host)', 'bon-toolkit'),
                 'name' => $prefix . $suffix['video'] . 'embed',
                 'type' => 'text',
-                'desc' => __('For List of Supported Providers please see <a href="http://codex.wordpress.org/Embeds" target="blank">http://codex.wordpress.org/Embeds</a>','bon-toolkit'),
+                'description' => __('For List of Supported Providers please see <a href="http://codex.wordpress.org/Embeds" target="blank">http://codex.wordpress.org/Embeds</a>','bon-toolkit'),
             ),
 
             'poster' => array(
@@ -710,7 +718,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['video'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
 
@@ -737,7 +744,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['twitter'] . 'title',
                 'type' => 'text',
             ),
-
+            'builder_icon' => 'bt-twitter',
             'username' => array(
                 'title' => __('Twitter Username', 'bon-toolkit'),
                 'name' => $prefix . $suffix['twitter'] . 'username',
@@ -760,7 +767,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['twitter'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
 
@@ -794,7 +800,7 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['flickr'] . 'flickr_id',
                 'type' => 'text',
             ),
-
+            'builder_icon' => 'bt-flickr',
             'flickr_count' => array(
                 'title' => __('How many post to fetch?', 'bon-toolkit'),
                 'name' => $prefix . $suffix['flickr'] . 'flickr_count',
@@ -805,7 +811,6 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['flickr'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
 
@@ -815,7 +820,45 @@ function bon_toolkit_get_builder_options()
                 ),
         ));
        
-    
+    /**
+     * Widget Element
+     * This element will output Choosen Sidebar
+     * Available Property :
+     *
+     */
+        $builder_options['elements']['widget'] = apply_filters('bon_toolkit_builder_element_flickr_filter', array(
+
+            'info' => array(
+                'title' => __('Description','bon-toolkit'),
+                'name' => $prefix . $suffix['widget'] . 'no-name',
+                'type' => 'info',
+                'description' => __('Choose the widget slot then go to <strong>Widget</strong> menu and drag widget into the slot. Custom widget slot can be created through theme options <strong>Sidebar Generator</strong> if supported.','bon-toolkit')
+            ),
+            'widget_id' => array(
+                'title' => __('Choose Widget Slot', 'bon-toolkit'),
+                'name' => $prefix . $suffix['widget'] . 'widget_id',
+                'type' => 'select',
+                'options' => $widget_options,
+            ),
+
+            'builder_icon' => 'bt-reorder',
+            'margin' => array(
+                'title' => __('Bottom Margin', 'bon-toolkit'),
+                'name' => $prefix . $suffix['widget'] . 'margin',
+                'std' => $default_margin,
+                'type' => 'text'
+            ),
+            'default_size' => 'span4',
+            'allowed_size' => array(
+                    'span3'=>'1/4',
+                    'span4'=>'1/3',
+                    'span6'=>'1/2',
+                    'span8'=>'2/3',
+                    'span9'=>'3/4',
+                    'span12'=>'1/1'
+                ),
+        ));
+
     return apply_filters('bon_toolkit_builder_options_filter', $builder_options);
 }
 ?>
