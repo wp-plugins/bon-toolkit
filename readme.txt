@@ -91,6 +91,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 = v1.1.0 - October 2nd, 2013 =
 * Update Page builder interface
 * Add widget element for Page builder
+= v1.1.1 - November 5th, 2013 =
+* Fix Map in page builder
 
 
 ==Installation==
