@@ -143,7 +143,7 @@ class BON_Toolkit_Shortcodes {
 
     function tab_shortcode( $attr, $content = null ) {
 
-         if( !isset($GLOBALS['current_tabs']) ) {
+        if( !isset($GLOBALS['current_tabs']) ) {
             
             $GLOBALS['current_tabs'] = $GLOBALS['tabs_count'];
             $state = 'active';

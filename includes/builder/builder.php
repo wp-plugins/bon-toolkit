@@ -82,6 +82,7 @@ class BON_Toolkit_Page_Builder {
 	 *
 	 */
 		function set_builder_options() {
+
 			$this->builder_options = bon_toolkit_get_builder_options();
 		}
 

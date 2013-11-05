@@ -208,45 +208,12 @@ class BON_Toolkit_Builder_Interface {
 
 		$o = '<div class="'.$column_classes.'" '.$style.'>';
 
-		if ($type == 'post') {
-		    $o.= $this->render_post($value);
-		} else if ($type == 'call_to_action') {
-		    $o.= $this->render_calltoaction($value);
-		} else if ($type == 'toggle') {
-		    $o.= $this->render_toggle($value);
-		} else if ($type == 'tab') {
-		    $o.= $this->render_tab($value);
-		} else if ($type == 'service') {
-		    $o.= $this->render_service($value);
-		} else if ($type == 'post_content') {
-		    $o.= $this->render_post_content($value);
-		} else if ($type == 'text_block') {
-		    $o.= $this->render_text_block($value);
-		} else if ($type == 'contact_form') {
-		    $o.= $this->render_contact_form($value);
-		} else if ($type == 'divider') {
-		    $o.= $this->render_divider($value);
-		} else if ($type == 'alert') {
-		    $o.= $this->render_alert($value);
-		} else if ($type == 'twitter') {
-		    $o.= $this->render_twitter($value);
-		} else if ($type == 'dribbble') {
-		    $o.= $this->render_dribbble($value);
-		} else if ($type == 'flickr') {
-		    $o.= $this->render_flickr($value);
-		} else if ($type == 'image_block') {
-		    $o.= $this->render_image_block($value);
-		} else if ($type == 'video') {
-		    $o.= $this->render_video($value);
-		} else if ($type == 'map') {
-		    $o.= $this->render_map($value);
-		} else if ($type == 'widget') {
-		    $o.= $this->render_widget($value);
+		if(method_exists($this, "render_{$type}")) {
+			$o .= call_user_func_array(array($this, "render_{$type}"), array($value));
 		} else {
-			// if type was defined by the theme use the filter to output the type
-		    $o.= apply_filters('bon_tookit_builder_render_element', $type, $value);
+			$o .= apply_filters('bon_tookit_builder_render_element', $type, $value);
 		}
-
+		
 		$o .= '</div>';
 
 		return $o;		

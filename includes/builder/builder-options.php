@@ -186,7 +186,7 @@ function bon_toolkit_get_builder_options()
      * @param height
      */
 
-    if(isset($bon_toolkit_options['google_api_key']) && !empty($bon_toolkit_options['google_api_key']) ) {
+   
         $builder_options['elements']['map'] = apply_filters('bon_toolkit_builder_element_map_filter', array(
                 
                 'latitude' => array(
@@ -236,7 +236,7 @@ function bon_toolkit_get_builder_options()
                         'span12' =>'1/1',
                     ),
             ));
-        }
+        
             
     /**
      * Text Block Element

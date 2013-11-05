@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.1.0
+Version: 1.1.1
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.1.0';
+		public $version = '1.1.1';
 
 		/**
 		 * @var string
@@ -60,6 +60,13 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		 * Used as font awesome prefix
 		 */
 		public $awe = 'awe-';
+
+		/**
+		 * @var string
+		 * options token
+		 */
+		public $token = 'bon_toolkit';
+
 
 		/**
 		 * @var array
@@ -117,7 +124,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			add_action('init', array( $this, 'init') , 1 );
 
-			add_action('admin_menu', array( $this, 'add_options_page') );
+			add_action('admin_menu', array( $this, 'add_options_page'), 30 );
 
 			add_action('init', array( $this, 'load_textdomain') );
 
@@ -225,7 +232,14 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 		// -------------- Add menu page -------------- //
 		public function add_options_page() {
-			$this->option_page = add_options_page('Bon Toolkit Options', 'Bon Toolkit', 'manage_options', 'bon-toolkit', array( $this, 'render_form') );
+			//
+			if(class_exists('BON_Main')) {
+
+				$this->option_page = add_submenu_page('bon_options', __( 'Bon Toolkit', 'bon-toolkit' ), __( 'Bon Toolkit', 'bon-toolkit' ), 'manage_options', $this->token , array( &$this, 'render_form' ) );
+
+			} else {
+				$this->option_page = add_options_page('Bon Toolkit Options', 'Bon Toolkit', 'manage_options', 'bon-toolkit', array( $this, 'render_form') );
+			}
 		}
 
 		// -------------- Enqueue admin scripts -------------- //
