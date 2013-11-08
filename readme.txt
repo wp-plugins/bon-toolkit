@@ -4,8 +4,8 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=d%2en
 Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
-Tested up to: 3.6
-Stable tag: 1.1.1
+Tested up to: 3.7
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Add widget element for Page builder
 = v1.1.1 - November 5th, 2013 =
 * Fix Map in page builder
+= v1.1.2 - November 8th, 2013 =
+* Fix Call To Action Render in Page Builder
+
 
 
 ==Installation==

@@ -423,7 +423,7 @@ function bon_toolkit_get_builder_options()
      * @param $button_link
      * @param button_icon
      */
-        $builder_options['elements']['call_to_action'] = apply_filters('bon_toolkit_builder_element_calltoaction_filter', array(
+        $builder_options['elements']['call_to_action'] = apply_filters('bon_toolkit_builder_element_call_to_action_filter', array(
             'title' => array(
                 'title' => __('Title', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'title',

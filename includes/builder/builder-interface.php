@@ -415,9 +415,9 @@ class BON_Toolkit_Builder_Interface {
 	 * @access public
 	 * @return string
 	 */
-    public function render_calltoaction($value) {
+    public function render_call_to_action($value) {
 
-    	$o = apply_filters('bon_toolkit_builder_render_calltoaction_output', '', $value);
+    	$o = apply_filters('bon_toolkit_builder_render_call_to_action_output', '', $value);
 
        	if( $o != '' ) {
        		return $o;
