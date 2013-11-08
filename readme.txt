@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.7
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Fix Map in page builder
 = v1.1.2 - November 8th, 2013 =
 * Fix Call To Action Render in Page Builder
+= v1.1.3 - November 8th, 2013 =
+* Fix Unescapped input in Builder.php
 
 
 

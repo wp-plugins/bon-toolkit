@@ -280,17 +280,15 @@ class BON_Toolkit_Page_Builder {
 				if($type) {
 					foreach( $elements[$type] as $input_key => $input_value ) {
 
-						if(isset($elem_val) && !empty($elem_val) && is_array($elem_val)) {
-							$input_value['value'] = isset($elem_val[$type][$input_key]) ? $elem_val[$type][$input_key] : '';
-						} else {
-							$input_value['value'] = '';
-						}
-
 						if( $input_key == 'default_size' || $input_key == 'allowed_size' || $input_key == 'builder_icon') {
 							continue;
-						} /*else if( $input_key == 'repeat-element' ) {
-							$this->render_repeat_element($input_value, $input_value['value']);
-						}*/ else {
+						} else {
+
+							if(isset($elem_val) && !empty($elem_val) && is_array($elem_val)) {
+								$input_value['value'] = isset($elem_val[$type][$input_key]) ? $elem_val[$type][$input_key] : '';
+							} else {
+								$input_value['value'] = '';
+							}
 
 							$this->get_meta_interface( $input_value );
 						}
@@ -562,7 +560,7 @@ class BON_Toolkit_Page_Builder {
 							}
 						} else if($key == 'default_size') {
 							$element_meta[$i][$element_new]['default_size'] = $element_size_new; 
-						} else if($key == 'allowed_size') {
+						} else if($key == 'allowed_size' || $key == 'builder_icon') {
 							continue;
 						} else {
 							
