@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.1.3
+Version: 1.1.4
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.1.3';
+		public $version = '1.1.4';
 
 		/**
 		 * @var string
@@ -109,6 +109,8 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			if( !defined('BON_TOOLKIT_TINYMCE') ) {
 				define('BON_TOOLKIT_TINYMCE', $this->plugin_url() . '/includes/tinymce/' );
 			}
+			// Installation
+			register_activation_hook( __FILE__, array( $this, 'activate' ) );
 
 			$this->includes();
 
@@ -135,6 +137,39 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			$this->suffix = $this->set_builder_suffix();
 			// Loaded action
 			do_action( 'bon_toolkit_loaded' );
+
+		}
+
+		/**
+		 * activate function.
+		 *
+		 * @access public
+		 * @return void
+		 */
+		public function activate() {
+
+			$options = $this->get_option_array();
+			$new_val = array();
+
+			foreach( $options as $option ) {
+				if( $option['type'] == 'text' || $option['type'] == 'textarea' || $option['type'] == 'checkbox' || $option['type'] == 'select' ) {
+					$new_val[$option['id']] = isset( $option['std'] ) ? $option['std'] : '';
+				}
+			}
+
+
+			if ( get_option( $this->option_name ) !== false ) {
+
+			    update_option( $this->option_name, $new_val );
+
+			} else {
+
+			    // The option hasn't been added yet. We'll add it with $autoload set to 'no'.
+			    $deprecated = null;
+			    $autoload = 'no';
+			    
+			    add_option( $this->option_name, $new_val, $deprecated, $autoload );
+			}
 
 		}
 

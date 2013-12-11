@@ -77,7 +77,7 @@ function bon_toolkit_set_options() {
 			$options[] = array(
 				'type' => 'checkbox',
 				'id' => 'enable_portfolio',
-				'std' => '',
+				'std' => 1,
 				'desc' => __('Enable / Disable Portfolio Post Type','bon-toolkit'),
 				'label' => __('Portfolio', 'bon-toolkit')
 			);
@@ -86,7 +86,7 @@ function bon_toolkit_set_options() {
 			$options[] = array(
 				'type' => 'checkbox',
 				'id' => 'enable_testimonial',
-				'std' => '',
+				'std' => 1,
 				'desc' => __('Enable / Disable Testimonial Post Type','bon-toolkit'),
 				'label' => __('Testimonial', 'bon-toolkit')
 			);
@@ -96,7 +96,7 @@ function bon_toolkit_set_options() {
 			$options[] = array(
 				'type' => 'checkbox',
 				'id' => 'enable_poll',
-				'std' => '',
+				'std' => 1,
 				'desc' => __('Enable / Disable Poll Post Type','bon-toolkit'),
 				'label' => __('Poll', 'bon-toolkit'),
 			);
@@ -106,7 +106,7 @@ function bon_toolkit_set_options() {
 			$options[] = array(
 				'type' => 'checkbox',
 				'id' => 'enable_review',
-				'std' => '',
+				'std' => 1,
 				'desc' => __('Enable / Disable Review Post Type','bon-toolkit'),
 				'label' => __('Review', 'bon-toolkit'),
 			);
@@ -116,7 +116,7 @@ function bon_toolkit_set_options() {
 			$options[] = array(
 				'type' => 'checkbox',
 				'id' => 'enable_featured_slider',
-				'std' => '',
+				'std' => 1,
 				'desc' => __('Enable / Disable Featured Slider Post Type','bon-toolkit'),
 				'label' => __('Featured Slider', 'bon-toolkit'),
 			);
@@ -126,7 +126,7 @@ function bon_toolkit_set_options() {
 			$options[] = array(
 				'type' => 'checkbox',
 				'id' => 'enable_quiz',
-				'std' => '',
+				'std' => 1,
 				'desc' => __('Enable / Disable Quiz Post Type','bon-toolkit'),
 				'label' => __('Quiz', 'bon-toolkit'),
 			);

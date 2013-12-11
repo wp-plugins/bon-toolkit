@@ -65,7 +65,7 @@ class BON_Toolkit_Builder_Interface {
 	}
 
 	/**
-	 * Registers the [column] shortcode.
+	 * Render the content
 	 *
 	 * @since  0.1.0
 	 * @access public
