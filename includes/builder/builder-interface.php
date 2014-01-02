@@ -44,7 +44,7 @@ class BON_Toolkit_Builder_Interface {
 	/**
 	 * @var array
 	 */
-	public $builder_options;
+	public $builder_options = array();
 
 	/**
 	 * @var array
@@ -60,6 +60,8 @@ class BON_Toolkit_Builder_Interface {
 	public function __construct() {
 
 		/* Register shortcodes on 'init'. */
+        $this->builder_options = bon_toolkit_get_builder_options();
+
 		add_filter('the_content', array(&$this, 'init'));
 
 	}
@@ -78,8 +80,6 @@ class BON_Toolkit_Builder_Interface {
 		if($post->post_type != 'page') {
 			return $content;
 		}
-
-		$this->builder_options = bon_toolkit_get_builder_options();
 
 		$this->builder_metas = get_post_meta( $post->ID, $this->builder_options['name'], true );
 		
@@ -102,18 +102,16 @@ class BON_Toolkit_Builder_Interface {
 		$row_classes = apply_filters('bon_tookit_builder_render_row_class', array('row'));
 		$use_placement_class = apply_filters('bon_toolkit_builder_use_placement_class', true);
 
-		$len = count($this->builder_metas);
-		
 		foreach($this->builder_metas as $meta) {
-			
+
 			foreach($meta as $key => $value) {
 
 				$value['classes'] = array();
-
-				$value['column_classes'] = apply_filters('bon_toolkit_builder_render_column_class', array($value['default_size']) );
+                $value['column_classes'] = apply_filters('bon_toolkit_builder_render_column_class', array($value['default_size']) );
 				$value['classes'] = array_merge($value['column_classes']);
 				$value['classes'][] = 'bon-builder-element-'. str_replace('_', '', $key);
-				
+
+                $value['callback'] = isset($this->builder_options['elements'][$key]['callback']) ? $this->builder_options['elements'][$key]['callback'] : '';
 				$element_size = intval(trim($value['default_size'], 'span'));
 
 				$this->span = $this->span + $element_size;
@@ -148,7 +146,8 @@ class BON_Toolkit_Builder_Interface {
 				}
 				// applying filter to the output in case theme want to have difference output
 				// default output is filtered in the bon-toolkit-core-functions.php
-				$output .= $this->render_element($key, $value);
+
+                $output .= $this->render_element($key, $value);
 
 				
 				/* If this is the last column. */
@@ -180,7 +179,9 @@ class BON_Toolkit_Builder_Interface {
 	public function reset() {
 
 		foreach ( get_class_vars( __CLASS__ ) as $name => $default ) {
-			$this->$name = $default;
+            if( $name != 'builder_options' && $name != 'builder_metas' ) {
+                $this->$name = $default;
+            }
 		}
 			
 	}
@@ -199,6 +200,7 @@ class BON_Toolkit_Builder_Interface {
 		if(empty($type) || empty($value)) {
 			return;
 		}
+
 		$column_classes = join( ' ', array_map( 'sanitize_html_class', array_unique( $value['classes'] ) ) );
 
 		$style = '';
@@ -207,8 +209,9 @@ class BON_Toolkit_Builder_Interface {
         }
 
 		$o = '<div class="'.$column_classes.'" '.$style.'>';
-
-		if(method_exists($this, "render_{$type}")) {
+        if( isset( $value['callback'] ) && !empty( $value['callback'] ) && function_exists( $value['callback'] ) ) {
+            $o .= call_user_func_array( $value['callback'] , array($value) );
+        } else if(method_exists($this, "render_{$type}")) {
 			$o .= call_user_func_array(array($this, "render_{$type}"), array($value));
 		} else {
 			$o .= apply_filters('bon_tookit_builder_render_element', $type, $value);
@@ -296,7 +299,7 @@ class BON_Toolkit_Builder_Interface {
                 $o .= '</div><div class="entry-image">';
                 if ($show_thumbnail == 1) {
                     $o .= (current_theme_supports('get-the-image')) ? get_the_image(array(
-                        'size' => 'blog_small',
+                        'size' => 'medium',
                         'echo' => false
                     )) : '';
                 }

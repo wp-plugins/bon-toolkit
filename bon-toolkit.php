@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.1.4
+Version: 1.1.5
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.1.4';
+		public $version = '1.1.5';
 
 		/**
 		 * @var string
@@ -158,17 +158,14 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			}
 
 
-			if ( get_option( $this->option_name ) !== false ) {
-
-			    update_option( $this->option_name, $new_val );
-
-			} else {
+			if ( get_option( $this->option_name ) === false ) {
 
 			    // The option hasn't been added yet. We'll add it with $autoload set to 'no'.
 			    $deprecated = null;
 			    $autoload = 'no';
 			    
 			    add_option( $this->option_name, $new_val, $deprecated, $autoload );
+
 			}
 
 		}
@@ -336,8 +333,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 
 				wp_register_script( 'googlemaps3', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, false, false );
-				wp_enqueue_script( 'googlemaps3' );
-
+				//wp_enqueue_script( 'googlemaps3' );
 				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery', 'googlemaps3'), '1.0.0', true );
 
 				if( !wp_script_is( 'fitvids', 'registered' )) {
@@ -347,7 +343,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				wp_register_script( 'jplayer', trailingslashit( BON_TOOLKIT_JS ) . 'jplayer/jquery.jplayer.min.js', array('jquery'), false, false );
 				wp_enqueue_script( 'jplayer' );
 
-				wp_register_script( 'bon-toolkit', trailingslashit( BON_TOOLKIT_JS ) . 'toolkit.js', array('jquery','fitvids','bon-toolkit-map'), '1.0.0', true );
+				wp_register_script( 'bon-toolkit', trailingslashit( BON_TOOLKIT_JS ) . 'toolkit.js', array('jquery','fitvids'), '1.0.0', true );
 				wp_enqueue_script( 'bon-toolkit' );
 
 				wp_localize_script( 'bon-toolkit', 'bon_toolkit_ajax', array('url' => admin_url('admin-ajax.php')) );

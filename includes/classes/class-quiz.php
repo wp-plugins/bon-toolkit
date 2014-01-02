@@ -100,7 +100,6 @@ class BON_Toolkit_Quiz {
 
 		if(!is_admin()) {
 
-			
 				wp_register_script( 'bon-toolkit-quiz' , trailingslashit(BON_TOOLKIT_JS) . 'quiz.js', array('jquery'), '1.0.0', true );
 		    	wp_enqueue_script( 'bon-toolkit-quiz' );
 		    	
@@ -113,14 +112,15 @@ class BON_Toolkit_Quiz {
 		    }
 		}
 	    
-		
 	}
 
 	function build($post_id) {
 		global $bontoolkit;
 		$output = '';
 
-			$this->load_scripts();
+			if( is_singular('quiz') ) {
+				$this->load_scripts();
+			}
 			$options = get_option($bontoolkit->option_name);
 			//$content = get_post($post_id);
 			$attachment_id = get_post_thumbnail_id( $post_id );
@@ -136,6 +136,7 @@ class BON_Toolkit_Quiz {
 	}
 
 	function shortcode( $atts ) {
+		$this->load_scripts();
 	    extract( shortcode_atts( array(
 	    	'id' => '',
 	    ), $atts ) );

@@ -41,7 +41,7 @@ class BON_Toolkit_Poll {
 
 		add_shortcode( $this->shortcode_tag, array( &$this, 'shortcode') );
 			
-		if(!is_admin()) {
+		if(!is_admin() && is_singular('poll') ) {
 			add_action('wp_enqueue_scripts', array( &$this, 'load_scripts') );
 		} else {
 			
@@ -321,6 +321,9 @@ class BON_Toolkit_Poll {
 	}
 
 	function shortcode( $atts ) {
+
+		$this->load_scripts();
+		
 	    extract( shortcode_atts( array(
 	    	'id' => '',
 	    ), $atts ) );

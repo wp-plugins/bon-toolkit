@@ -246,6 +246,7 @@ function bon_toolkit_get_builder_options()
      * @param $content
      */
         $builder_options['elements']['text_block'] = apply_filters('bon_toolkit_builder_element_textblock_filter', array(        
+            'callback' => 'bon_test_callback',
             'header' => array(
                 'title' => __('Title', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'title',

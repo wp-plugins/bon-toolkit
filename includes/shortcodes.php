@@ -70,6 +70,8 @@ class BON_Toolkit_Shortcodes {
     function map_shortcode( $attr ) {
         global $post;
 
+        wp_enqueue_script( 'bon-toolkit-map' );
+
         $current = $post->ID;
 
         $attr = shortcode_atts( array(

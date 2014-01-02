@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.7.1
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,7 +100,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 = v1.1.4 - December 11st, 2013 =
 * Add Language Files for France and Spanish
 * Add Activation Hook
-
+= v1.1.5 - January 2nd, 2014 =
+* Add Social Share Options to Page
 
 
 ==Installation==

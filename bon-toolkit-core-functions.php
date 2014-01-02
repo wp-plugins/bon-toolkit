@@ -565,4 +565,5 @@ function bon_toolkit_filter_custom_bg() {
 }
 
 add_action('wp_head', 'bon_toolkit_filter_custom_bg', 1000);
+
 ?>

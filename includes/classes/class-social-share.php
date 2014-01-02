@@ -11,6 +11,85 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
+add_action( 'add_meta_boxes', 'bon_toolit_social_share_meta_boxes' );
+add_action( 'save_post', 'bon_toolkit_social_share_meta_box_save', 10, 2 );
+
+/**
+ * Registers custom metabox for page.
+ *
+ * @since  1.1.5
+ * @access public
+ * @return void
+ */
+function bon_toolit_social_share_meta_boxes( $post_type ) {
+	if ( 'page' === $post_type ) {
+
+		add_meta_box( 
+			'bon-toolkit-social-share-option', 
+			__( 'BT Social Share Options', 'bon-toolkit' ), 
+			'bon_toolkit_social_share_meta_box_display', 
+			$post_type, 
+			'side', 
+			'core'
+		);
+	}
+}
+
+/**
+ * Displays the options for social share info meta box.
+ *
+ * @since  1.1.5
+ * @access public
+ * @param  object  $post
+ * @param  array   $metabox
+ * @return void
+ */
+function bon_toolkit_social_share_meta_box_display( $post, $metabox ) {
+	
+	wp_nonce_field( basename( __FILE__ ), 'bon-toolkit-social-share-info-nonce' ); $opt = get_post_meta( $post->ID, 'bon_toolkit_social_share_enable', true ); ?>
+
+	<p>
+		<label for="bon-toolkit-social-share-enable"><?php _e( 'Enable social share in this page', 'bon-toolkit' ); ?>
+		<input type="checkbox" name="bon_toolkit_social_share_enable" id="bon-toolkit-social-share-enable" value="1" tabindex="30" <?php checked( true, $opt ); ?> />
+		</label>
+	</p>
+	<?php
+}
+
+/**
+ * Save custom metabox for page.
+ *
+ * @since  1.1.5
+ * @access public
+ * @return void
+ */
+function bon_toolkit_social_share_meta_box_save( $post_id, $post ) {
+	if ( !isset( $_POST['bon-toolkit-social-share-info-nonce'] ) || !wp_verify_nonce( $_POST['bon-toolkit-social-share-info-nonce'], basename( __FILE__ ) ) )
+		return;
+
+	$meta = array(
+		'bon_toolkit_social_share_enable' => (!empty( $_POST['bon_toolkit_social_share_enable'] ) ? 1 : 0)
+	);
+
+	foreach ( $meta as $meta_key => $new_meta_value ) {
+
+		/* Get the meta value of the custom field key. */
+		$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+		/* If there is no new meta value but an old value exists, delete it. */
+		if ( current_user_can( 'delete_post_meta', $post_id, $meta_key ) && '' == $new_meta_value && $meta_value )
+			delete_post_meta( $post_id, $meta_key, $meta_value );
+
+		/* If a new meta value was added and there was no previous value, add it. */
+		elseif ( current_user_can( 'add_post_meta', $post_id, $meta_key ) && $new_meta_value && '' == $meta_value )
+			add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+		/* If the new meta value does not match the old value, update it. */
+		elseif ( current_user_can( 'edit_post_meta', $post_id, $meta_key ) && $new_meta_value && $new_meta_value != $meta_value )
+			update_post_meta( $post_id, $meta_key, $new_meta_value );
+	}
+}
+
 function bon_toolkit_render_social_counter($output) {
 		
 	if(!is_admin() && bon_toolkit_check_options('automatic_share_button') === true) {
@@ -126,24 +205,33 @@ class Bon_Toolkit_Social_Counter {
 
 	public function init() {
 
-		if(is_singular() && !is_singular('page')) {
+		if(is_singular()) {
 
 			global $post;
 
-			$this->url = get_permalink($post->ID);
-			$this->title = get_the_title($post->ID);
+			$show = false;
 
-			if(is_array($this->requested_counts) && !empty($this->requested_counts)) {
-			
-				$output = $this->args['before'];
+			if( is_singular('page') ) {
+				$show = get_post_meta( $post->ID, 'bon_toolkit_social_share_enable', true );
+			}
 
-				$output .= '<h4 class="share-text">'.$this->args['text'].'</h4>';
+			if( $show || !is_singular('page') ) {
 
-				$output .= $this->render_button();
+				$this->url = get_permalink($post->ID);
+				$this->title = get_the_title($post->ID);
 
-				$output .= $this->args['after'];
+				if(is_array($this->requested_counts) && !empty($this->requested_counts)) {
+				
+					$output = $this->args['before'];
 
-				return $output;
+					$output .= '<h4 class="share-text">'.$this->args['text'].'</h4>';
+
+					$output .= $this->render_button();
+
+					$output .= $this->args['after'];
+
+					return $output;
+				}
 			}
 		}
 
@@ -162,9 +250,9 @@ class Bon_Toolkit_Social_Counter {
 
 
 	public function render_after($content) {
-
+		
 		$button = $this->init();
-
+		
 		$output = $content . $button;
 
 		return $output;

@@ -280,7 +280,7 @@ class BON_Toolkit_Page_Builder {
 				if($type) {
 					foreach( $elements[$type] as $input_key => $input_value ) {
 
-						if( $input_key == 'default_size' || $input_key == 'allowed_size' || $input_key == 'builder_icon') {
+						if( $input_key == 'default_size' || $input_key == 'allowed_size' || $input_key == 'builder_icon' || $input_key == 'callback') {
 							continue;
 						} else {
 
@@ -524,10 +524,9 @@ class BON_Toolkit_Page_Builder {
 				$element_meta_num = array();
 				
 				for($i=0; $i<$num; $i++) {
-					$element_new = $_POST[$meta_box['name']][$i];
-					$element_size_new = $_POST[$meta_box['size']][$i];
+					$element_new = sanitize_text_field( $_POST[$meta_box['name']][$i] );
+					$element_size_new = sanitize_text_field( $_POST[$meta_box['size']][$i] );
 					$element = $meta_box['elements'][$element_new];
-
 					if(!isset($element_meta_num[$element_new])){
 						$element_meta_num[$element_new] = 0;
 						if($element_new == 'tab'){
@@ -560,7 +559,7 @@ class BON_Toolkit_Page_Builder {
 							}
 						} else if($key == 'default_size') {
 							$element_meta[$i][$element_new]['default_size'] = $element_size_new; 
-						} else if($key == 'allowed_size' || $key == 'builder_icon') {
+						} else if($key == 'allowed_size' || $key == 'builder_icon' || $key == 'callback' ) {
 							continue;
 						} else {
 							
