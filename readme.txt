@@ -4,8 +4,8 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=d%2en
 Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
-Tested up to: 3.7.1
-Stable tag: 1.1.5
+Tested up to: 3.8
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Add Activation Hook
 = v1.1.5 - January 2nd, 2014 =
 * Add Social Share Options to Page
+= v1.1.6 - January 16th, 2014 =
+* Fix Map Instance
 
 
 ==Installation==
