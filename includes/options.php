@@ -5,8 +5,8 @@ function bon_toolkit_set_options() {
 
 	$options[] = array(
 		'type' => 'section',
-		'id' => 'widget-setting',
-		'label' => __('Widget Settings', 'bon-toolkit'),
+		'id' => 'general-setting',
+		'label' => __('General Settings', 'bon-toolkit'),
 		'class' => 'visible'
 	);
 

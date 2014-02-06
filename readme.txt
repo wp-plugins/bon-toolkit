@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.8
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Add Social Share Options to Page
 = v1.1.6 - January 16th, 2014 =
 * Fix Map Instance
+= v1.1.7 - February 6th, 2014 =
+* Fix Checkbox Options
 
 
 ==Installation==

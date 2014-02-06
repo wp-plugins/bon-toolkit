@@ -397,7 +397,7 @@ class BON_Toolkit_Builder_Interface {
         $title           = '<h2>' . $value['title'] . '</h2>';
         $service_content = '<div class="service-content">';
         $service_content .= $title;
-        $service_content .= '<div class="servce-summary">';
+        $service_content .= '<div class="service-summary">';
         $service_content .= $value['content'];
         $service_content .= '</div>';
         $service_content .= '</div>';
