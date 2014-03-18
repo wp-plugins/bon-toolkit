@@ -183,7 +183,6 @@ class BON_Toolkit_Builder_Interface {
                 $this->$name = $default;
             }
 		}
-			
 	}
 
 	/**
@@ -434,8 +433,8 @@ class BON_Toolkit_Builder_Interface {
             $icon = '<i class="icon ' . $value['button_icon'] . '"></i>';
         }
         $o .= '<div class="panel callaction"><div class="panel-content">';
-        $o .= '<h1 class="action-title">' . $value['title'] . '</h1>';
-        $o .= '<h2 class="action-content subheader">' . $value['subtitle'] . '</h2>';
+        $o .= '<h2 class="action-title">' . $value['title'] . '</h2>';
+        $o .= '<h3 class="action-content subheader">' . $value['subtitle'] . '</h3>';
         $o .= '</div>';
         $o .= '<div class="panel-button"><a href="' . $value['button_link'] . '" title="' . $value['button_text'] . '">' . $icon . '<span>' . $value['button_text'] . '</span></a></div>';
         $o .= '</div>';
@@ -735,7 +734,13 @@ class BON_Toolkit_Builder_Interface {
        		return $o;
        	}
 
-        $o .= '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h3>' . $header . '</h3></header>';
+        if( !is_front_page() && $type == 'post_content' ) {
+            $o = '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h1>' . $header . '</h1></header>';
+        } else {
+
+            $o = '<header class="bon-builder-element-header bon-builder-' . $type . '-header"><h3>' . $header . '</h3></header>';
+        }
+
         return $o;
     }
 
