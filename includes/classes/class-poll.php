@@ -111,8 +111,8 @@ class BON_Toolkit_Poll {
 
 	    if( isset($_POST['post_id']) && isset($_POST['option_id']) ) {
 	        
-	        $post_id = str_replace('poll_', '', $_POST['post_id']);
-	        $opt_id = $_POST['option_id'];
+	        $post_id = str_replace('poll_', '', $_POST['post_id'] );
+	        $opt_id = stripslashes( $_POST['option_id'] );
 
 	        echo $this->create_poll($post_id, $opt_id, 'update');
 	       
@@ -131,7 +131,7 @@ class BON_Toolkit_Poll {
 		$return = array();
 
 		$options = get_post_meta( $post_id, $this->prefix . 'poll_options', true);
-
+		
 		if(!$options) {
 			return false;
 		} else {
@@ -139,7 +139,6 @@ class BON_Toolkit_Poll {
 				$return[] = $option['vote_option'];
 			}
 		}
-
 		return $return;
 	}
 
@@ -204,7 +203,7 @@ class BON_Toolkit_Poll {
 		         				$votes = get_post_meta($post_id, $this->prefix . 'poll_votes', true);
 		         				if($votes) {
 			         				foreach($votes as $key => $value) {
-
+			         					
 			         					if($key != $opt_id) {
 			         						$new_votes[$key] = $value;
 			         						if(!isset($votes[$opt_id])) {
@@ -240,7 +239,7 @@ class BON_Toolkit_Poll {
 
 			            	update_post_meta($post_id, $this->prefix . 'poll_votes', $new_votes);
 
-			            	setcookie('entry_poll_'. $post_id, $post_id, time()*20, '/');
+			            	//setcookie('entry_poll_'. $post_id, $post_id, time()*20, '/');
 			            	
 			            	return $this->get_result($post_id);
 	         			}

@@ -162,6 +162,12 @@ function bon_toolkit_get_builder_options()
                     'type' => 'text',
                     'description' => __('Input the email address for the contact form to send the contact email', 'bon-toolkit')
                 ),
+                'color' => array(
+                    'title' => __('Submit Button Color', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['contact_form'] . 'color',
+                    'type' => 'select',
+                    'options' => $coloroptions
+                ),
                 'margin' => array(
                     'title' => __('Bottom Margin', 'bon-toolkit'),
                     'name' => $prefix . $suffix['contact_form'] . 'margin',

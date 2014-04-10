@@ -69,12 +69,12 @@ class Bon_Toolkit_Widget_Contact_Form extends WP_Widget {
 		if ( !empty( $instance['title'] ) )
 			echo $before_title . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . $after_title;
 
-		$o = apply_filters( 'bon_toolkit_contact_form_widget_filter', '', $args['email_address']);
+		$o = apply_filters( 'bon_toolkit_contact_form_widget_filter', '', $args['email_address'], $args['color']);
 
 		if($o != '') {
 			echo $o;
 		} else {
-			$o = bon_toolkit_get_contact_form($args['email_address']);
+			$o = bon_toolkit_get_contact_form($args['email_address'], $args['color']);
         	echo $o;
 		}
 
@@ -94,6 +94,7 @@ class Bon_Toolkit_Widget_Contact_Form extends WP_Widget {
 
 		$instance['title']  = strip_tags( $new_instance['title'] );
 		$instance['email_address']  = (is_email( $new_instance['email_address'] )) ? $new_instance['email_address'] : '';
+		$instance['color']  = strip_tags( $new_instance['color'] );
 
 		return $instance;
 	}
@@ -109,7 +110,19 @@ class Bon_Toolkit_Widget_Contact_Form extends WP_Widget {
 		$defaults = array(
 			'title'           => esc_attr__( 'Contact Us', 'bon-toolkit' ),
 			'email_address'   => '',
+			'color' => '',
 		);
+
+		$color = array(
+	        'red' => __('Red','bon-toolkit'),
+	        'green' => __('Green','bon-toolkit'),
+	        'blue' => __('Blue','bon-toolkit'),
+	        'orange' => __('Orange','bon-toolkit'),
+	        'purple' => __('Purple','bon-toolkit'),
+	        'yellow' => __('Yellow', 'bon-toolkit'),
+	        'dark' => __('Dark','bon-toolkit')
+	    );
+
 
 		/* Merge the user-selected arguments with the defaults. */
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -121,6 +134,15 @@ class Bon_Toolkit_Widget_Contact_Form extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><code><?php _e( 'Title:', 'bon-toolkit' ); ?></code></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'color' ); ?>"><code>link</code></label> 
+			<select class="widefat" id="<?php echo $this->get_field_id( 'color' ); ?>" name="<?php echo $this->get_field_name( 'color' ); ?>">
+				<?php foreach ( $color as $option_value => $option_label ) { ?>
+					<option value="<?php echo $option_value; ?>" <?php selected( $instance['color'], $option_value ); ?>><?php echo $option_label; ?></option>
+				<?php } ?>
+			</select>
+		</p>
+
 		<p>
 			<label for="<?php echo $this->get_field_id( 'email_address' ); ?>"><code><?php _e('Receiver Email Address','bon-toolkit'); ?></code></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'email_address' ); ?>" name="<?php echo $this->get_field_name( 'email_address' ); ?>" value="<?php echo esc_attr( $instance['email_address'] ); ?>" />

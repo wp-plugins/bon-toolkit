@@ -4,8 +4,8 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=d%2en
 Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
-Tested up to: 3.8
-Stable tag: 1.1.8
+Tested up to: 3.8.2
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,8 +106,10 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Fix Map Instance
 = v1.1.7 - February 6th, 2014 =
 * Fix Checkbox Options
-= v1.1.7 - March 18th, 2014 =
+= v1.1.8 - March 18th, 2014 =
 * Fix Post Content h1 Tag on non homepage pages for SEO improvement
+= v1.1.9 - April 11th, 2014 =
+* Added Color Callback to contact form
 
 
 ==Installation==

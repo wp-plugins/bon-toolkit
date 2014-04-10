@@ -459,7 +459,7 @@ class BON_Toolkit_Builder_Interface {
 
         extract($value);
         
-        $o = bon_toolkit_get_contact_form($email);
+        $o = bon_toolkit_get_contact_form($email, $color);
 
         return $o;
     }
