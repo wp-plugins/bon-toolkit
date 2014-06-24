@@ -64,7 +64,8 @@ jQuery(function ($) {
     selected_elem_wrap.find("#bon-builder-selected-elements").sortable({
         forcePlaceholderSize: true,
         placeholder: 'bon-builder-element-placeholder',
-    })
+    });
+    
 });
 (function ($) {
     $.fn.btSubSize = function () {

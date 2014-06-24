@@ -1,6 +1,9 @@
 <?php
 
 function bon_toolkit_set_options() {
+
+	$post_types = get_post_types( array( 'public' => true ) );
+
 	$options = array();
 
 	$options[] = array(
@@ -38,16 +41,6 @@ function bon_toolkit_set_options() {
 		'desc' => __('Use the plugin FontAwesome icon style','bon-toolkit'),
 		'label' => __('Use FontAwesome from Plugin', 'bon-toolkit')
 	);
-
-	$options[] = array(
-		'type' => 'text',
-		'id' => 'font_awesome_prefix',
-		'std' => 'awe-',
-		'desc' => __('Your FontAwesome Icon prefix might be different from the plugin FontAwesome prefix specify the prefix in here.','bon-toolkit'),
-		'label' => __('FontAwesome Prefix', 'bon-toolkit')
-	);
-
-
 
 	$options[] = array(
 		'type' => 'section_close',
@@ -396,6 +389,37 @@ function bon_toolkit_set_options() {
 		'type' => 'section_close',
 	);
 
+	if( current_theme_supports('bon-page-builder') ) :
+
+		$builder = get_theme_support( 'bon-page-builder' );
+		$std = array();
+
+		if( is_array($builder[0] ) ) {
+			$std = $builder[0];
+		}
+		
+		$options[] = array(
+			'type' => 'section',
+			'id' => 'page-builder-settings',
+			'std' => '',
+			'label' => __('Page Builder Settings', 'bon-toolkit'),
+		);
+
+
+		$options[] = array(
+			'type' => 'multicheck',
+			'id' => 'page_builder_post_type',
+			'desc' => __('Select for which custom post type the BT Page Builder should be available','bon-toolkit'),
+			'label' => __('Turn on Page Builder', 'bon-toolkit'),
+			'std' => $std,
+			'options' => $post_types
+		);
+
+		$options[] = array(
+			'type' => 'section_close',
+		);
+	endif;
+
 	$options[] = array(
 		'type' => 'section',
 		'id' => 'help-setting',
@@ -448,6 +472,8 @@ function bon_toolkit_set_options() {
 	$options[] = array(
 		'type' => 'section_close',
 	);
+
+	
 
 	$options = apply_filters('bon_toolkit_filter_options', $options);
 

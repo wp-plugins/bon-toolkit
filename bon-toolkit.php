@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.1.9
+Version: 1.2.0
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.1.9';
+		public $version = '1.2.0';
 
 		/**
 		 * @var string
@@ -57,12 +57,6 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 		/**
 		 * @var string
-		 * Used as font awesome prefix
-		 */
-		public $awe = 'awe-';
-
-		/**
-		 * @var string
 		 * options token
 		 */
 		public $token = 'bon_toolkit';
@@ -79,6 +73,12 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		 * Used as metabox prefix
 		 */
 		public $cpt_arr = array();
+
+		/**
+		 * @var array
+		 * Suported post type for builder
+		 */
+		public $builder_post_types = array();
 
 		/**
 		 * Bon Toolkit Constructor.
@@ -109,6 +109,11 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			if( !defined('BON_TOOLKIT_TINYMCE') ) {
 				define('BON_TOOLKIT_TINYMCE', $this->plugin_url() . '/includes/tinymce/' );
 			}
+
+			if( !defined('BON_TOOLKIT_FONT_AWESOME') ) {
+				define( 'BON_TOOLKIT_FONT_AWESOME', 'bonicons bi-' );
+			}
+
 			// Installation
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
 
@@ -249,7 +254,6 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			$this->set_widget_features();
 			$this->include_classes();
-			$this->set_font_awesome_prefix();
 			
 			add_action('wp_enqueue_scripts', array(&$this, 'ajax_url'));
 			
@@ -310,11 +314,9 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					wp_enqueue_style( 'bon_toolkit' );
 				}
 
-				if ( BON_TOOLKIT_USE_FONT_AWESOME ) {
+				if ( !class_exists( 'BON_Main') ) {
 					wp_register_style( 'bon_toolkit_font_awesome', trailingslashit( BON_TOOLKIT_CSS ) . 'font-awesome.css', false, '3.2.1' );
-					wp_register_style( 'bon_toolkit_font_awesome_ie7', trailingslashit( BON_TOOLKIT_CSS ) . 'font-awesome-ie7.css', false, '3.2.1' );
 					wp_enqueue_style( 'bon_toolkit_font_awesome' );
-					wp_enqueue_style( 'bon_toolkit_font_awesome_ie7' );
 				}
 
 				wp_register_style( 'bon_toolkit_font_style', trailingslashit( BON_TOOLKIT_CSS ) . 'bt-social.css', false, '1.0.0' );
@@ -497,6 +499,25 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					</div><!-- setting -->';
 				break;
 
+				case 'multicheck' :
+
+					$o .= '<div id="setting-'.esc_attr($id).'" class="setting '.esc_attr($class).'" data-toggle="' . ((isset($toggle)) ? 'setting-' . esc_attr($toggle) : '') .'" >';
+					$o .= '<strong>'. $label .'</strong><div class="options">';
+
+					$o .= '<ul>';
+					foreach ( $options as $val => $option ) {
+						$c_name = $this->option_name . '[' . esc_attr( $name ) .'][]';
+						$checked = '';
+						if( $meta && is_array( $meta ) ) {
+							$checked = checked( in_array( $val, $meta ), 1, false);
+						}
+						$o .= '<li class="opt"><input type="checkbox" value="'.$val.'" name="' . $c_name . '" id="' . esc_attr( $id ) . '-' . $val . '"' . $checked . ' /> 
+								<label for="' . esc_attr( $id ) . '-' . $val . '">' . $option . '</label></li>';
+					}
+					$o .= '</ul><br/>' . $desc .'</div></div>'; 
+
+				break;
+
 				case 'section_close':
 					$o .= '</div>';
 				break;
@@ -590,8 +611,6 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					}
 				}
 				
-				include_once 'includes/posttypes/settings.php';
-				
 			}
 
 		} // end
@@ -626,22 +645,38 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			return admin_url( 'admin-ajax.php', 'relative' );
 		}
 
-		public function set_font_awesome_prefix() {
-
-			$bon_toolkit_options = get_option($this->option_name);
-			if ( ! defined( 'BON_TOOLKIT_FONT_AWESOME' ) ) {
-				if(isset($bon_toolkit_options['font_awesome_prefix'])) {
-					define( 'BON_TOOLKIT_FONT_AWESOME', $bon_toolkit_options['font_awesome_prefix'] != '' ? $bon_toolkit_options['font_awesome_prefix'] : 'awe-' );
-				} else {
-					define( 'BON_TOOLKIT_FONT_AWESOME', $this->awe );
-				}
-			}
-		}
-
 		public function set_page_builder() {
 
 			if( current_theme_supports('bon-page-builder') && class_exists('BON_Main') ) {
-				
+
+				$bon_toolkit_options = get_option($this->option_name);
+
+				$builder_options = isset( $bon_toolkit_options['page_builder_post_type'] ) ? $bon_toolkit_options['page_builder_post_type'] : '';
+
+				$builder_support = get_theme_support( 'bon-page-builder' );
+			
+				if( is_array( $builder_options ) && !empty( $builder_options ) ) {
+
+					$this->builder_post_types = $builder_options;
+
+				} else {
+					if( !empty( $builder_support[0] ) ) {
+						$this->builder_post_types = array_merge( $this->builder_post_types, $builder_support[0] );
+					}
+
+					$post_types = get_post_types( array( 'public' => true ) );
+
+					foreach ( $post_types as $type ) {
+
+						$post_type_supports = get_all_post_type_supports( $type );
+
+						if( !empty( $post_type_supports ) && array_key_exists( 'bon-page-builder', $post_type_supports ) && !in_array( $type, $this->builder_post_types ) ) {
+							$this->builder_post_types[] = $type;
+						}
+
+					}
+				}
+
 				include_once 'includes/builder/builder-options.php';
 				include_once 'includes/builder/builder.php';
 				include_once 'includes/builder/builder-interface.php';

@@ -16,19 +16,19 @@ if( !function_exists('bon_toolkit_setup_portfolio_post_type') ) {
 	function bon_toolkit_setup_portfolio_post_type() {
 
 		global $bon;
-
 		
 		$prefix = bon_toolkit_get_prefix();
 
-
 		$cpt = $bon->cpt();
 
+		$name = __('Portfolio', 'bon-toolkit');
+		$plural = __('Portfolios', 'bon-toolkit');
 
-		$cpt->create('Portfolio', array('supports' => array('editor','title', 'page-attributes', 'thumbnail','excerpt','comments','custom-fields'), 'menu_position' => 4 ));
+		$cpt->create('Portfolio', array( 'has_archive' => true, 'menu_icon' => 'dashicons-portfolio', 'supports' => array('editor','title', 'page-attributes', 'thumbnail','excerpt','comments','custom-fields'), 'menu_position' => 4 ), array(), $name, $plural );
 	    
-		$cpt->add_taxonomy("Portfolio Category", array('hierarchical' => true, 'label' => 'Categories', 'labels' => array('menu_name' => 'Categories') ) );
+		$cpt->add_taxonomy("Portfolio Category", array('hierarchical' => true, 'label' => __('Portfolio Categories','bon-toolkit') , 'labels' => array('menu_name' => __('Categories', 'bon-toolkit') ) ) );
 
-		$cpt->add_taxonomy("Portfolio Tag", array('hierarchical' => false, 'label' => 'Tags', 'labels' => array('menu_name' => 'Tags') ) );
+		$cpt->add_taxonomy("Portfolio Tag", array('hierarchical' => false, 'label' =>  __('Portfolio Tags','bon-toolkit'), 'labels' => array('menu_name' => __('Tags','bon-toolkit') ) ) );
 
 		$meta_fields = array(
 
@@ -78,19 +78,4 @@ if( !function_exists('bon_toolkit_setup_portfolio_post_type') ) {
 
 }
 
-/*
- * Adding Portfolio Icon to WordPress Menu
- */
-if( !function_exists('bon_toolkit_setup_portfolio_icon') ) {
-	
-	function bon_toolkit_setup_portfolio_icon($input) {
-		
-		$input['portfolio'] = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon-portfolio.png'; 
-
-		return $input;
-	}
-	
-	add_filter('bon_toolkit_filter_post_type_icon', 'bon_toolkit_setup_portfolio_icon');
-
-}
 ?>

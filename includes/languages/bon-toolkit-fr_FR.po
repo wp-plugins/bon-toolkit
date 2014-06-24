@@ -12,7 +12,7 @@ msgid "Cannot send email to destination. No parameter receive form AJAX call."
 msgstr "Impossible d'envoyer l'e-mail au destinataire. Aucun paramètre ne reçoit l'appel du formulaire AJAX."
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:157
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:409
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:408
 msgid "Please enter your name."
 msgstr "Entrez votre nom"
 
@@ -32,139 +32,139 @@ msgstr "E-mail envoyé"
 msgid "There is an error sending email."
 msgstr "Erreur lors de l'envoi de l'e-mail"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:331
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:327
 msgid "Error Loading Video"
 msgstr "Erreur de chargement de la vidéo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:395
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:394
 msgid "Failed rendering contact form. Please provide a correct <strong>Email Address</strong>."
 msgstr "Echec de création du formulaire de contact. Merci de fournir une adresse e-mail correcte"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:407
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:406
 msgid "Your Name"
 msgstr "Votre nom"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:408
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:407
 msgid "Name"
 msgstr "Nom"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:413
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:160
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:412
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:171
 msgid "Email Address"
 msgstr "Adresse e-mail"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:414
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:413
 msgid "Email"
 msgstr "E-mail"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:415
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:414
 msgid "Please enter valid email address."
 msgstr "Merci d'entrer une adresse e-mail valide."
 
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:418
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:419
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:420
 msgid "Subject"
 msgstr "Sujet"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:424
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:423
 msgid "Your Messages"
 msgstr "Votre message"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:425
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:424
 msgid "Messages"
 msgstr "Message"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:426
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:425
 msgid "Please enter your messages."
 msgstr "Entrez ici votre message."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:432
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:431
 msgid "Send Message"
 msgstr "Envoyer le message"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:463
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:462
 msgid "Background Image"
 msgstr "Image de fond"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:464
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:463
 msgid "Upload a custom background image for this post. Once image has been uploaded, click Insert into Post."
 msgstr "Téléchargez une image de fond personnalisée pour ce post. Lorsque l'image sera chargée, cliquez sur \"insérer dans le post\"."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:470
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:469
 msgid "Background Repeat"
 msgstr "Répétition du motif de fond"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:471
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:470
 msgid "Select the preferred repeat for the uploaded image."
 msgstr "Sélectionnez la répétition de motif que vous préférez pour l'image téléchargée."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:474
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:473
 msgid "No Repeat"
 msgstr "Pas de répétition"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:475
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:474
 msgid "Repeat Horizontal"
 msgstr "Répétition horizontale"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:476
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:475
 msgid "Repeat Vertical"
 msgstr "Répétition verticale"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:477
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:476
 msgid "Repeat"
 msgstr "Répétition"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:483
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:482
 msgid "Background Position"
 msgstr "Positionnement du fond"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:484
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:483
 msgid "Select the background position for the uploaded image."
 msgstr "Sélectionnez le positionnement du fond pour l'image téléchargée."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:487
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:488
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:486
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:515
 msgid "Left"
 msgstr "Gauche"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:488
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:489
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:487
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:516
 msgid "Right"
 msgstr "Droit"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:489
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:488
 msgid "Center"
 msgstr "Centre"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:495
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:494
 msgid "Background Cover"
 msgstr "Couvrir le fond"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:496
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:495
 msgid "If browser supported, the background image should cover the block."
 msgstr "Si votre navigateur le supporte, l'image de fond devrait couvrir le bloc."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:499
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:92
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:115
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:498
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:103
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:126
 msgid "Yes"
 msgstr "Oui"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:500
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:93
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:116
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:499
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:104
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:127
 msgid "No"
 msgstr "Non"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:506
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:505
 msgid "Background Color"
 msgstr "Couleur de fond"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:507
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:506
 msgid "Select a custom background color for this post."
 msgstr "Sélectionnez une couleur de fond personnalisée pour ce post."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:513
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit-core-functions.php:512
 msgid "Custom Background"
 msgstr "Fond personnalisé"
 
@@ -188,781 +188,788 @@ msgstr "La clef client secrète n'est pas configurée correctement."
 msgid "There was an error grabbing the Twitter feed"
 msgstr "Erreur pour récupérer le flux Twitter."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:222
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:265
 msgid "BonFramework is not available in your theme or you are currently using the older version. Some features of the Bon Toolkit are disabled."
 msgstr "BonFramework n'est pas disponible pour votre thème, ou vous utilisez une ancienne version. Certaines fonctionnalités de Bon Toolkit sont désactivées."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:326
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:373
 msgid "Bon Toolkit Options"
 msgstr "Options de Bon Toolkit"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:9
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:204
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:197
 msgid "Widget Settings"
 msgstr "Réglages des Widgets"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:26
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:29
 msgid "Use the default css from the plugin. Disable this if you want to use your own css"
 msgstr "Utiliser la css par défaut du plugin. À désactiver si vous voulez utiliser votre propre css. "
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:27
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:30
 msgid "Use Default Widget CSS"
 msgstr "Utiliser le Widget CSS par défaut"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:38
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:41
 msgid "Use the plugin FontAwesome icon style"
 msgstr "Utiliser le plugin FontAwesome icon style"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:39
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:42
 msgid "Use FontAwesome from Plugin"
 msgstr "Utiliser FontAwesome à partir du plugin"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:46
-msgid "Your FontAwesome Icon prefix might be different from the plugin FontAwesome prefix specify the prefix in here."
-msgstr "Si votre préfixe pour les icônes FontAwesome est différent de celui du plugin FontAwesome, indiquez-le ici."
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:47
-msgid "FontAwesome Prefix"
-msgstr "Préfixe FontAwesome"
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:67
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:60
 msgid "Post Type Settings"
 msgstr "Réglages des types de posts"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:81
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:74
 msgid "Enable / Disable Portfolio Post Type"
 msgstr "Activer / désactiver les posts de type Portfolio"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:82
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:75
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:27
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:90
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:83
 msgid "Enable / Disable Testimonial Post Type"
 msgstr "Activer / désactiver les posts de type témoignages"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:91
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:84
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:24
 msgid "Testimonial"
 msgstr "Témoignages"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:100
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:93
 msgid "Enable / Disable Poll Post Type"
 msgstr "Activer / désactiver les posts de type sondage."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:101
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:94
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:24
 msgid "Poll"
 msgstr "Sondage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:110
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:103
 msgid "Enable / Disable Review Post Type"
 msgstr "Activer / désactiver les post de type rapport"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:111
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:104
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:23
 msgid "Review"
 msgstr "Rapport"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:120
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:113
 msgid "Enable / Disable Featured Slider Post Type"
 msgstr "Activer / désactiver les posts de type Featured Slider"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:121
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:114
 msgid "Featured Slider"
 msgstr "Featured Slider"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:130
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:123
 msgid "Enable / Disable Quiz Post Type"
 msgstr "Activer / désactiver les posts de type quiz"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:131
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:124
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:25
 msgid "Quiz"
 msgstr "Quiz"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:139
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:132
 msgid "Comment for Quiz Score 100"
 msgstr "Commentaire du quiz pour score 100 "
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:147
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:140
 msgid "Comment for Quiz Score >= 90"
 msgstr "Commentaire du quiz pour score >=90 "
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:155
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:148
 msgid "Comment for Quiz Score >= 80"
 msgstr "Commentaire du quiz pour score  >=80"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:163
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:156
 msgid "Comment for Quiz Score >= 60"
 msgstr "Commentaire du quiz pour score  >=60"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:171
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:164
 msgid "Comment for Quiz Score >= 40"
 msgstr "Commentaire du quiz pour score  >=40"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:179
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:172
 msgid "Comment for Quiz Score >= 30"
 msgstr "Commentaire du quiz pour score  >=30"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:187
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:180
 msgid "Comment for Quiz Score 0"
 msgstr "Commentaire du quiz pour score 0"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:210
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:203
 msgid "Enable / Disable Twitter Widget."
 msgstr "Activer / désactiver le widget Twitter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:211
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:204
 msgid "Twitter Widget"
 msgstr "Widget Twitter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:217
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:210
 msgid "Enable / Disable Dribbble Widget."
 msgstr "Activer / Désactiver le widget Dribbble"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:218
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:211
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-dribbble.php:29
 msgid "Dribbble Widget"
 msgstr "Widget Dribbble"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:224
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:217
 msgid "Enable / Disable Flickr Widget."
 msgstr "Activer / Désactiver le widget Flickr"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:225
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:218
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-flickr.php:29
 msgid "Flickr Widget"
 msgstr "Widget Flickr"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:231
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:224
 msgid "Enable / Disable Social Icons Widget."
 msgstr "Activer / Désactiver le widget Social Icons"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:232
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:225
 msgid "Social Icons Widget"
 msgstr "Widget Social Icons"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:238
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:231
 msgid "Enable / Disable Video Widget."
 msgstr "Activer / Désactiver le widget vidéo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:239
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:232
 msgid "Video Widget"
 msgstr "Widget vidéo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:245
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:238
 msgid "Enable / Disable Posts Widget."
 msgstr "Activer / Désactiver le widget posts"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:246
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:239
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-posts.php:53
 msgid "Posts Widget"
 msgstr "Widget posts"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:252
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:245
 msgid "Enable / Disable Contact Form Widget."
 msgstr "Activer / Désactiver le widget formulaire de contact"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:253
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:246
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:45
 msgid "Contact Form Widget"
 msgstr "Widget formulaire de contact"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:262
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:255
 msgid "Enable / Disable Advanced Archives Widget."
 msgstr "Activer / Désactiver le widget archives avancées"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:263
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:256
 msgid "Archives Widget"
 msgstr "Widget archives"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:269
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:262
 msgid "Enable / Disable Advanced Tags Widget."
 msgstr "Activer / Désactiver le widget Tags avancés"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:270
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:263
 msgid "Tags Widget"
 msgstr "Widget tags"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:276
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:269
 msgid "Enable / Disable Advanced Search Widget."
 msgstr "Activer / Désactiver le widget de recherche avancée."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:277
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:270
 msgid "Search Widget"
 msgstr "Widget recherche"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:283
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:276
 msgid "Enable / Disable Advanced Pages Widget."
 msgstr "Activer / Désactiver le widget Pages avancées"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:284
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:277
 msgid "Pages Widget"
 msgstr "Widget pages"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:290
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:283
 msgid "Enable / Disable Advanced Navigation Menu Widget."
 msgstr "Activer / Désactiver le widget menu de navigation avancée."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:291
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:284
 msgid "Navigation Menu Widget"
 msgstr "Widget menu de navigation"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:297
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:290
 msgid "Enable / Disable Advanced Categories Widget."
 msgstr "Activer / Désactiver le widget catégories avancées"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:298
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:291
 msgid "Categories Widget"
 msgstr "Widget catégories"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:304
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:297
 msgid "Enable / Disable Advanced Calendar Widget."
 msgstr "Activer / Désactiver le widget Calendrier avancé"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:305
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:298
 msgid "Calendar Widget"
 msgstr ""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:311
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:304
 msgid "Enable / Disable Advanced Authors Widget."
 msgstr "Activer / désactiver le widget auteurs avancé"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:312
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:305
 msgid "Authors Widget"
 msgstr "Widget auteurs"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:326
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:319
 msgid "API Settings"
 msgstr "Réglages API"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:331
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:324
 msgid "Here is the place to fill the api key needed for some features to work."
 msgstr "Indiquez ici la clef API nécessaire pour activer certaines fonctionnalités."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:337
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:330
 msgid "The twitter access token key generated from your apps."
 msgstr "La clef d'accès Twitter générée par vos apps."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:338
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:331
 msgid "Twitter Acces Token"
 msgstr "Clef d'accès Twitter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:344
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:337
 msgid "The twitter access token secret key generated from your apps."
 msgstr "La clef secrète d'acces Twitter générée par vos apps"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:345
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:338
 msgid "Twitter Acces Token Secret"
 msgstr "Clef secrète d'accès Twitter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:351
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:344
 msgid "The twitter consumer key generated from your apps."
 msgstr "La clef client Twitter générée par vos apps."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:352
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:345
 msgid "Twitter Consumer Key"
 msgstr "Clef client Twitter."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:358
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:351
 msgid "The twitter consumer secret key generated from your apps."
 msgstr "La clef client secrète Twitter générée par vos apps. "
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:359
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:352
 msgid "Twitter Consumer Key Secret"
 msgstr "Clef client secrète Twitter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:373
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:366
 msgid "Social Share Settings"
 msgstr "Réglage des partages via les réseaux sociaux"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:379
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:372
 msgid "Turn on the social share button on posts and pages"
 msgstr "Activer le partage via les réseaux sociaux pour les posts et les pages"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:380
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:373
 msgid "Turn on Social Share button"
 msgstr "Activer le bouton de partage via les réseaux sociaux"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:388
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:381
 msgid "After Post Content"
 msgstr "après le contenu du post"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:389
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:382
 msgid "Before Post Content"
 msgstr "avant le contenu du post"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:391
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:384
 msgid "Where do you want the share button to be put?"
 msgstr "Où voulez-vous placer le bouton de partage ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:392
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:385
 msgid "Set Location for Share Button"
 msgstr "Définir l'emplacement du bouton de partage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:403
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:427
 msgid "Toolkit Help"
 msgstr "Aide Toolkit"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:413
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:437
 msgid "What is this plugin and why do I need it?"
 msgstr "Quel est ce plugin et à quoi sert-il ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:414
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:438
 msgid "The Bon Toolkit provides extra functionality to the collection of themes from <a target=\"blank\" href=\"http://bonfirelab.com\" title=\"bonfirelab\">Bonfirelab</a>. The Toolkit adds various widgets (Twitter, Flickr, Dribbble and social icons), and a few custom post types. The plugin is not a requirement to use themes from bonfirelab, but it will extend the themes to function as you see them in the demos."
 msgstr "Bon Toolkit apporte des fonctionnalités supplémentaires à la collection des thèmes <a target=\"blank\" href=\"http://bonfirelab.com\" title=\"bonfirelab\">Bonfirelab</a>. Toolkit ajoute différents widgets (Twitter, Flickr, Dribbble et icônes de partage vers les réseaux sociaux) ainsi que la possibilité de personnaliser certains types de posts. Ce plugin n'est pas obligatoire pour utiliser les thèmes de bonfirelab, mais il permet d'accéder à des fonctions comme celles que vous pouvez voir dans les démos."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:419
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:443
 msgid "How to use the Shortcode?"
 msgstr "Comment utiliser les shortcodes ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:420
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:444
 msgid "When editing post there is a small black button with \"B\" in the Editor. Press it and choose the shortcode you want."
 msgstr "Lorsque vous créez un post, il y a dans l'éditeur un petit bouton noir avec un \"B\". Cliquez dessus et sélectionnez le shortcode que vous voulez utiliser."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:425
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:449
 msgid "Available Shortcode Settings"
 msgstr "Réglages des shortcodes disponibles"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:426
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:450
 msgid "<ul> <li> <strong>Used to wrap [bt-tab][/bt-tabs] (~s different)</strong> <pre><code>[bt-tabs direction=\"top|left|right\" color=\"red|green|blue|yellow|dark|purple|orange\"] [bt-tab][/bt-tab] [/bt-tabs]</code></pre> </li> <li> <strong>Use to output each tab content</strong> <pre><code>[bt-tab]Content[/bt-tab]</code></pre> </li> <li> <strong>Used to output map</strong> <pre><code>[bt-map latitude=\"123456890\" longitude=\"1234567890\" zoom=\"14\" color=\"red|green|blue|yellow|dark|purple|orange\" height=\"px|%|em\" width=\"px|%|em\"]</code></pre> </li> <li> <strong>Used to wrap [bt-toggle][/bt-toggle]</strong> <pre><code>[bt-toggles] [bt-toggle][/bt-toggle] [/bt-toggles]</code></pre> </li> <li> <strong>Used to output toggle content</strong> <pre><code>[bt-toggle]Content[/bt-toggle]</code></pre> </li> <li> <strong>Used to output Alert</strong> <pre><code>[bt-alert color=\"white|blue|gray|yellow|red|green\"]Content[/bt-alert]</code></pre> </li> <li> <strong>Used to output Button</strong> <pre><code>[bt-button url=\"http://\" target=\"_self|_blank\" color=\"dark|light|pink|red|green|blue|yellow|orange|purple\" style=\"grad|flat\" size=\"small|medium|large\" type=\"square|round|round-corner\" ]Content[/bt-button]</code></pre> </li> </ul>"
 msgstr "<ul> <li> <strong>Pour l'habillage de texte [bt-tab][/bt-tabs] (~s different)</strong> <pre><code>[bt-tabs direction=\"top|left|right\" color=\"red|green|blue|yellow|dark|purple|orange\"] [bt-tab][/bt-tab] [/bt-tabs]</code></pre> </li> <li> <strong>Définir les contenus des onglets</strong> <pre><code>[bt-tab]Content[/bt-tab]</code></pre> </li> <li> <strong>Insérer une carte</strong> <pre><code>[bt-map latitude=\"123456890\" longitude=\"1234567890\" zoom=\"14\" color=\"red|green|blue|yellow|dark|purple|orange\" height=\"px|%|em\" width=\"px|%|em\"]</code></pre> </li> <li> <strong>insérer [bt-toggle][/bt-toggle]</strong> <pre><code>[bt-toggles] [bt-toggle][/bt-toggle] [/bt-toggles]</code></pre> </li> <li> <strong>contenu sous forme de menu basculant</strong> <pre><code>[bt-toggle]Content[/bt-toggle]</code></pre> </li> <li> <strong>Insérer un message d'alerte</strong> <pre><code>[bt-alert color=\"white|blue|gray|yellow|red|green\"]Content[/bt-alert]</code></pre> </li> <li> <strong>Insérer un bouton</strong> <pre><code>[bt-button url=\"http://\" target=\"_self|_blank\" color=\"dark|light|pink|red|green|blue|yellow|orange|purple\" style=\"grad|flat\" size=\"small|medium|large\" type=\"square|round|round-corner\" ]Content[/bt-button]</code></pre> </li> </ul>"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:431
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:455
 msgid "Why are the some of the Post Type Settings available in one of my Bonfirelab themes but not the other?"
 msgstr "Pourquoi certains réglages sont-ils disponibles dans l'un de mes thèmes Bonfirelab et pas dans un autre ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:432
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:456
 msgid "The Toolkit plugin only shows options / settings for themes that support it. If your theme does not support either feature, their settings will not be shown."
 msgstr "Le plugin Toolkit ne montre que les options / réglages des thèmes qu'il supporte. Si votre thème ne supporte pas certaines fonctionnalités, elles n'apparaîtront pas."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:437
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:461
 msgid "Can I use this plugin with other themes?"
 msgstr "Puis-je utiliser ce plugin avec d'autres thèmes ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:438
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:462
 msgid "This toolkit was developed to extend the functionality of Bonfirelab themes, however you can still use some parts of the plugin features such as widget in other themes. Advanced features like Custom Post Types will only work with Bonfirelab Themes due to framework dependant."
 msgstr "Toolkit a été principalement développé pour étendre les fonctionnalités des thèmes Bonfirelab, cependant vous pouvez en utiliser certains éléments sur d'autres thèmes, par exemple pour définir les caractéristiques de plugin comme les widgets. Par contre, les réglages avancés comme ceux des posts personnalisés (Custom Post Types) ne fonctionneront qu'avec les thèmes Bonfirelab car ils dépendent de la structure du thème."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:443
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:467
 msgid "This plugin is awesome where do I find the developer?"
 msgstr "Ce plugin est génial, où puis-je trouver le développeur ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:444
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:468
 msgid "You can find me on <a href=\"http://bonfirelab.com\" target=\"blank\" >bonfirelab.com</a>. Or follow me on <a href=\"http://twitter.com/nackle2k10\" target=\"blank\">Twitter</a>"
 msgstr "Vous pouvez me trouver sur <a href=\"http://bonfirelab.com\" target=\"blank\" >bonfirelab.com</a>. Où me suivre sur <a href=\"http://twitter.com/nackle2k10\" target=\"blank\">Twitter</a>"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/shortcodes.php:281
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/shortcodes.php:311
 msgid "Posted on:"
 msgstr "Posté le :"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/shortcodes.php:296
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/shortcodes.php:326
 msgid "Author:"
 msgstr "Auteur :"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:793
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-interface.php:784
 msgid "Please activate some widget"
 msgstr "Activez quelques widgets"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:21
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:219
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:641
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:31
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:236
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:675
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:117
 msgid "Red"
 msgstr "Rouge"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:22
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:220
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:643
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:237
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:677
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:118
 msgid "Green"
 msgstr "Vert"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:23
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:221
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:639
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:33
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:238
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:673
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:119
 msgid "Blue"
 msgstr "Bleu"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:24
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:223
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:34
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:240
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:120
 msgid "Orange"
 msgstr "Orange"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:25
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:224
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:35
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:241
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:121
 msgid "Purple"
 msgstr "Violet"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:26
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:222
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:642
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:239
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:676
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:122
 msgid "Yellow"
 msgstr "Jaune"
 
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:27
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:37
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:123
 msgid "Dark"
 msgstr "Noir"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:55
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:125
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:250
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:287
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:349
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:392
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:428
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:477
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:545
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:743
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:793
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:126
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:66
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:136
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:267
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:304
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:371
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:419
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:455
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:504
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:579
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:777
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:827
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:123
 msgid "Title"
 msgstr "Titre"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:69
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:80
 msgid "Post Size"
 msgstr "Taille du post"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:72
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:83
 msgid "1 Column"
 msgstr "1 colonne"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:73
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:84
 msgid "2 Columns"
 msgstr "2 colonnes"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:74
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:85
 msgid "3 Columns"
 msgstr "3 colonnes"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:75
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:86
 msgid "4 Columns"
 msgstr "4 colonnes"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:78
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:89
 msgid "Choose the post column options"
 msgstr "Choisissez le nombre de colonnes pour ce post"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:81
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:92
 msgid "Choose Category"
 msgstr "Choisissez la catégorie"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:85
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:96
 msgid "Choose the post category you want to fetch for the post."
 msgstr "Choisissez la catégorie que vous voulez utiliser pour ce post"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:88
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:99
 msgid "Show Thumbnail"
 msgstr "Montrer les miniatures"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:97
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:108
 msgid "Number of Posts"
 msgstr "Nombre de posts"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:101
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:112
 msgid "This is the number of fetched item in one page."
 msgstr "Nombre d'éléments utilisés dans une page"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:104
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:115
 msgid "Excerpt's Length"
 msgstr "Longueur de l'extrait"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:108
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:119
 msgid "This is the number of thumbnail content character."
 msgstr "Nombre de miniatures"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:111
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:122
 msgid "Show Pagination"
 msgstr "Montrer la pagination"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:119
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:130
 msgid "Pagination will only appear when the number of blog post is greater than the number of fetched item in one page."
 msgstr "La pagination apparaît seulement lorsque le nombre de posts du blog est supérieur au nombre d'éléments devant apparaître dans une seule page."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:122
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:133
 msgid "Order By"
 msgstr "Classé par"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:124
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:135
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:36
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:142
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:135
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:134
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:54
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:125
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:111
 msgid "Date"
 msgstr "Date"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:126
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:137
 msgid "Random"
 msgstr "Aléatoire"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:127
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:138
 msgid "Comment Count"
 msgstr "Nombre de commentaires"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:133
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:144
 msgid "Order Type"
 msgstr "Type de classement"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:135
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:146
 msgid "Ascending"
 msgstr "Croissant"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:136
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:147
 msgid "Descending"
 msgstr "Décroissant"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:143
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:166
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:228
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:261
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:303
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:359
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:398
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:455
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:518
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:568
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:601
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:649
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:718
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:767
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:811
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:846
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:154
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:183
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:245
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:279
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:325
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:386
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:425
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:482
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:552
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:602
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:635
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:683
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:752
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:801
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:845
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:880
 msgid "Bottom Margin"
 msgstr "Marge inférieure"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:163
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:174
 msgid "Input the email address for the contact form to send the contact email"
 msgstr "Entrez l'adresse e-mail de votre choix pour que le formulaire de contact fonctionne"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:193
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:210
 msgid "Location Latitude"
 msgstr "Latitude"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:199
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:216
 msgid "Location Longitude"
 msgstr "Longitude"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:204
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:221
 msgid "Map Height"
 msgstr "Hauteur de la carte"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:209
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:226
 msgid "Start Zoom"
 msgstr "Démarrer le zoom"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:215
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:232
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-social.php:191
 msgid "Color"
 msgstr "Couleur"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:256
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:354
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:273
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:381
 msgid "Content"
 msgstr "Contenu"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:293
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:310
 msgid "Image URL"
 msgstr "URL de l'image"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:298
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:315
 msgid "Link Image to"
 msgstr "Lier l'image à"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:331
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:450
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:353
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:477
 msgid "Icon Class"
 msgstr "Classe d'icône"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:334
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:356
 msgid "Class for the icon"
 msgstr "Classe de l'icône"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:338
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:360
 msgid "Icon Style"
 msgstr "Style de l'icône"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:342
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:364
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-social.php:202
 msgid "Round"
 msgstr "Rond"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:343
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:365
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-social.php:201
 msgid "Square"
 msgstr "Carré"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:344
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:366
 msgid "Round Corner"
 msgstr "Coins arrondis"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:345
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:367
 msgid "Hexagon"
 msgstr "Hexagone"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:385
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:679
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:832
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:412
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:713
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:866
 msgid "Description"
 msgstr "Description"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:388
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:415
 msgid "Use this element to put the content from the WordPress Editor"
 msgstr "Utilisez cet élément pour insérer du contenu à partir de l'éditeur Wordpress"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:395
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:422
 msgid "Leave blank if you don't want a title"
 msgstr "Ne pas remplir si vous ne désirez pas de titre"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:433
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:460
 msgid "Sub Title"
 msgstr "Sous titre"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:439
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:466
 msgid "Button Text"
 msgstr "Texte du bouton"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:445
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:472
 msgid "Link To"
 msgstr "Lien"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:483
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:510
 msgid "Tab Direction"
 msgstr "Direction de l'onglet"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:487
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:514
 msgid "Default"
 msgstr "Par défaut"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:494
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:522
 msgid "Tab Color"
 msgstr "Couleur de l'onglet"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:507
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:541
 msgid "Tab Title"
 msgstr "Titre de l'onglet"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:513
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:547
 msgid "Tab Content"
 msgstr "Contenu de l'onglet"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:557
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:591
 msgid "Toggle Title"
 msgstr "Titre du menu horizontal (Toggle)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:563
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:597
 msgid "Toggle Content"
 msgstr "Contenu du menu horizontal (Toggle)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:594
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:628
 msgid "Divider Text"
 msgstr "Texte de séparation"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:597
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:631
 msgid "Leave blank to use second style divider"
 msgstr "Ne pas remplir si vous voulez un séparateur simple"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:629
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:663
 msgid "Alert Content"
 msgstr "Message d'alerte"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:635
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:669
 msgid "Alert Color"
 msgstr "Couleur du message d'alerte"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:640
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:674
 msgid "White"
 msgstr "Blanc"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:644
-msgid "Grey"
-msgstr "Gris"
-
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:673
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:707
 msgid "Video Title"
 msgstr "Titre de la vidéo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:682
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:716
 msgid "To embed you only need to specify the url. For example: http://www.youtube.com/watch?v=abcdeFGHIJ. To use self hosted video leave the embed field empty."
 msgstr "Pour intégrer une vidéo, vous devez simplement indiquer son URL (par exemple : http://www.youtube.com/watch?v=abcdeFGHIJ. \n"
 "Pour utiliser une vidéo hébergée sur votre site, laissez le champ d'intégration vide."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:686
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:131
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:720
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:128
 msgid "Video Url (Third Party Host)"
 msgstr "URL de la vidéo (hébergée ailleurs)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:689
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:133
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:723
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:130
 msgid "For List of Supported Providers please see <a href=\"http://codex.wordpress.org/Embeds\" target=\"blank\">http://codex.wordpress.org/Embeds</a>"
 msgstr "Pour obtenir la liste des hébergeurs supportés, allez sur <a href=\"http://codex.wordpress.org/Embeds\" target=\"blank\">http://codex.wordpress.org/Embeds</a>"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:693
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:727
 msgid "Video Poster Url (Self Hosted)"
 msgstr "URL de l'image de la vidéo (hébergée sur votre site)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:699
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:733
 msgid "Video .m4v URL (Self Hosted)"
 msgstr "URL de la vidéo au format .m4v (hébergée sur votre site)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:706
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:740
 msgid "Video .ogv URL (Self Hosted)"
 msgstr "URL de la vidéo au format .ogv (hébergée sur votre site)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:712
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:746
 msgid "Short Video Description"
 msgstr "Courte description de la vidéo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:749
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:783
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-twitter.php:124
 msgid "Twitter Username"
 msgstr "Nom de compte Twitter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:755
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:805
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:789
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:839
 msgid "How many post to fetch?"
 msgstr "Combien de post à faire apparaître ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:761
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:795
 msgid "Follow Me Text"
 msgstr "Texte \"follow me\" / suivez moi"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:799
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:833
 msgid "Flickr ID"
 msgstr "Identifiant Flickr"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:835
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:869
 msgid "Choose the widget slot then go to <strong>Widget</strong> menu and drag widget into the slot. Custom widget slot can be created through theme options <strong>Sidebar Generator</strong> if supported."
 msgstr "Choisissez l'emplacement du widget, puis allez dans le menu <strong>Widget</strong> et placez-le dans l'emplacement de votre choix. Vous pouvez définir de nouveaux emplacements pour les widgets en utilisant l'option <strong>Sidebar Generator</strong> de votre thème (si disponible)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:838
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:872
 msgid "Choose Widget Slot"
 msgstr "Choisissez l'emplacement du widget"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:46
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:57
 msgid "BT Page Builder"
 msgstr "BT Page Builder"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:137
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:152
 msgid "loading..."
 msgstr "En cours de chargement..."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:144
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:159
 msgid "Choose the builder element from the button bar above. You can drag the position and resize the block of the generated element"
 msgstr "Choisissez les éléments à placer à partir de la barre de boutons ci-dessus. Vous pouvez ensuite changer leur position ainsi que leur dimension"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:233
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:248
 msgid "Edit %s Property"
 msgstr "Editer propriété %s "
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:308
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:321
 msgid "Add Tab"
 msgstr "Ajouter un onglet"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:376
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:401
 msgid "Upload Image"
 msgstr "Télécharger une image"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:448
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:469
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:473
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:494
 msgid "Add Field"
 msgstr "Ajouter un champ"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:449
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:470
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:474
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder.php:495
 msgid "Remove Field"
 msgstr "Supprimer un champ"
 
@@ -974,80 +981,80 @@ msgstr "Aimer"
 msgid "You already like this"
 msgstr "Vous aimez déjà"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-poll.php:275
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-poll.php:274
 msgid "Vote"
 msgstr "Voter"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-poll.php:315
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-poll.php:314
 msgid "Total Vote: 1"
 msgstr "Total des votes : 1"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-poll.php:332
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-poll.php:334
 msgid "Invalid Poll ID"
 msgstr "Identifiant du sondage invalide"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-quiz.php:147
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-quiz.php:148
 msgid "Invalid Quiz ID"
 msgstr "Identifiant du quiz invalide"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:104
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:183
 msgid "Share this on :"
 msgstr "Partagez sur :"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:218
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:306
 msgid "Share this on %s"
 msgstr "Partagez sur %s"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:28
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:47
 msgid "Poll Settings"
 msgstr "Réglages du sondage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:29
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:48
 msgid "Setup the voting options for user."
 msgstr "Définir les options de vote pour l'utilisateur."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:39
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:56
 msgid "Vote Option"
 msgstr "Option du vote"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:82
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:99
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:90
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:133
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:132
 msgid "Poll Title"
 msgstr "Titre du sondage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:134
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:133
 msgid "Poll Shortcode"
 msgstr "Shortcode du sondage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:37
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:55
 msgid "When is the project created"
 msgstr "Quand le projet est-il créé"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:43
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:61
 msgid "Url"
 msgstr "URL"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:44
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:62
 msgid "Url to the implemented final project"
 msgstr "URL du projet finalisé"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:50
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:68
 msgid "Client"
 msgstr "Client"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:51
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:69
 msgid "Who is your client (eq. Jonh doe or Organization Name)"
 msgstr "Qui est votre client (nom d'une personne ou d'une organisation)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:57
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:75
 msgid "Gallery"
 msgstr "Galerie"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:58
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:76
 msgid "Project Images Gallery"
 msgstr "Galerie d'images de projets"
 
@@ -1075,107 +1082,108 @@ msgstr "Réglage des options"
 msgid "Separate each option in square bracket. eq: [Option 1] [Option 2] [Option 3]"
 msgstr "Séparez chaque option par un crochet : [Option 1] [Option 2] [Option 3]..."
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:140
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:123
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:110
 msgid "Quiz Title"
 msgstr "Titre du quiz"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:141
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:124
 msgid "Quiz Shortcode"
 msgstr "Shortcode du quiz"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:50
 msgid "Review Settings"
 msgstr "Réglages des textes descriptifs"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:33
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:51
 msgid "Setup the review criteria."
 msgstr "Définir les critères pour les avis"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:42
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:61
 msgid "Review Criteria"
 msgstr "Critères des avis"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:48
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:67
 msgid "Review Rating"
 msgstr "Note des avis"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:60
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:79
 msgid "Review Pros"
 msgstr "Avis professionnels"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:61
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:80
 msgid "The review pros. Tips: You can wrap the item in list. eq <br />&lt;ul&gt;<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> &lt;/ul&gt;"
 msgstr "Les avis professionnels. Astuce : vous pouvez les réunir dans une liste. Par exemple <br />&lt;ul&gt;<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> &lt;/ul&gt;"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:68
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:87
 msgid "Review Cons"
 msgstr "Avis clients"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:69
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:88
 msgid "The review cons.  Tips: You can wrap the item in list. eq <br />&lt;ul&gt;<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> &lt;/ul&gt;"
 msgstr "Les avis clients. Astuce : vous pouvez les réunir dans une liste. Par exemple <br />&lt;ul&gt;<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> &lt;/ul&gt;"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:29
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:48
 msgid "Slider Image"
 msgstr "Image diaporama"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:51
 msgid "The Slider Image."
 msgstr "L'image du diaporama"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:55
 msgid "Sub Title / Secondary Title"
 msgstr "Sous titre / second niveau de titre"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:39
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:58
 msgid "The Secondary title below the Primary Title."
 msgstr "Le second niveau de titre placé sous le premier"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:43
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:62
 msgid "Url / Link to"
 msgstr "URL / lien"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:46
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:65
 msgid "Read more target"
 msgstr "cible du \"lire la suite\""
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:50
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:69
 msgid "Caption Position"
 msgstr "Position des éléments textes"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:57
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:76
 msgid "The position of the titles and the contents"
 msgstr "La position des titres et des contenus"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:29
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:48
 msgid "Author Photo"
 msgstr "Auteur de la photo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:51
 msgid "The image for the author who give the testimonial."
 msgstr "L'image de l'auteur du témoignage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:55
 msgid "Author Name"
 msgstr "Nom de l'auteur"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:39
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:58
 msgid "The testimonial author's name"
 msgstr "Nom de l'auteur du témoignage"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:43
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:62
 msgid "Author Url"
 msgstr "URL de l'auteur"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:46
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:65
 msgid "Link to Author"
 msgstr "Lien vers l'auteur"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:50
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:69
 msgid "Author Position"
 msgstr "Statut hiérarchique de l'auteur "
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:53
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:72
 msgid "The author position. eq. CEO"
 msgstr "Le statut de l'auteur (par exemple, directeur général...)"
 
@@ -1187,7 +1195,7 @@ msgstr "Archives"
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-authors.php:164
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-calendar.php:112
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-categories.php:200
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:121
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:134
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-dribbble.php:92
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-flickr.php:67
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-nav-menu.php:135
@@ -1260,6 +1268,8 @@ msgstr "Calendrier"
 msgid "One-letter abbreviation?"
 msgstr "Abréviation en une lettre ?"
 
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:47
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:43
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-categories.php:49
 msgid "Categories"
 msgstr "Catégories"
@@ -1277,7 +1287,7 @@ msgstr "Utiliser la description ?"
 msgid "Show count?"
 msgstr "Montrer le nombre ?"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:125
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-contactform.php:147
 msgid "Receiver Email Address"
 msgstr "Adresse e-mail du destinataire"
 
@@ -1427,6 +1437,8 @@ msgstr "Petite"
 msgid "Large"
 msgstr "Grande"
 
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:49
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:45
 #: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-tags.php:53
 msgid "Tags"
 msgstr "Tags"
@@ -1459,19 +1471,195 @@ msgstr "Montrer la vidéo"
 msgid " Video Widget"
 msgstr "␣Widget vidéo"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:137
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:134
 msgid "M4V Video Url (Self Hosted)"
 msgstr "URL vidéo M4V (hébergée sur votre site)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:142
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:139
 msgid "OGV Video Url (Self Hosted)"
 msgstr "URL vidéo OGV (hébergée sur votre site)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:148
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:145
 msgid "Poster Url (Self Hosted)"
 msgstr "URL de l'image (pour vidéo hébergée sur votre site)"
 
-#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:153
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/widgets/widget-video.php:150
 msgid "Short Description"
 msgstr "Description courte"
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/bon-toolkit.php:274
+msgid "Bon Toolkit"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:12
+msgid "General Settings"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:405
+msgid "Page Builder Settings"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:412
+msgid "Select for which custom post type the BT Page Builder should be available"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/options.php:413
+msgid "Turn on Page Builder"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:38
+msgid "Light"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:177
+msgid "Submit Button Color"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:320
+msgid "Alt Text"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:376
+msgid "Link to"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:517
+msgid "Bottom"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:528
+msgid "Tab Content Style"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/builder/builder-options.php:678
+msgid "Gray"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:29
+msgid "BT Social Share Options"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/classes/class-social-share.php:52
+msgid "Enable social share in this page"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:25
+msgid "Polls"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:29
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:28
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:29
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:29
+msgid "Add New"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:30
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:33
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:29
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:30
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:30
+msgid "Add New %s"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:31
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:34
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:30
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:31
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:31
+msgid "Edit %s"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:35
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:31
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:32
+msgid "New %s"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:33
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:32
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:33
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:33
+msgid "All %s"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:34
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:37
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:33
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:34
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:34
+msgid "View %s"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:35
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:38
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:34
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:35
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:35
+msgid "Search %s"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:39
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:35
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:36
+msgid "No %s found"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/poll.php:37
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:40
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:36
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:37
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:37
+msgid "No %s found in Trash"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:28
+msgid "Portfolios"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:47
+msgid "Portfolio Categories"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/portfolio.php:49
+msgid "Portfolio Tags"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/quiz.php:25
+msgid "Quizzes"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:24
+msgid "Reviews"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:43
+msgid "Review Categories"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/review.php:45
+msgid "Review Tags"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:24
+msgid "Slider"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:25
+msgid "Sliders"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/slider.php:109
+msgid "Slide ID"
+msgstr ""
+
+#: C:\wamp\www\wp\wp-content\plugins\bon-toolkit/includes/posttypes/testimonial.php:25
+msgid "Testimonials"
+msgstr ""
 

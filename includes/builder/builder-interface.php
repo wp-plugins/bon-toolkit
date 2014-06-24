@@ -51,6 +51,11 @@ class BON_Toolkit_Builder_Interface {
 	 */
 	public $builder_metas;
 
+    /**
+     * @var array
+     */
+    public $supported_post_type = array();
+
 
 	/**
 	 * Sets up our actions/filters.
@@ -58,9 +63,12 @@ class BON_Toolkit_Builder_Interface {
 	 * @return void
 	 */
 	public function __construct() {
+        global $bontoolkit;
 
 		/* Register shortcodes on 'init'. */
         $this->builder_options = bon_toolkit_get_builder_options();
+
+        $this->supported_post_type = $bontoolkit->builder_post_types;
 
 		add_filter('the_content', array(&$this, 'init'));
 
@@ -77,7 +85,11 @@ class BON_Toolkit_Builder_Interface {
 
 		global $post, $bon, $bontoolkit;
 
-		if($post->post_type != 'page') {
+        if( !is_object( $post ) ) {
+            return $content;
+        } 
+        
+		if( !in_array( $post->post_type, $this->supported_post_type ) ) {
 			return $content;
 		}
 
@@ -194,7 +206,7 @@ class BON_Toolkit_Builder_Interface {
 	 */
 	public function render_element($type, $value) {
 
-		global $bonbuilder;
+		//global $bonbuilder;
 
 		if(empty($type) || empty($value)) {
 			return;
@@ -342,7 +354,7 @@ class BON_Toolkit_Builder_Interface {
             $tab .= '[bt-tab title="' . $child_element['repeat_title'] . '"]' . $child_element['repeat_content'] . '[/bt-tab]';
         }
         $o .= $this->render_header('tab', $header);
-        $o .= do_shortcode('[bt-tabs direction="' . $value['direction'] . '" color="' . $value['color'] . '"]' . $tab . '[/bt-tabs]');
+        $o .= do_shortcode('[bt-tabs style="'.$value['content_style'].'" direction="' . $value['direction'] . '" color="' . $value['color'] . '"]' . $tab . '[/bt-tabs]');
         return $o;
     }
 
@@ -390,10 +402,13 @@ class BON_Toolkit_Builder_Interface {
        		return $o;
        	}
 
+        $value['icon_class'] = $this->process_icon( $value['icon_class'] );
+
+
         extract($value);
-        
-        $icon            = '<div class="' . $value['icon_style'] . '-icon icon-wrapper"><i class="' . $value['icon_class'] . ' icon-anim-' . $value['icon_animation'] . '"></i></div>';
-        $title           = '<h2>' . $value['title'] . '</h2>';
+
+        $icon            = '<div class="' . $value['icon_style'] . '-icon icon-wrapper">'.( isset( $link ) && ( $link != '' ) ? '<a href="'.esc_url( $link ).'" title="'.$title.'">' : '' ).'<i class="' . $value['icon_class'] . ' icon-anim-' . $value['icon_animation'] . '"></i>'.( isset( $link ) ? '</a>' : '' ).'</div>';
+        $title           = '<h2>'.( isset( $link ) && ( $link != '' ) ? '<a href="'.esc_url( $link ).'" title="'.$title.'">' : '' ) . $value['title'] .( isset( $link ) ? '</a>' : '' ). '</h2>';
         $service_content = '<div class="service-content">';
         $service_content .= $title;
         $service_content .= '<div class="service-summary">';
@@ -425,6 +440,8 @@ class BON_Toolkit_Builder_Interface {
        		return $o;
        	}
 
+        $value['button_icon'] = $this->process_icon( $value['button_icon'] );
+        
         extract($value);
        	
 
@@ -436,7 +453,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= '<h2 class="action-title">' . $value['title'] . '</h2>';
         $o .= '<h3 class="action-content subheader">' . $value['subtitle'] . '</h3>';
         $o .= '</div>';
-        $o .= '<div class="panel-button"><a href="' . $value['button_link'] . '" title="' . $value['button_text'] . '">' . $icon . '<span>' . $value['button_text'] . '</span></a></div>';
+        $o .= '<div class="panel-button"><a href="' . esc_url( $value['button_link'] ) . '" title="' . $value['button_text'] . '">' . $icon . '<span>' . $value['button_text'] . '</span></a></div>';
         $o .= '</div>';
         return $o;
     }
@@ -458,6 +475,10 @@ class BON_Toolkit_Builder_Interface {
        	}
 
         extract($value);
+
+        if( !isset( $color ) ) {
+            $color = '';
+        }
         
         $o = bon_toolkit_get_contact_form($email, $color);
 
@@ -534,14 +555,14 @@ class BON_Toolkit_Builder_Interface {
 
        	$o = '';
         extract($value);
-        
+
         $o .= $this->render_header('image_block', $header);
         $o .= '<div class="image-block-content">';
 
-        $img = '<img src="'.$src.'" alt="'.$header.'" />';
+        $img = '<img src="'.$src.'" alt="'. ( isset($alt) ? $alt : $header ) .'" />';
 
         if(!empty($link)) {
-        	$o .= '<a href="'.$link.'" title="'.$header.'" target="blank">'.$img.'</a>';
+        	$o .= '<a href="'.esc_url( $link ).'" title="'.$header.'" target="blank">'.$img.'</a>';
         } else {
         	$o .= $img;
         }
@@ -769,6 +790,19 @@ class BON_Toolkit_Builder_Interface {
 		}
 
         return $o;
+    }
+
+    public function process_icon( $icon ) {
+
+        if( substr( $icon, 0, 4 ) == 'awe-' ) {
+            $icon = str_replace( 'awe-', 'bi-', $icon );
+        }
+
+        if( substr( $icon, 0, 3 ) == 'bi-' && strpos( $icon , 'bonicons') == false ) {
+            $icon = 'bonicons ' . $icon;
+        }
+
+        return $icon;
     }
 
 }

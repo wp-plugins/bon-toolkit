@@ -21,7 +21,10 @@ if( !function_exists('bon_toolkit_setup_poll_post_type') ) {
 	
 		$cpt = $bon->cpt();
 
-		$cpt->create('Poll', array( 'show_in_nav_menus' => false, 'exclude_from_search' => true, 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ));
+		$name = __('Poll', 'bon-toolkit');
+		$plural = __('Polls', 'bon-toolkit');
+
+		$cpt->create('Poll', array( 'menu_icon' => 'dashicons-list-view', 'show_in_nav_menus' => false, 'exclude_from_search' => true, 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ), array(), $name, $plural );
 
 		$meta_fields = array(
 			array( 
@@ -30,11 +33,9 @@ if( !function_exists('bon_toolkit_setup_poll_post_type') ) {
 				'id'	=> $prefix.'poll_options',
 				'type'	=> 'repeatable',
 				'sanitizer' => array( 
-					'vote_option' => 'sanitize_text_field',
-					'desc' => 'wp_kses_data'
+					'vote_options' => 'sanitize_text_field',
 				),
 				'repeatable_fields' => array(
-					
 					'vote_options' => array(
 						'label' => __('Vote Option','bon-toolkit'),
 						'id' => 'vote_option',
@@ -97,24 +98,6 @@ if( !function_exists('bon_toolkit_add_poll_metabox') ) {
 	}
 
 	add_action('admin_init', 'bon_toolkit_add_poll_metabox');
-
-}
-
-/**
- * 
- * Setting up Custom Icon for WordPress Menu
- * 
- **/
-if( !function_exists('bon_toolkit_setup_poll_icon') ) {
-
-	function bon_toolkit_setup_poll_icon($input) {
-	
-		$input['poll'] = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon-poll.png'; 
-
-		return $input;
-	}
-
-	add_filter('bon_toolkit_filter_post_type_icon', 'bon_toolkit_setup_poll_icon');
 
 }
 

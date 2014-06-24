@@ -21,15 +21,25 @@ class BON_Toolkit_Page_Builder {
 	public $prefix;
 
 	/**
+	 * @var array
+	 */
+	public $supported_post_type = array();
+
+	/**
 	 * The Class Constructor
 	 * @since 1.0.0
 	 *
 	 */
 		function __construct() {
+			global $bontoolkit;
+			
 			$this->prefix = bon_toolkit_get_prefix();
 			$this->set_builder_options();
+
+			$this->supported_post_type = $bontoolkit->builder_post_types;
+
 			add_action( 'add_meta_boxes', array(&$this, 'set_meta_box') );
-			add_action( 'admin_enqueue_scripts', array(&$this, 'enqueue_scripts') );
+			add_action( 'admin_enqueue_scripts', array(&$this, 'enqueue_scripts'), 1000 );
 			add_action( 'wp_ajax_bon_toolkit_builder', array( &$this, 'render_element') );
 			add_action( 'wp_ajax_nopriv_bon_toolkit_builder', array( &$this, 'render_element') );
 			add_action( 'save_post', array(&$this, 'save') );
@@ -43,7 +53,9 @@ class BON_Toolkit_Page_Builder {
 	 *
 	 */
 		function set_meta_box() {
-			add_meta_box( 'bon-toolkit-builder', __( 'BT Page Builder', 'bon-toolkit' ), array($this, 'render_meta_box'), 'page', 'advanced', 'high' );
+			foreach( $this->supported_post_type as $type ) {
+				add_meta_box( 'bon-toolkit-builder', __( 'BT Page Builder', 'bon-toolkit' ), array($this, 'render_meta_box'), $type, 'advanced', 'high' );
+			}
 		}
 
 	/**
@@ -57,12 +69,14 @@ class BON_Toolkit_Page_Builder {
 			if( !in_array($hook, $this->page ) ) {
 					return;
 			}
+
 			global $post;
 
-			if($post->post_type === 'page') {
+			if( in_array( $post->post_type, $this->supported_post_type ) ) {
+
 				wp_register_style('bon-toolkit-builder', trailingslashit( BON_TOOLKIT_CSS ) . 'builder.css');
-				wp_register_script('bon-toolkit-builder', trailingslashit( BON_TOOLKIT_JS ) . 'builder.js', array('jquery', 'jquery-ui-sortable'));
-				wp_register_script('bon-toolkit-builder-modal', trailingslashit( BON_TOOLKIT_JS ) . 'modal.js', array('jquery'));
+				wp_register_script('bon-toolkit-builder', trailingslashit( BON_TOOLKIT_JS ) . 'builder.js', array('jquery', 'jquery-ui-sortable'), '1.0', true );
+				wp_register_script('bon-toolkit-builder-modal', trailingslashit( BON_TOOLKIT_JS ) . 'modal.js', array('jquery'), '1.0', true );
 				
 				wp_enqueue_style( 'bon-toolkit-builder' );
 
@@ -338,11 +352,23 @@ class BON_Toolkit_Page_Builder {
 	 *
 	 */
 
-		function get_meta_interface($meta_box, $name_triailling = true) {
-			if(empty($meta_box['std'])) $meta_box['std'] = '';
+		function get_meta_interface($meta_box, $name_trailing = true) {
+
+			$defaults = array(
+				'type' => '',
+				'std' => '',
+				'class' => '',
+				'title' => '',
+				'options' => '',
+				'repeat_num' => '',
+				'repeat_child' => ''
+			);
+
+			$meta_box = wp_parse_args( $meta_box, $defaults );
+
 			extract($meta_box);
 			$id = $name;
-			if($name_triailling) {
+			if($name_trailing) {
 				$name = $name . '[]';
 			}
 			if(!empty($value)) {
@@ -356,9 +382,9 @@ class BON_Toolkit_Page_Builder {
 				case "text": 
 				?>
 				<div class="bon-builder-meta-body">
-					<label><?php _e($title, 'bon-toolkit'); ?></label>
+					<label><?php echo $title; ?></label>
 					<div class="bon-builder-meta-input">
-						<input type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>" />
+						<input type="text" class="<?php echo $class; ?>" name="<?php echo $name; ?>" value="<?php echo $value; ?>" />
 						<?php if(isset($description)){ ?>
 							<span class="bon-builder-meta-description"><?php echo $description; ?> </span>
 						<?php } ?>
@@ -369,9 +395,9 @@ class BON_Toolkit_Page_Builder {
 				case "upload": 
 				?>
 				<div class="bon-builder-meta-body">
-					<label><?php _e($title, 'bon-toolkit'); ?></label>
+					<label><?php echo $title; ?></label>
 					<div class="bon-builder-meta-input">	
-						<input name="<?php echo $name; ?>" type="text" class="upload_media_text_meta" value="<?php echo $value; ?>" />
+						<input name="<?php echo $name; ?>" type="text" class="upload_media_text_meta <?php echo $class; ?>" value="<?php echo $value; ?>" />
 						<a href="#" class="bon-builder-upload-button button"><?php _e('Upload Image','bon-toolkit'); ?></a>
 						<?php if(isset($description)){ ?>
 							<span class="bon-builder-meta-description"><?php echo $description; ?></span>
@@ -383,9 +409,9 @@ class BON_Toolkit_Page_Builder {
 				case "textarea":
 				?>
 				<div class="bon-builder-meta-body">
-					<label><?php _e($title, 'bon-toolkit'); ?></label>
+					<label><?php echo $title; ?></label>
 					<div class="bon-builder-meta-input">
-						<textarea name="<?php echo $name; ?>" ><?php echo stripslashes($value); ?></textarea>
+						<textarea class="<?php echo $class; ?>" name="<?php echo $name; ?>" ><?php echo stripslashes($value); ?></textarea>
 						<?php if(isset($description)){ ?>
 							<span class="bon-builder-meta-description"><?php echo $description; ?></span>
 						<?php } ?>
@@ -396,9 +422,9 @@ class BON_Toolkit_Page_Builder {
 				case "select": 
 				?>
 				<div class="bon-builder-meta-body">
-					<label><?php _e($title, 'bon-toolkit'); ?></label>
+					<label><?php echo $title; ?></label>
 					<div class="bon-builder-meta-input">	
-						<select name="<?php echo $name; ?>">
+						<select class="<?php echo $class; ?>" name="<?php echo $name; ?>">
 							<?php foreach($options as $key_option => $option){ ?>
 								<option value="<?php echo $key_option ; ?>" <?php if( $key_option==esc_html($value) ){ echo 'selected'; }?> ><?php echo $option ; ?></option>
 							<?php } ?>
@@ -479,6 +505,16 @@ class BON_Toolkit_Page_Builder {
 				</div>
 				<?php
 				break;
+
+				case "icon" : ?>
+					<div class="bon-builder-meta-body" id="bon-builder-meta-body-<?php echo $id; ?>">
+						<label><?php echo $title; ?></label>
+						<div class="bon-builder-meta-input">
+						<?php echo bon_icon_select_field( $id, $name, '#bon-builder-meta-modal #bon-builder-meta-body-'.$id, esc_attr( $value ) ); ?>
+						</div>
+					</div>
+				<?php
+				break;
 			}
 		}
 
@@ -498,7 +534,7 @@ class BON_Toolkit_Page_Builder {
 			if(!wp_verify_nonce($_POST['bon_toolkit_builder_nonce'], plugin_basename( __FILE__ ))) return;
 			
 			// Save data of page
-			if('page' == $_POST['post_type']){
+			if( in_array( $_POST['post_type'], $this->supported_post_type ) ){
 				if(!current_user_can('edit_page', $post_id)) return;
 				$this->save_builder($post_id);
 			}

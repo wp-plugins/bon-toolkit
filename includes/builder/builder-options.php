@@ -27,6 +27,17 @@ function bon_toolkit_get_builder_options()
         'dark' => __('Dark','bon-toolkit')
     );
 
+    $coloroptions2 = array(
+        'red' => __('Red','bon-toolkit'),
+        'green' => __('Green','bon-toolkit'),
+        'blue' => __('Blue','bon-toolkit'),
+        'orange' => __('Orange','bon-toolkit'),
+        'purple' => __('Purple','bon-toolkit'),
+        'yellow' => __('Yellow', 'bon-toolkit'),
+        'dark' => __('Dark','bon-toolkit'),
+        'light' => __('Light','bon-toolkit')
+    );
+
     $widget_options = array();
 
     if(!empty($wp_registered_sidebars) && is_array($wp_registered_sidebars)) {
@@ -261,13 +272,13 @@ function bon_toolkit_get_builder_options()
             'content' => array(
                 'title' => __('Content', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'content',
-                'type' => 'textarea'
+                'type' => 'textarea',
+                'class' => 'bon-builder-editor'
             ),
             'margin' => array(
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['text_block'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
             ),
             'default_size' => 'span3',
@@ -305,6 +316,11 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['image_block'] . 'link',
                 'type' => 'text'
             ),
+            'alt' => array(
+                'title' => __('Alt Text', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'alt',
+                'type' => 'text'
+            ),
             'margin' => array(
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['image_block'] . 'margin',
@@ -336,7 +352,7 @@ function bon_toolkit_get_builder_options()
             'icon_class' => array(
                 'title' => __('Icon Class'),
                 'name' => $prefix . $suffix['service'] . 'icon_class',
-                'type' => 'text',
+                'type' => 'icon',
                 'description' => __('Class for the icon','bon-toolkit')
             ),
             'builder_icon' => 'bt-check',
@@ -354,6 +370,11 @@ function bon_toolkit_get_builder_options()
             'title' => array(
                 'title' => __('Title', 'bon-toolkit'),
                 'name' => $prefix . $suffix['service'] . 'title',
+                'type' => 'text'
+            ),
+            'link' => array(
+                'title' => __('Link to', 'bon-toolkit'),
+                'name' => $prefix . $suffix['service'] . 'link',
                 'type' => 'text'
             ),
             'content' => array(
@@ -455,7 +476,7 @@ function bon_toolkit_get_builder_options()
             'button_icon' => array(
                 'title' => __('Icon Class', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'button_icon',
-                'type' => 'text'
+                'type' => 'icon'
             ),
             'margin' => array(
                 'title' => __('Bottom Margin', 'bon-toolkit'),
@@ -493,6 +514,7 @@ function bon_toolkit_get_builder_options()
                     'tab-default' => __('Default','bon-toolkit'),
                     'tab-left' => __('Left','bon-toolkit'),
                     'tab-right' => __('Right', 'bon-toolkit'),
+                    'tab-bottom' => __('Bottom','bon-toolkit'),
                 ),
             ),
 
@@ -500,7 +522,13 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Tab Color', 'bon-toolkit'),
                 'name' => $prefix . $suffix['tab'] . 'color',
                 'type' => 'select',
-                'options' => $coloroptions,
+                'options' => $coloroptions2,
+            ),
+            'content_style' => array(
+                'title' => __('Tab Content Style', 'bon-toolkit'),
+                'name' => $prefix . $suffix['tab'] . 'content_style',
+                'type' => 'select',
+                'options' => $coloroptions2,
             ),
 
             'repeat_element' => array(
@@ -576,7 +604,7 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
-             'default_size' => 'span4',
+            'default_size' => 'span4',
             'allowed_size' => array(
                     'span3'=>'1/4',
                     'span4'=>'1/3',
@@ -647,7 +675,7 @@ function bon_toolkit_get_builder_options()
                     'red' => __('Red', 'bon-toolkit'),
                     'yellow' => __('Yellow', 'bon-toolkit'),
                     'green' => __('Green', 'bon-toolkit'),
-                    'grey' => __('Grey', 'bon-toolkit'),
+                    'gray' => __('Gray', 'bon-toolkit'),
                 ),
             ),
 

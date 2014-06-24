@@ -47,9 +47,6 @@ function widget( $args, $instance ) {
 
 	$awe = BON_TOOLKIT_FONT_AWESOME;
 
-	if(!$awe) {
-		$awe = 'awe-';
-	}
 	extract( $args );
 
 	/* Our variables from the widget settings ---------------------------------------*/

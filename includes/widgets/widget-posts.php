@@ -106,7 +106,7 @@ class Bon_Toolkit_Widget_Posts extends WP_Widget {
 		?>
 
 		<div class="item clear">
-			<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'image_scan' => true, 'before' => '<div class="featured-image">', 'after' => '</div>' ) ); ?>
+			<?php if ( current_theme_supports( 'get-the-image' ) && $args['display_thumb'] == 'yes' ) get_the_image( array( 'image_scan' => true, 'before' => '<div class="featured-image">', 'after' => '</div>' ) ); ?>
 			<div class="item-content">
 				<h3 class="item-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => __('Permalink to ', 'bon-toolkit')) ); ?>"><?php the_title(); ?></a></h3>
 				<?php 
@@ -141,6 +141,7 @@ class Bon_Toolkit_Widget_Posts extends WP_Widget {
 		$instance['order']  = strip_tags( $new_instance['order'] );
 		$instance['orderby']  = strip_tags( $new_instance['orderby'] );
 		$instance['include_meta']  = strip_tags( $new_instance['include_meta'] );
+		$instance['display_thumb']  = strip_tags( $new_instance['display_thumb'] );
 		
 		$instance['term']  = strip_tags($new_instance['term']);
 
@@ -174,6 +175,7 @@ class Bon_Toolkit_Widget_Posts extends WP_Widget {
 			'orderby'		  => 'date',
 			'order'			  => 'DESC',
 			'include_meta'	  => 'yes',
+			'display_thumb'   => 'yes',
 		);
 
 		/* Create an array of order options. */
@@ -216,6 +218,15 @@ class Bon_Toolkit_Widget_Posts extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'limit' ); ?>"><code><?php _e('Limit','bon-toolkit'); ?></code></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" value="<?php echo esc_attr( $instance['limit'] ); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'display_thumb' ); ?>"><code><?php _e('Display Thumbnail','bon-toolkit'); ?></code></label> 
+			<select class="widefat" id="<?php echo $this->get_field_id( 'order' ); ?>" name="<?php echo $this->get_field_name( 'display_thumb' ); ?>">
+				<?php foreach ( $opts as $option_value => $option_label ) { ?>
+					<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $instance['display_thumb'], $option_value ); ?>><?php echo esc_html( $option_label ); ?></option>
+				<?php } ?>
+			</select>
 		</p>
 
 		<p>

@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.8.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,8 +108,15 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Fix Checkbox Options
 = v1.1.8 - March 18th, 2014 =
 * Fix Post Content h1 Tag on non homepage pages for SEO improvement
-= v1.1.9 - April 11th, 2014 =
+= v1.1.9 - April 11st, 2014 =
 * Added Color Callback to contact form
+= v.1.2.0 - May 22nd, 2014 =
+* Removed Post Type Icon Settings
+* Added ID column to Featured Slider table
+* Update font awesome icon to v4
+* Update all font awesome default prefix
+* Remove font awesome prefix options
+* Update tinymce shortcode button
 
 
 ==Installation==

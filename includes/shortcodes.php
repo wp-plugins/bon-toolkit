@@ -49,6 +49,7 @@ class BON_Toolkit_Shortcodes {
         add_shortcode('bt-toggle', array( $this, 'toggle_shortcode' ));
         add_shortcode('bt-alert', array( $this, 'alert_shortcode' ));
         add_shortcode('bt-button', array( $this, 'button_shortcode' ));
+        add_shortcode('bt-icon', array( $this, 'icon_shortcode' ));
         
         if ( function_exists('shortcode_exists') && !shortcode_exists( 'entry-published' ) ) {
             add_shortcode('entry-published', array( $this, 'entry_published_shortcode' ));
@@ -108,6 +109,7 @@ class BON_Toolkit_Shortcodes {
         extract( shortcode_atts( array(
             'direction' => '',
             'color' => 'orange',
+            'style' => 'light',
         ), $attr ) );
 
         preg_match_all( '/bt-tab title="([^\"]+)"/i', $content, $matches, PREG_OFFSET_CAPTURE );
@@ -118,24 +120,34 @@ class BON_Toolkit_Shortcodes {
         $output = '';
 
         if( count($tab_titles) ){
-            $output .= '<section class="bon-toolkit-tabs '.$color. ' ' .$direction.'"><nav class="tab-nav">';
+
+            $tab_nav = '<nav class="tab-nav">';
 
             $i = 0;
             foreach( $tab_titles as $tab ) {
               
-                $output .= '<a class="';
+                $tab_nav .= '<a class="';
                 if($i== 0 ) {
-                    $output .= 'active';
+                    $tab_nav .= 'active';
                 }
-                $output .= '" href="#tab-target-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab[0] ) . '" >' . $tab[0] . '</a>';
+                $tab_nav .= '" href="#tab-target-' . $GLOBALS['tabs_count'] . '-' . sanitize_title( $tab[0] ) . '" >' . $tab[0] . '</a>';
                 
                 $i++;
             }
-            $output .= '</nav>';
+            $tab_nav .= '</nav>';
 
-            $output .= '<div class="tab-contents">';
+
+            $output .= '<section class="bon-toolkit-tabs '.$color. ' ' .$direction.'">';
+            if( $direction != 'tab-bottom' ) {
+                $output .= $tab_nav;
+            }
+            $output .= '<div class="tab-contents '.$style.'">';
             $output .= do_shortcode( $content );
-            $output .= '</div></section>';
+            $output .= '</div>';
+            if( $direction == 'tab-bottom' ) {
+                $output.= $tab_nav;
+            }
+            $output .= '</section>';
 
         } else {
             $output .= do_shortcode( $content );
@@ -265,10 +277,25 @@ class BON_Toolkit_Shortcodes {
             'color' => 'grey',
             'style' => 'grad',
             'size' => 'small',
+            'block' => '',
             'type' => 'round'
         ), $attr));
+            
+        $block_cls = '';
+
+        if( $block == 'yes') {
+            $block_cls = 'block';
+        }
+       return '<a target="'.$target.'" class="bon-toolkit-button '.$size.' '.$style.' '.$color.' '. $block_cls .' '. $type .'" href="'.$url.'">' . do_shortcode($content) . '</a>';
+    }
+
+    function icon_shortcode( $attr, $content = null ) {
+        extract(shortcode_atts(array(
+            'size'   => '',
+            'icon' => '',
+        ), $attr));
         
-       return '<a target="'.$target.'" class="bon-toolkit-button '.$size.' '.$style.' '.$color.' '. $type .'" href="'.$url.'">' . do_shortcode($content) . '</a>';
+       return '<i class="bonicons ' . $icon . ' ' . $size . '"></i>';
     }
 
    

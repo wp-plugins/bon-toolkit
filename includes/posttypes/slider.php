@@ -21,7 +21,10 @@ if( !function_exists('bon_toolkit_setup_slider_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('Slider', array( 'show_in_nav_menus' => false, 'exclude_from_search' => true, 'supports' => array('editor','title', 'page-attributes'), 'public' => false, 'menu_position' => 4 ));
+		$name = __('Slider', 'bon-toolkit');
+		$plural = __('Sliders', 'bon-toolkit');
+
+		$cpt->create('Slider', array( 'menu_icon' => 'dashicons-slides', 'show_in_nav_menus' => false, 'exclude_from_search' => true, 'supports' => array('editor','title', 'page-attributes'), 'public' => false, 'menu_position' => 4 ), array(), $name, $plural );
 
 		$meta_fields = array(
 
@@ -75,20 +78,47 @@ if( !function_exists('bon_toolkit_setup_slider_post_type') ) {
 	
 }
 
-/*
- * Adding Slider Icon to WordPress Menu
- */
-if( !function_exists('bon_toolkit_setup_slider_icon') ) {
-	
-	function bon_toolkit_setup_slider_icon($input) {
-	
-		$input['slider'] = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon-slide.png'; 
 
-		return $input;
-	}
+/**
+ * 
+ * Defining new table column in All Quizzes View
+ * 
+ **/
+if( !function_exists('bon_toolkit_slider_custom_columns') ) {
 
-	add_filter('bon_toolkit_filter_post_type_icon', 'bon_toolkit_setup_slider_icon');
+	function bon_toolkit_slider_custom_columns($columns){  
+
+	        $columns = array(  
+	            "cb" => "<input type=\"checkbox\" />",
+	            "id" => __('Slide ID', 'bon-toolkit' ),  
+	            "title" => __( 'Quiz Title','bon-toolkit' ),
+	            "date" => __( 'Date','bon-toolkit' )
+	        );  
+	  
+	        return $columns;  
+	}   
+
+	add_filter("manage_edit-slider_columns", "bon_toolkit_slider_custom_columns");
 
 }
 
+/**
+ * 
+ * Adding output to new table column in All Quizzes View
+ * 
+ **/
+if( !function_exists('bon_toolkit_slider_manage_columns') ) {
+	
+	function bon_toolkit_slider_manage_columns($name) {
+		global $post;
+		switch ($name) {
+			case 'id':
+				echo $post->ID;
+				break;
+		}
+	}
+
+	add_action('manage_posts_custom_column',  'bon_toolkit_slider_manage_columns');
+
+}
 ?>

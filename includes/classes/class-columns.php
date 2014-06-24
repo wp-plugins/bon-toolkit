@@ -8,6 +8,9 @@
  * @since 1.0.0
  *
  */
+
+add_filter( 'bon_toolkit_column_content_filter', 'do_shortcode' );
+
 class BON_Toolkit_Columns {
 
 	/**
@@ -40,7 +43,7 @@ class BON_Toolkit_Columns {
 	 *
 	 * @var array()
 	 */
-	public $allowed_grids = array( 2, 3, 4, 5, 12 );
+	//public $allowed_grids = array( 2, 3, 4, 5, 12 );
 
 	/**
 	 * @var string
@@ -105,9 +108,14 @@ class BON_Toolkit_Columns {
 		$defaults = apply_filters(
 			'bon_toolkit_column_default_attr_filter',
 			array(
-				'grid'  => $this->grid,
-				'span'  => 1,
-				'push'  => 0,
+				//'grid'  => $this->grid,
+				'span' => 1,
+				'offset' => 0,
+				'md_span' => 0,
+				'md_offset' => 0,
+				'sm_span' => 1,
+				'sm_offset' => 0,
+				'incomplete' => false,
 				'class' => ''
 			)
 		);
@@ -119,25 +127,49 @@ class BON_Toolkit_Columns {
 		$attr = apply_filters( 'bon_toolkit_column_attr_filter', $attr );
 
 		/* Allow devs to overwrite the allowed grids. */
-		$this->allowed_grids = apply_filters( 'bon_toolkit_column_allowed_grid_filter', $this->allowed_grids );
+		//$this->allowed_grids = apply_filters( 'bon_toolkit_column_allowed_grid_filter', $this->allowed_grids );
 
 		/* Make sure the grid is in the allowed grids array. */
-		if ( $this->is_first && in_array( $attr['grid'], $this->allowed_grids ) )
-			$this->grid = absint( $attr['grid'] );
+		//if ( $this->is_first && in_array( $attr['grid'], $this->allowed_grids ) )
+			//$this->grid = absint( $attr['grid'] );
 
 		/* Span cannot be greater than the grid. */
 		$attr['span'] = ( $this->grid >= $attr['span'] ) ? absint( $attr['span'] ) : 1;
+		$attr['md_span'] = ( $this->grid >= $attr['md_span'] ) ? absint( $attr['md_span'] ) : 0;
+		$attr['sm_span'] = ( $this->grid >= $attr['sm_span'] ) ? absint( $attr['sm_span'] ) : 0;
 
-		/* The push argument should always be less than the grid. */
-		$attr['push'] = ( $this->grid > $attr['push'] ) ? absint( $attr['push'] ) : 0;
+		/* The offset argument should always be less than the grid. */
+		$attr['offset'] = ( $this->grid > $attr['offset'] ) ? absint( $attr['offset'] ) : 0;
+		$attr['md_offset'] = ( $this->grid > $attr['md_offset'] ) ? absint( $attr['md_offset'] ) : 0;
+		$attr['sm_offset'] = ( $this->grid > $attr['sm_offset'] ) ? absint( $attr['sm_offset'] ) : 0;
 
 		/* Add to the total $span. */
-		$this->span = $this->span + $attr['span'] + $attr['push'];
+		$this->span = $this->span + $attr['span'] + $attr['offset'];
 
 		/* Column classes. */
-		$column_classes[] = 'bon-toolkit-col';
-		$column_classes[] = "column-span-{$attr['span']}";
-		$column_classes[] = "column-push-{$attr['push']}";
+		$column_classes[] = 'bt-col';
+		//$column_classes[] = "column-span-{$attr['span']}";
+		//$column_classes[] = "column-push-{$attr['push']}";
+		
+		$column_classes[] = "bt-col-lg-{$attr['span']}";
+
+		if( !empty( $attr['md_span'] ) ) 
+			$column_classes[] = "bt-col-md-{$attr['md_span']}";
+		
+		if( !empty( $attr['sm_span'] ) )
+			$column_classes[] = "bt-col-sm-{$attr['sm_span']}";
+
+		if( !empty( $attr['offset'] ) )
+			$column_classes[] = "bt-col-off-lg-{$attr['offset']}";
+
+		if( !empty( $attr['md_offset'] ) )
+			$column_classes[] = "bt-col-off-md-{$attr['md_offset']}";
+
+		if( !empty( $attr['sm_offset'] ) )
+			$column_classes[] = "bt-col-off-sm-{$attr['sm_offset']}";
+
+		if( $attr['incomplete'] )
+			$column_classes[] = "end";
 
 		/* Add user-input custom class(es). */
 		if ( !empty( $attr['class'] ) ) {
@@ -148,13 +180,13 @@ class BON_Toolkit_Columns {
 
 		/* Add the 'column-first' class if this is the first column. */
 		if ( $this->is_first )
-			$column_classes[] = 'column-first';
+			$column_classes[] = 'bt-col-first';
 
 		/* If the $span property is greater than (shouldn't be) or equal to the $grid property. */
 		if ( $this->span >= $this->grid ) {
 
 			/* Add the 'column-last' class. */
-			$column_classes[] = 'column-last';
+			$column_classes[] = 'bt-col-last';
 
 			/* Set the $is_last property to true. */
 			$this->is_last = true;
@@ -175,7 +207,8 @@ class BON_Toolkit_Columns {
 		if ( $this->is_first ) {
 
 			/* Row classes. */
-			$row_classes = array( 'bon-toolkit-column-grid', "column-grid-{$this->grid}" );
+			//$row_classes = array( 'bon-toolkit-column-grid', "column-grid-{$this->grid}" );
+			$row_classes = array( 'bt-col-row' );
 			$row_classes = apply_filters( 'bon_toolkit_column_row_class_filter', $row_classes, $attr, $object_vars );
 			$row_class = join( ' ', array_map( 'sanitize_html_class', array_unique( $row_classes ) ) );
 

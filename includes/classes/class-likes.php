@@ -82,6 +82,7 @@ class BON_Toolkit_Likes {
 	function load() {
     	    
 		global $post;
+		
 	    $output = $this->create($post->ID);
 
 	    $class = 'bon-toolkit-likes';
@@ -115,7 +116,7 @@ class BON_Toolkit_Likes {
 	                add_post_meta($post_id, '_bt_likes', $likes, true);
 	            }
 
-	            return '<i class="bt-heart"></i><span class="bt-likes-count">'. $likes .'</span>';
+	            return '<i class="bt-icon-heart"></i><span class="bt-likes-count">'. $likes .'</span>';
 
 	        break;
 	            
@@ -129,7 +130,7 @@ class BON_Toolkit_Likes {
 	            update_post_meta($post_id, '_bt_likes', $likes);
 	            setcookie('bt_likes_'. $post_id, $post_id, time()*20, '/');
 	            
-	            return '<i class="bt-heart"></i><span class="bt-likes-count">'. $likes .'</span>';
+	            return '<i class="bt-icon-heart"></i><span class="bt-likes-count">'. $likes .'</span>';
 
 	        break;
 	    

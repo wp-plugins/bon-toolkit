@@ -309,7 +309,7 @@ class Bon_Toolkit_Social_Counter {
 
 		$output .= "<a class='{$type}' onclick='{$onclick}' href='{$sharer_url_string}' title='{$title_attr}' rel='nofollow'>";
 
-		$output .= "<i class='icon bt-{$type}'></i>";
+		$output .= "<i class='icon bt-icon-{$type}'></i>";
 
 		$output .= "</a>";
 

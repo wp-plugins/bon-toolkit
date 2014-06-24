@@ -15,14 +15,16 @@ if( !function_exists('bon_toolkit_setup_quiz_post_type') ) {
 
 	function bon_toolkit_setup_quiz_post_type() {
 
-
 		global $bon;
 
 		$prefix = bon_toolkit_get_prefix();
 
 		$cpt = $bon->cpt();
-
-		$cpt->create('Quiz', array( 'label' => 'Quizzes', 'exclude_from_search' => true, 'show_in_nav_menus' => false, 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ), array('menu_name' => 'Quizzes', 'all_items' => 'All Quizzes', 'singular_name' => 'Quiz'));
+		
+		$name = __('Quiz', 'bon-toolkit');
+		$plural = __('Quizzes','bon-toolkit');
+		
+		$cpt->create('Quiz', array( 'menu_icon' => 'dashicons-clipboard', 'exclude_from_search' => true, 'show_in_nav_menus' => false, 'supports' => array('editor', 'title', 'thumbnail'), 'menu_position' => 20 ), array(), $name, $plural );
 
 		$meta_fields = array(
 
@@ -31,9 +33,9 @@ if( !function_exists('bon_toolkit_setup_quiz_post_type') ) {
 					'id' => $prefix.'quiz_settings',
 					'type' => 'repeatable',
 					'sanitizer' => array( 
-						'option' => 'sanitize_textarea',
 						'question' => 'sanitize_text_field',
 						'answer' => 'sanitize_text_field',
+						'options' => 'sanitize_textarea',
 					),
 					'repeatable_fields' => array(
 						
@@ -108,23 +110,6 @@ if( !function_exists('bon_toolkit_add_quiz_metabox') ) {
 
 }
 
-/*
- * 
- * Setup quiz icon in the wordpress menu
- *
- */
-if( !function_exists('bon_toolkit_setup_quiz_icon') ) {
-
-	function bon_toolkit_setup_quiz_icon($input) {
-		
-		$input['quiz'] = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon-quiz.png'; 
-
-		return $input;
-	}
-
-	add_filter('bon_toolkit_filter_post_type_icon', 'bon_toolkit_setup_quiz_icon');
-
-}
 
 /**
  * 

@@ -282,11 +282,7 @@ if( !function_exists('bon_toolkit_video') ) {
 		global $bontoolkit;
 
 		$awe = BON_TOOLKIT_FONT_AWESOME;
-
-		if(!$awe) {
-			$awe = 'awe-';
-		}
-
+		
 		$o = '<div class="bon-toolkit-video">';
 		if(!empty($embed)) {
 	    	$o .= '<div class="bon-toolkit-video-embed">';

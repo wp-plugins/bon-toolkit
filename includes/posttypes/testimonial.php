@@ -21,7 +21,10 @@ if( !function_exists('bon_toolkit_setup_testimonial_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('Testimonial', array( 'public' => false, 'exclude_from_search' => true, 'show_in_nav_menus' => false, 'supports' => array('editor','title'), 'menu_position' => 20 ));
+		$name = __('Testimonial', 'bon-toolkit');
+		$plural = __('Testimonials', 'bon-toolkit');
+
+		$cpt->create('Testimonial', array( 'menu_icon' => 'dashicons-format-status', 'public' => false, 'exclude_from_search' => true, 'show_in_nav_menus' => false, 'supports' => array('editor','title'), 'menu_position' => 20 ), array(), $name, $plural );
 
 		$meta_fields = array(
 
@@ -68,22 +71,6 @@ if( !function_exists('bon_toolkit_setup_testimonial_post_type') ) {
 	}
 
 	add_action('init','bon_toolkit_setup_testimonial_post_type', 1);
-
-}
-
-/*
- * Setup Testimonial Icon for WordPress Menu
- */
-if( !function_exists('bon_toolkit_setup_testimonial_icon') ) {
-
-	function bon_toolkit_setup_testimonial_icon($input) {
-	
-		$input['testimonial'] = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon-testi.png'; 
-
-		return $input;
-	}
-
-	add_filter('bon_toolkit_filter_post_type_icon', 'bon_toolkit_setup_testimonial_icon');
 
 }
 

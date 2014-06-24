@@ -20,11 +20,14 @@ if( !function_exists('bon_toolkit_setup_review_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('Review', array('supports' => array('editor','title', 'thumbnail','excerpt','comments','custom-fields', 'post-formats'), 'menu_position' => 4 ));
-	    
-		$cpt->add_taxonomy("Review Category", array('hierarchical' => true, 'label' => 'Categories', 'labels' => array('menu_name' => 'Categories') ) );
+		$name = __('Review', 'bon-toolkit');
+		$plural = __('Reviews', 'bon-toolkit');
 
-		$cpt->add_taxonomy("Review Tag", array('hierarchical' => false, 'label' => 'Tags', 'labels' => array('menu_name' => 'Tags') ) );
+		$cpt->create('Review', array( 'has_archive' => true, 'menu_icon' => 'dashicons-awards', 'supports' => array('editor','title', 'thumbnail','excerpt','comments','custom-fields', 'post-formats'), 'menu_position' => 4 ), array(), $name, $plural );
+	    
+		$cpt->add_taxonomy("Review Category", array('hierarchical' => true, 'label' => __('Review Categories','bon-toolkit'), 'labels' => array('menu_name' => __('Categories', 'bon-toolkit') ) ) );
+
+		$cpt->add_taxonomy("Review Tag", array('hierarchical' => false, 'label' => __('Review Tags','bon-toolkit'), 'labels' => array('menu_name' => __('Tags', 'bon-toolkit' ) ) ) );
 
 		$meta_fields = array(
 
@@ -35,6 +38,7 @@ if( !function_exists('bon_toolkit_setup_review_post_type') ) {
 				'type'	=> 'repeatable',
 				'sanitizer' => array( 
 					'criteria' => 'sanitize_text_field',
+					'rating' => 'intval',
 				),
 				'repeatable_fields' => array(
 					
@@ -86,22 +90,6 @@ if( !function_exists('bon_toolkit_setup_review_post_type') ) {
 
 	}
 	add_action('init','bon_toolkit_setup_review_post_type', 1);
-}
-
-/*
- * Adding Review Icon for WordPress Menu
- */
-if( !function_exists('bon_toolkit_setup_review_icon') ) {
-
-	function bon_toolkit_setup_review_icon($input) {
-		
-		$input['review'] = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon-review.png'; 
-
-		return $input;
-	}
-
-	add_filter('bon_toolkit_filter_post_type_icon', 'bon_toolkit_setup_review_icon');
-
 }
 
 ?>

@@ -23,6 +23,7 @@ class BON_Toolkit_Tinymce_Init {
 	 */
 	function init()
 	{
+		add_action( 'admin_print_styles', array( $this, 'print_styles' ) );
 
 		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )
 			return;
@@ -59,6 +60,11 @@ class BON_Toolkit_Tinymce_Init {
 	{
 		array_push( $buttons, "|", 'bon_toolkit_button' );
 		return $buttons;
+	}
+
+	function print_styles() {
+		$icon = trailingslashit( BON_TOOLKIT_IMAGES ) . 'icon.png';
+		echo '<style>.mce-ico.mce-i-bt-shortcode-icon{ background: url("'.$icon.'") no-repeat; }</style>';
 	}
 
 }
