@@ -449,7 +449,7 @@ class BON_Toolkit_Page_Builder {
 				break;
 				case "repeatable":
 				?>
-				<div class="bon-builder-meta-body">
+				<div class="bon-builder-elements-meta-body">
 					
 					<div class="bon-builder-meta-repeat">
 						<input type="hidden" id="repeat-count" name="<?php echo $repeat_num; ?>[]" value="<?php echo empty($value)? 1: count($value); ?>" />
@@ -507,12 +507,25 @@ class BON_Toolkit_Page_Builder {
 				break;
 
 				case "icon" : ?>
+					<?php if( function_exists( 'bon_icon_select_field') ) : ?>
 					<div class="bon-builder-meta-body" id="bon-builder-meta-body-<?php echo $id; ?>">
 						<label><?php echo $title; ?></label>
 						<div class="bon-builder-meta-input">
 						<?php echo bon_icon_select_field( $id, $name, '#bon-builder-meta-modal #bon-builder-meta-body-'.$id, esc_attr( $value ) ); ?>
 						</div>
 					</div>
+					<?php else: ?>
+					<div class="bon-builder-meta-body">
+						<label><?php echo $title; ?></label>
+						<div class="bon-builder-meta-input">
+							<input type="text" class="<?php echo $class; ?>" name="<?php echo $name; ?>" value="<?php echo $value; ?>" />
+							<?php if(isset($description)){ ?>
+								<span class="bon-builder-meta-description"><?php echo $description; ?> </span>
+							<?php } ?>
+						</div>
+					</div>
+					<?php endif; ?>
+
 				<?php
 				break;
 			}

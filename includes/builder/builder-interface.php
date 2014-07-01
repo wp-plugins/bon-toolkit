@@ -794,6 +794,9 @@ class BON_Toolkit_Builder_Interface {
 
     public function process_icon( $icon ) {
 
+        if( !function_exists( 'bon_icon_select_field') ) 
+            return $icon;
+
         if( substr( $icon, 0, 4 ) == 'awe-' ) {
             $icon = str_replace( 'awe-', 'bi-', $icon );
         }

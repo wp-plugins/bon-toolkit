@@ -4,8 +4,8 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=d%2en
 Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
-Tested up to: 3.8.2
-Stable tag: 1.2.0
+Tested up to: 3.9.1
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,9 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 * Update all font awesome default prefix
 * Remove font awesome prefix options
 * Update tinymce shortcode button
+
+= v.1.2.1 - July 7th, 2014 =
+Provide backward compatibility with bonframework version below 1.2
 
 
 ==Installation==

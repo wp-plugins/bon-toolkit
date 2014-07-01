@@ -392,7 +392,7 @@ function bon_toolkit_set_options() {
 	if( current_theme_supports('bon-page-builder') ) :
 
 		$builder = get_theme_support( 'bon-page-builder' );
-		$std = array();
+		$std = array( 'page' );
 
 		if( is_array($builder[0] ) ) {
 			$std = $builder[0];
