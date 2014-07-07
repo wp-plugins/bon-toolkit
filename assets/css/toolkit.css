@@ -929,18 +929,19 @@ div.contact-form-error,div.sending-result {
     font-size: 13px;
     color: #fff;
     background-color: #333;
+    line-height: 1;
 }
 
 .social-share-button-count:before {
-    border-width: 6px 8px 6px 0;
+    border-width: 5px 6px 5px 0;
     border-style: solid;
     border-color: transparent #333 transparent transparent;
     content: "";
     height: 0;
-    left: -8px;
+    left: -6px;
     position: absolute;
     top: 0;
-    margin-top: 6px;
+    margin-top: 5px;
     width: 0;
 }
 

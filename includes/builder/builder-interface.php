@@ -54,7 +54,7 @@ class BON_Toolkit_Builder_Interface {
     /**
      * @var array
      */
-    public $supported_post_type = array();
+   // public $supported_post_type = array();
 
 
 	/**
@@ -68,9 +68,9 @@ class BON_Toolkit_Builder_Interface {
 		/* Register shortcodes on 'init'. */
         $this->builder_options = bon_toolkit_get_builder_options();
 
-        $this->supported_post_type = $bontoolkit->builder_post_types;
+       // $this->supported_post_type = $bontoolkit->builder_post_types;
 
-		add_filter('the_content', array(&$this, 'init'));
+		add_filter('the_content', array(&$this, 'init'), 1000);
 
 	}
 
@@ -89,7 +89,7 @@ class BON_Toolkit_Builder_Interface {
             return $content;
         } 
         
-		if( !in_array( $post->post_type, $this->supported_post_type ) ) {
+		if( !in_array( $post->post_type, $bontoolkit->builder_post_types ) ) {
 			return $content;
 		}
 

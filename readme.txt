@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 3.9.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -120,6 +120,10 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 
 = v.1.2.1 - July 7th, 2014 =
 Provide backward compatibility with bonframework version below 1.2
+
+= v.1.2.2 - July 8th, 2014 =
+Fix Builder instance for supported post type
+
 
 
 ==Installation==
