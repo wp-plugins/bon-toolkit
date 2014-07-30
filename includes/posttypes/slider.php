@@ -91,7 +91,7 @@ if( !function_exists('bon_toolkit_slider_custom_columns') ) {
 	        $columns = array(  
 	            "cb" => "<input type=\"checkbox\" />",
 	            "id" => __('Slide ID', 'bon-toolkit' ),  
-	            "title" => __( 'Quiz Title','bon-toolkit' ),
+	            "title" => __( 'Slide Title','bon-toolkit' ),
 	            "date" => __( 'Date','bon-toolkit' )
 	        );  
 	  

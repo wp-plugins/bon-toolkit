@@ -113,9 +113,9 @@ function bon_toolkit_render_social_counter($output) {
 		$social_counter = new BON_Toolkit_Social_Counter($defaults);
 
 		if( $location == 'before_post' ) {
-			add_filter('the_content', array($social_counter, 'render_before'), 50, 1);
+			add_filter('the_content', array($social_counter, 'render_before'), 999, 1);
 		} else if( $location == 'after_post' ) {
-			add_filter('the_content',  array($social_counter, 'render_after'), 50, 1);
+			add_filter('the_content',  array($social_counter, 'render_after'), 999, 1);
 		}
 
 	}	

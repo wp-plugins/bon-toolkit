@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.2.2
+Version: 1.2.3
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.2.2';
+		public $version = '1.2.3';
 
 		/**
 		 * @var string
@@ -333,9 +333,8 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				);
 
 
-				wp_register_script( 'googlemaps3', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, false, false );
-				//wp_enqueue_script( 'googlemaps3' );
-				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery', 'googlemaps3'), '1.0.0', true );
+				wp_register_script( 'googlemap3', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, false, false );
+				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery', 'googlemap3'), '1.0.0', true );
 
 				if( !wp_script_is( 'fitvids', 'registered' )) {
 					wp_register_script( 'fitvids', trailingslashit( BON_TOOLKIT_JS ) . 'jquery.fitvids.js', array('jquery'), '1.0.2', true );
@@ -653,10 +652,10 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				$builder_options = isset( $bon_toolkit_options['page_builder_post_type'] ) ? $bon_toolkit_options['page_builder_post_type'] : '';
 
 				$builder_support = get_theme_support( 'bon-page-builder' );
-			
-				if( is_array( $builder_options ) && !empty( $builder_options ) ) {
+				
+				if( is_array( $builder_options[0] ) && !empty( $builder_options[0] ) ) {
 
-					$this->builder_post_types = $builder_options;
+					$this->builder_post_types = $builder_options[0];
 
 				} else {
 

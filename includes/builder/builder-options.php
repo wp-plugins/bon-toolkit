@@ -154,8 +154,14 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['post'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['post'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             )
         ));
             
@@ -184,6 +190,13 @@ function bon_toolkit_get_builder_options()
                     'name' => $prefix . $suffix['contact_form'] . 'margin',
                     'std' => $default_margin,
                     'type' => 'text'
+                ),
+                'element_class' => array(
+                    'title' => __('Element Class', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['contact_form'] . 'element_class',
+                    'std' => '',
+                    'type' => 'text',
+                    'description' => __('Separate class with space.','bon-toolkit')
                 ),
                 'builder_icon' => 'bt-envelope-alt',
                 'default_size' => 'span12',
@@ -247,6 +260,13 @@ function bon_toolkit_get_builder_options()
                     'std' => $default_margin,
                     'type' => 'text'
                 ),
+                'element_class' => array(
+                    'title' => __('Element Class', 'bon-toolkit'),
+                    'name' => $prefix . $suffix['map'] . 'element_class',
+                    'std' => '',
+                    'type' => 'text',
+                    'description' => __('Separate class with space.','bon-toolkit')
+                ),
                 'default_size' => 'span12',
                 'allowed_size' => array(
                         'span6' => '1/2',
@@ -280,6 +300,13 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['text_block'] . 'margin',
                 'std' => $default_margin,
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['text_block'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
             'default_size' => 'span3',
             'allowed_size' => array(
@@ -326,6 +353,13 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['image_block'] . 'margin',
                 'std' => $default_margin,
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
             'default_size' => 'span3',
             'allowed_size' => array(
@@ -388,6 +422,13 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['service'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
+            ),
             'default_size' => 'span4',
             'allowed_size' => array(
                     'span3'=>'1/4',
@@ -425,8 +466,14 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['post_content'] . 'margin',
                 'std' => $default_margin,
-                
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['post_content'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
             'default_size' => 'span4',
             'allowed_size' => array(
@@ -483,6 +530,13 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['call_to_action'] . 'margin',
                 'std' => $default_margin,
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['call_to_action'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
             'default_size' => 'span12',
             'allowed_size' => array(
@@ -554,6 +608,13 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['tab'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
+            ),
             'default_size' => 'span4',
             'allowed_size' => array(
                     'span3'=>'1/4',
@@ -604,6 +665,13 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['toggle'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
+            ),
             'default_size' => 'span4',
             'allowed_size' => array(
                     'span3'=>'1/4',
@@ -636,6 +704,13 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['divider'] . 'margin',
                 'std' => $default_margin,
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['divider'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
              'default_size' => 'span12',
             'allowed_size' => array(
@@ -684,6 +759,13 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['alert'] . 'margin',
                 'std' => $default_margin,
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['alert'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
             'default_size' => 'span12',
             'allowed_size' => array(
@@ -754,7 +836,13 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
-
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['video'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
+            ),
             'default_size' => 'span4',
             'allowed_size' => array(
                     'span3'=>'1/4',
@@ -803,7 +891,13 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
-
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['twitter'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
+            ),
             'default_size' => 'span4',
             'allowed_size' => array(
                     'span3'=>'1/4',
@@ -847,7 +941,13 @@ function bon_toolkit_get_builder_options()
                 'std' => $default_margin,
                 'type' => 'text'
             ),
-
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['flickr'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
+            ),
             'default_size' => 'span3',
             'allowed_size' => array(
                     'span3'=>'1/4',
@@ -881,6 +981,13 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['widget'] . 'margin',
                 'std' => $default_margin,
                 'type' => 'text'
+            ),
+            'element_class' => array(
+                'title' => __('Element Class', 'bon-toolkit'),
+                'name' => $prefix . $suffix['widget'] . 'element_class',
+                'std' => '',
+                'type' => 'text',
+                'description' => __('Separate class with space.','bon-toolkit')
             ),
             'default_size' => 'span4',
             'allowed_size' => array(

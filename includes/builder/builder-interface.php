@@ -69,8 +69,7 @@ class BON_Toolkit_Builder_Interface {
         $this->builder_options = bon_toolkit_get_builder_options();
 
        // $this->supported_post_type = $bontoolkit->builder_post_types;
-
-		add_filter('the_content', array(&$this, 'init'), 1000);
+		add_filter('the_content', array( &$this, 'init' ) );
 
 	}
 
@@ -99,6 +98,10 @@ class BON_Toolkit_Builder_Interface {
 			return $content;
 		}
 
+        if( !is_singular() ) {
+            return $content;
+        }
+        
 		return $this->render();
 	}
 
@@ -111,12 +114,14 @@ class BON_Toolkit_Builder_Interface {
 
 		/* Set up the default variables. */
 		$output = '';
-		$row_classes = apply_filters('bon_tookit_builder_render_row_class', array('row'));
+		
 		$use_placement_class = apply_filters('bon_toolkit_builder_use_placement_class', true);
 
 		foreach($this->builder_metas as $meta) {
 
 			foreach($meta as $key => $value) {
+
+                $row_classes = apply_filters('bon_tookit_builder_render_row_class', array('row'), $key, $value );
 
 				$value['classes'] = array();
                 $value['column_classes'] = apply_filters('bon_toolkit_builder_render_column_class', array($value['default_size']) );
@@ -507,7 +512,7 @@ class BON_Toolkit_Builder_Interface {
 
         $o .= $this->render_header('post_content', $header);
         $o .= '<article class="post-content">';
-        $o .= wptexturize( wpautop( do_shortcode( get_the_content($post->ID) ) ) );
+        $o .= wptexturize( wpautop( do_shortcode( get_the_content( $post->ID ) ) ) );
         $o .= '</article>';
         return $o;
     }
@@ -532,7 +537,7 @@ class BON_Toolkit_Builder_Interface {
         
         $o .= $this->render_header('text_block', $header);
         $o .= '<div class="text-block-content">';
-        $o .= $content;
+        $o .=  wptexturize( wpautop( do_shortcode( $content ) ) );
         $o .= '</div>';
         return $o;
     }
