@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.2.3
+Version: 1.2.4
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.2.3';
+		public $version = '1.2.4';
 
 		/**
 		 * @var string
@@ -652,10 +652,9 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				$builder_options = isset( $bon_toolkit_options['page_builder_post_type'] ) ? $bon_toolkit_options['page_builder_post_type'] : '';
 
 				$builder_support = get_theme_support( 'bon-page-builder' );
-				
-				if( is_array( $builder_options[0] ) && !empty( $builder_options[0] ) ) {
+				if( is_array( $builder_options ) && !empty( $builder_options ) ) {
 
-					$this->builder_post_types = $builder_options[0];
+					$this->builder_post_types = $builder_options;
 
 				} else {
 
