@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 4.0
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -124,6 +124,9 @@ Provide backward compatibility with bonframework version below 1.2
 = v.1.2.2 - July 8th, 2014 =
 Fix Builder instance for supported post type
 
+= v.1.2.5 - September 8th, 2014 =
+Returning page builder support for other post type
+Add conditional to the google json return
 
 
 ==Installation==

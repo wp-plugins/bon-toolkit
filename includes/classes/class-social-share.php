@@ -347,8 +347,12 @@ class Bon_Toolkit_Social_Counter {
 	    if (is_wp_error($json_string)){
 	        return "0";            
 	    } else {       
-	        $json = json_decode($json_string['body'], true);                   
-	        return intval( $json['result']['metadata']['globalCounts']['count'] );
+	        $json = json_decode($json_string['body'], true);
+	        if( isset( $json['result'] ) ) {              
+	        	return intval( $json['result']['metadata']['globalCounts']['count'] );
+	    	} else {
+	    		return "0";
+	    	}
 	    }
 	}
 
