@@ -82,7 +82,9 @@ class BON_Toolkit_Shortcodes {
                         'zoom'  => '14',
                         'color' => 'red',
                         'height' => '400px',
-                        'width' => '100%'
+                        'width' => '100%',
+                        'scrollwheel' => true,
+                        'draggable' => true,
                     ), $attr);
 
         $color = 'red';
@@ -93,7 +95,7 @@ class BON_Toolkit_Shortcodes {
 
         $marker = BON_TOOLKIT_IMAGES . '/marker-'.$color.'.png';
 
-        $output = '<div id="'.$instance.'" style="height:'.$attr['height'].'; width:'.$attr['width'].';" data-marker="'.$marker.'" class="bon-toolkit-map '.$color.'" data-latitude="'.$attr['latitude'].'" data-longitude="'.$attr['longitude'].'" data-zoom="'.$attr['zoom'].'"></div>';
+        $output = '<div id="'.$instance.'" style="height:'.$attr['height'].'; width:'.$attr['width'].';" data-marker="'.$marker.'" class="bon-toolkit-map '.$color.'" data-latitude="'.$attr['latitude'].'" data-longitude="'.$attr['longitude'].'" data-zoom="'.$attr['zoom'].'" data-sw="'.$attr['scrollwheel'].'" data-dg="'.$attr['draggable'].'"></div>';
 
         return $output;
     }
