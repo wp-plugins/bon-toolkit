@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.2.6
+Version: 1.2.7
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -17,7 +17,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.2.6';
+		public $version = '1.2.7';
 
 		/**
 		 * @var string
@@ -332,8 +332,9 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					'ajax_url'                         => $this->ajax_url(),
 				);
 
+				$protocol = is_ssl() ? 'https' : 'http';
 
-				wp_register_script( 'googlemap3', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, false, false );
+				wp_register_script( 'googlemap3', "{$protocol}://maps.googleapis.com/maps/api/js?sensor=false", false, false, false );
 				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery', 'googlemap3'), '1.0.0', true );
 
 				if( !wp_script_is( 'fitvids', 'registered' )) {
