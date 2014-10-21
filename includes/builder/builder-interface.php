@@ -128,6 +128,11 @@ class BON_Toolkit_Builder_Interface {
 				$value['classes'] = array_merge($value['column_classes']);
 				$value['classes'][] = 'bon-builder-element-'. str_replace('_', '', $key);
 
+                if( isset( $value['element_class'] ) && !empty($value['element_class'] ) ) {
+                    $element_class = explode( ' ', $value['element_class']);
+                    $value['classes'] = array_merge($value['classes'], $element_class);
+                }
+
                 $value['callback'] = isset($this->builder_options['elements'][$key]['callback']) ? $this->builder_options['elements'][$key]['callback'] : '';
 				$element_size = intval(trim($value['default_size'], 'span'));
 

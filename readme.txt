@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 4.0
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -138,6 +138,9 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 
 = v.1.2.8 - October 16th, 2014 =
 *Added new draggable and scrollwheel parameter to the bt-map shortcode
+
+= v.1.2.9 - October 21st, 2014 =
+*Fix Element class in page builder
 
 ==Installation==
 
