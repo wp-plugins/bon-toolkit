@@ -525,6 +525,15 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['call_to_action'] . 'button_icon',
                 'type' => 'icon'
             ),
+            'button_target' => array(
+                'title' => __('Target To', 'bon-toolkit'),
+                'name' => $prefix . $suffix['call_to_action'] . 'button_target',
+                'type' => 'select',
+                'options' => array(
+                    '_self' => __('Self','bon-toolkit'),
+                    '_blank' => __('Blank','bon-toolkit'),
+                ),
+            ),
             'margin' => array(
                 'title' => __('Bottom Margin', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'margin',

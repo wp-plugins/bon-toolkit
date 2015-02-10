@@ -454,6 +454,7 @@ class BON_Toolkit_Builder_Interface {
         
         extract($value);
        	
+        $target = isset( $value['button_target'] ) ? $value['button_target'] : '';
 
         $icon = '';
         if ($value['button_icon']) {
@@ -463,7 +464,7 @@ class BON_Toolkit_Builder_Interface {
         $o .= '<h2 class="action-title">' . $value['title'] . '</h2>';
         $o .= '<h3 class="action-content subheader">' . $value['subtitle'] . '</h3>';
         $o .= '</div>';
-        $o .= '<div class="panel-button"><a href="' . esc_url( $value['button_link'] ) . '" title="' . $value['button_text'] . '">' . $icon . '<span>' . $value['button_text'] . '</span></a></div>';
+        $o .= '<div class="panel-button"><a target="'.$target.'" href="' . esc_url( $value['button_link'] ) . '" title="' . $value['button_text'] . '">' . $icon . '<span>' . $value['button_text'] . '</span></a></div>';
         $o .= '</div>';
         return $o;
     }

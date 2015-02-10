@@ -97,7 +97,7 @@ class Bon_Toolkit_Widget_Social extends WP_Widget {
 								$icon_class = str_replace('_icon', '', $param);
 							
 							?>
-							<a href="<?php echo $instance[$param]; ?>" class="<?php echo $icon_class; ?>" title="<?php echo ucfirst($icon_class); ?>"><i class="bt-icon-<?php echo $icon_class; ?>"></i></a>
+							<a href="<?php echo $instance[$param]; ?>" target="blank" class="<?php echo $icon_class; ?>" title="<?php echo ucfirst($icon_class); ?>"><i class="bt-icon-<?php echo $icon_class; ?>"></i></a>
 							
 							<?php
 							}

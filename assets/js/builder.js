@@ -1,5 +1,5 @@
 jQuery(function ($) {
-    $('#wp-content-editor-tools').find('.wp-switch-editor').click(function () {
+    $('#wp-content-wrap .wp-editor-tabs').find('.wp-switch-editor').click(function () {
         var $$ = $(this);
         $('#wp-content-editor-container, #post-status-info').show();
         $('#bon-toolkit-builder').removeClass('closed').hide();
@@ -24,6 +24,13 @@ jQuery(function ($) {
         var p = $$.attr('id').split('-');
         $('#wp-content-wrap').addClass(p[1] + '-active')
     });
+
+        // WordPress 4.1 changed the float of the tabs. Reorder them here.
+        // After WP 4.3 is released we'll make the new ordering default
+        if( $('body').hasClass('branch-4-1') || $('body').hasClass('branch-4-2') ) {
+            $( '#wp-content-wrap .wp-editor-tabs #content-bon-toolkit-builder' )
+                .appendTo( $( '#wp-content-wrap .wp-editor-tabs' ) );
+        }
     $('#bon-toolkit-builder').insertAfter('#wp-content-editor-container').addClass('wp-editor-container').hide().find('.handlediv').remove().end().find('.hndle').remove().end().prepend($('#bon-builder-action'));
 	$('.bon-builder-add-elem').click(function (e) {
         e.preventDefault();
