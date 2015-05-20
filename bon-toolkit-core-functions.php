@@ -165,6 +165,10 @@ if( !function_exists('bon_toolkit_process_contact_form') ) {
 			die ( json_encode($return_data) );		
 		}
 
+		$phone = '';
+		if( isset( $_POST['phone'] ) ) {
+			$phone = sanitize_text_field( $_POST['phone'] );
+		}
 
 		$subject = esc_html( $_POST['subject'] );
 
@@ -202,6 +206,9 @@ if( !function_exists('bon_toolkit_process_contact_form') ) {
 		$body = "You have received a new contact form message via ".get_bloginfo('name')." \n";
 		$body .= 'Name : ' . $name . " \n";
 		$body .= 'Email : ' . $email . " \n";
+		if( !empty( $phone ) ) {
+			$body .= 'Phone :' . $phone . " \n";
+		}
 		$body .= 'Subject : ' . $subject . " \n";
 		$body .= 'Message : ' . $messages;
 
