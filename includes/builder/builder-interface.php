@@ -570,6 +570,8 @@ class BON_Toolkit_Builder_Interface {
         $o .= $this->render_header('image_block', $header);
         $o .= '<div class="image-block-content">';
 
+        if( !isset( $target ) ) { $target = '_blank'; }
+
         $img = '<img src="'.$src.'" alt="'. ( isset($alt) ? $alt : $header ) .'" />';
 
         if(!empty($link)) {
