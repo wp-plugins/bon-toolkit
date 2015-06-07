@@ -5,7 +5,7 @@ Tags: widgets, icons, retina, social, shortcode
 License: GPLv2 or later
 Requires at least: 3.5.0
 Tested up to: 4.2.2
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -149,6 +149,8 @@ This toolkit was developed to extend the functionality of Bonfirelab themes, how
 = v.1.3.1 - May 22th, 2015 =
 *Allow Contact Form to accept phone parameter
 
+= v.1.3.2 - May 22th, 2015 =
+*Target options for image block link
 
 ==Installation==
 

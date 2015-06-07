@@ -343,6 +343,17 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['image_block'] . 'link',
                 'type' => 'text'
             ),
+            'target' => array(
+                'title' => __('Target', 'bon-toolkit'),
+                'name' => $prefix . $suffix['image_block'] . 'target',
+                'type' => 'select',
+                'options' => array(
+                    '_blank' => __('_blank','bon-toolkit'),
+                    '_self' => __('_self','bon-toolkit'),
+                    '_parent' => __('_parent', 'bon-toolkit'),
+                    '_top' => __('_top', 'bon-toolkit'),
+                ),
+            ),
             'alt' => array(
                 'title' => __('Alt Text', 'bon-toolkit'),
                 'name' => $prefix . $suffix['image_block'] . 'alt',
@@ -530,8 +541,10 @@ function bon_toolkit_get_builder_options()
                 'name' => $prefix . $suffix['call_to_action'] . 'button_target',
                 'type' => 'select',
                 'options' => array(
-                    '_self' => __('Self','bon-toolkit'),
-                    '_blank' => __('Blank','bon-toolkit'),
+                    '_blank' => __('_blank','bon-toolkit'),
+                    '_self' => __('_self','bon-toolkit'),
+                    '_parent' => __('_parent', 'bon-toolkit'),
+                    '_top' => __('_top', 'bon-toolkit'),
                 ),
             ),
             'margin' => array(

@@ -573,7 +573,7 @@ class BON_Toolkit_Builder_Interface {
         $img = '<img src="'.$src.'" alt="'. ( isset($alt) ? $alt : $header ) .'" />';
 
         if(!empty($link)) {
-        	$o .= '<a href="'.esc_url( $link ).'" title="'.$header.'" target="blank">'.$img.'</a>';
+        	$o .= '<a href="'.esc_url( $link ).'" title="'.$header.'" target="'.$target.'">'.$img.'</a>';
         } else {
         	$o .= $img;
         }
