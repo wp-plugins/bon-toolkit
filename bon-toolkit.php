@@ -64,7 +64,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 		/**
 		 * @var array
-		 * 
+		 *
 		 */
 		public $suffix = array();
 
@@ -167,7 +167,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			    // The option hasn't been added yet. We'll add it with $autoload set to 'no'.
 			    $deprecated = null;
 			    $autoload = 'no';
-			    
+
 			    add_option( $this->option_name, $new_val, $deprecated, $autoload );
 
 			}
@@ -180,7 +180,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		}
 
 		// -------------- Include Required File -------------- //
-		public function includes() { 
+		public function includes() {
 
 			if ( ! is_admin() || defined('DOING_AJAX') )
 				$this->frontend_includes();
@@ -253,9 +253,9 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			$this->set_widget_features();
 			$this->include_classes();
-			
+
 			add_action('wp_enqueue_scripts', array(&$this, 'ajax_url'));
-			
+
 		}
 
 		// -------------- Display Error if Framework Not Available -------------- //
@@ -279,11 +279,11 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 		// -------------- Enqueue admin scripts -------------- //
 		public function load_admin_scripts($hook) {
-			
+
 			if( $hook != $this->option_page )
 				return;
-			
-			//Register and enqueue custom admin scripts	
+
+			//Register and enqueue custom admin scripts
 			wp_register_script('bon_toolkit_admin_js', trailingslashit( BON_TOOLKIT_JS ) . 'admin.js', array('jquery','media-upload','thickbox'));
 			wp_enqueue_script('bon_toolkit_admin_js');
 
@@ -292,14 +292,14 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			wp_enqueue_style( 'bon_toolkit_admin_css' );
 
 		}
-		
+
 
 		// -------------- Enqueue front-end scripts and styles into footer -------------- //
 		public function plugin_style() {
 
 			if( !is_admin() ) {
 				$bon_toolkit_options = get_option($this->option_name);
-				
+
 				if ( ! defined( 'BON_TOOLKIT_USE_CSS' ) ) {
 					define( 'BON_TOOLKIT_USE_CSS', $bon_toolkit_options['use_bon_toolkit_css'] == 'yes' ? true : false );
 				}
@@ -307,7 +307,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				if ( ! defined( 'BON_TOOLKIT_USE_FONT_AWESOME' ) ) {
 					define( 'BON_TOOLKIT_USE_FONT_AWESOME', $bon_toolkit_options['use_bon_toolkit_fontawesome'] == 'yes' ? true : false );
 				}
-				
+
 				if ( BON_TOOLKIT_USE_CSS ) {
 					wp_register_style( 'bon_toolkit', trailingslashit( BON_TOOLKIT_CSS ) . 'toolkit.css', false, '1.0.0' );
 					wp_enqueue_style( 'bon_toolkit' );
@@ -320,7 +320,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 				wp_register_style( 'bon_toolkit_font_style', trailingslashit( BON_TOOLKIT_CSS ) . 'bt-social.css', false, '1.0.0' );
 				wp_enqueue_style( 'bon_toolkit_font_style' );
-				
+
 
 				if ( $this->check_options('enable_social_widget') === true ) {
 					wp_register_style( 'bon_toolkit_icon_style', trailingslashit( BON_TOOLKIT_CSS ) . 'social-icon.css', array('bon_toolkit_font_style'), '1.0.0');
@@ -353,18 +353,18 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		}
 
 		// -------------- Build the options form -------------- //
-		public function render_form() { 
+		public function render_form() {
 
 			$menus = array();
 			$fields = array();
 			$settings = get_option( $this->option_name );
 			$options = $this->get_option_array();
-			foreach ( $options as $field ) { 
+			foreach ( $options as $field ) {
 				$return = $this->render_element($field);
 				$menus[] = $return[1];
 				$fields[] = $return[0];
 			}
-			
+
 
 			?>
 			<div class="wrap">
@@ -376,36 +376,36 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 					<!-- Settings navigation -->
 					<ul class="tab-nav">
-						<?php 
+						<?php
 							foreach ( $menus as $menu ) {
 								echo $menu;
 							}
 						?>
 					</ul>
-					
+
 					<div class="bon-toolkit-admin">
 						<div id="bon-toolkit-options">
-						<?php 
+						<?php
 							foreach ( $fields as $field ) {
 								echo $field;
 							}
 						?>
-							
+
 						</div><!-- toolkit options -->
 					</div><!-- toolkit admin -->
-					
+
 					<div id="submit-options">
 						<div class="restore"></div>
-						
+
 						<?php echo submit_button('Save Changes'); ?>
 					</div>
 				</form>
 			</div><!-- wrap -->
-			<?php	
+			<?php
 		}
 
 		public function get_option_array() {
-			include_once('includes/options.php');
+			include( plugin_dir_path( __FILE__ ) . 'includes/options.php');
 
 			return $options = bon_toolkit_set_options();
 		}
@@ -418,9 +418,9 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			$o = '';
 
 			global $allowedtags;
-			
+
 			$settings = get_option( $this->option_name );
-			
+
 			// get field data
 			$type = isset( $field['type'] ) ? $field['type'] : null;
 			$label = isset( $field['label'] ) ? $field['label'] : null;
@@ -445,43 +445,43 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			if((!isset($meta)) && isset($std)) {
 				$meta = '';
 			}
-			
+
 
 
 			switch ($type) {
-				
+
 				case 'section' :
 
 					$menu .= '<li><a id="nav-'.esc_attr($id).'" href="#">'.$label.'</a></li>';
 
 					$o .= '<div id="'. esc_attr( $id ) . '" class="box '.esc_attr($class).'">';
 
-				break; 
+				break;
 
 				case 'select' :
 					$o .= '
 					<div class="setting '.esc_attr($class).'" data-toggle="' . ((isset($toggle)) ? 'setting-' . esc_attr($toggle) : '') .'">
 						<strong>'. $label .'</strong>
-						
+
 						<div class="options">
-							<select name="' .$this->option_name . '['  . esc_attr( $name ) . ']" id="' . esc_attr( $id ) . '">'; 
+							<select name="' .$this->option_name . '['  . esc_attr( $name ) . ']" id="' . esc_attr( $id ) . '">';
 								foreach ( $options as $val => $option ) {
 									$o .= '<option' . selected( $meta, $val, false ) . ' value="' . $val . '">' . $option . '</option>';
 								}
 								$o .= '</select>
-								' . $desc . '	
+								' . $desc . '
 						</div>
 					</div><!-- setting -->';
-				break; 
+				break;
 
 				case 'checkbox' :
 					$o .= '
 					<div id="setting-'.esc_attr($id).'" class="setting '.esc_attr($class).'" data-toggle="' . ((isset($toggle)) ? 'setting-' . esc_attr($toggle) : '') .'" >
 						<strong>'. $label .'</strong>
-						
+
 						<div class="options">
 							<input type="checkbox" class="bon-input" name="'.$this->option_name . '[' . esc_attr( $name ) . ']" id="' . esc_attr( $id ) . '" ' . checked( $meta, true, false ) . ' value="1" />
-									<label for="' . esc_attr( $id ) . '">' . $desc . '</label>	
+									<label for="' . esc_attr( $id ) . '">' . $desc . '</label>
 						</div>
 					</div><!-- setting -->';
 				break;
@@ -490,7 +490,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 					$o .= '
 					<div id="setting-'.esc_attr($id).'" class="setting '.esc_attr($class).'" data-toggle="' . ((isset($toggle)) ? 'setting-' . esc_attr($toggle) : '') .'" >
 						<strong>'. $label .'</strong>
-						
+
 						<div class="options">
 							<input type="text" class="bon-input" name="'.$this->option_name . '[' . esc_attr( $name ) . ']" id="' . esc_attr( $id ) . '" value="'.$meta.'" />
 									<br /><br />' . $desc . '
@@ -510,10 +510,10 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 						if( $meta && is_array( $meta ) ) {
 							$checked = checked( in_array( $val, $meta ), 1, false);
 						}
-						$o .= '<li class="opt"><input type="checkbox" value="'.$val.'" name="' . $c_name . '" id="' . esc_attr( $id ) . '-' . $val . '"' . $checked . ' /> 
+						$o .= '<li class="opt"><input type="checkbox" value="'.$val.'" name="' . $c_name . '" id="' . esc_attr( $id ) . '-' . $val . '"' . $checked . ' />
 								<label for="' . esc_attr( $id ) . '-' . $val . '">' . $option . '</label></li>';
 					}
-					$o .= '</ul><br/>' . $desc .'</div></div>'; 
+					$o .= '</ul><br/>' . $desc .'</div></div>';
 
 				break;
 
@@ -556,7 +556,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			);
 
 			$widget_arr = apply_filters( 'bon_toolkit_filter_widget_opt', $widget_arr );
-			
+
 			foreach($widget_arr as $key => $value) {
 				if( $this->check_options( esc_attr( $value['key_option'] ) ) === true ) {
 					include_once 'includes/widgets/' . esc_attr($value['file']) . '.php';
@@ -583,7 +583,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 			}
 		}
 
-		
+
 		// -------------- Setting Custom Post Type -------------- //
 		public function set_cpt_features() {
 
@@ -601,7 +601,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				return;
 
 			} else {
-				
+
 				$this->cpt_arr = apply_filters( 'bon_toolkit_filter_cpt_opt', $this->cpt_arr );
 
 				foreach($this->cpt_arr as $key => $value) {
@@ -609,7 +609,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 						include_once 'includes/posttypes/' . esc_attr($value['file']) . '.php';
 					}
 				}
-				
+
 			}
 
 		} // end
@@ -680,11 +680,11 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				include_once 'includes/builder/builder.php';
 				include_once 'includes/builder/builder-interface.php';
 			}
-			
+
 		}
 
 		public function set_builder_suffix() {
-			
+
 			$suffix = apply_filters('bon_tookit_builder_suffix_filters', array(
 		        'post' => 'builder_post_',
 		        'contact_form' => 'builder_contact_form_',
@@ -722,7 +722,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 		function flush_rewrite() {
 		    // First, we "add" the custom post type via the above written function.
 		    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
-		    // They are only referenced in the post_type column with a post entry, 
+		    // They are only referenced in the post_type column with a post entry,
 		    // when you add a post of this CPT.
 		    $this->set_cpt_features();
 
